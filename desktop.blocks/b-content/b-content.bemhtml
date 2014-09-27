@@ -1,0 +1,4 @@
+block b-content {
+  tag: 'div'
+  content: 'Hello block'
+}
