@@ -1,0 +1,8 @@
+block page {
+  elem header {
+    tag: 'header'
+  }
+  elem footer {
+    tag: 'footer'
+  }
+}

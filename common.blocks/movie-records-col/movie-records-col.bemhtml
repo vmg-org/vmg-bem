@@ -1,0 +1,9 @@
+block movie-records-col {
+  tag: 'div'
+  elem header {
+    tag: 'div'
+  }
+  elem workspace {
+    tag: 'div'
+  }
+}

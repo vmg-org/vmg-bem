@@ -1,0 +1,8 @@
+block movie-records {
+  tag: 'ul'
+  content: this.ctx.arr.map(function(user) { return { elem: 'item', content: user } })
+  elem item {
+    tag: 'li'
+    content: ['Hello, ', applyNext(), '!!!']
+  }
+}
