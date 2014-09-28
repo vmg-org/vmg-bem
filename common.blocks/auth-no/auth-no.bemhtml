@@ -1,0 +1,9 @@
+block 'auth-no' {
+  tag: 'div'
+  elem 'welcome' {
+    tag: 'span'
+  }
+  elem 'auth-button' {
+    tag: 'button'
+  }
+}

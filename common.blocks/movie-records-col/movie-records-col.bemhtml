@@ -1,4 +1,4 @@
-block movie-records-col {
+block 'movie-records-col' {
   tag: 'div'
   elem header {
     tag: 'div'

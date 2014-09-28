@@ -4,7 +4,7 @@
   favicon: 'favicon.ico',
   head: [{
     elem: 'css',
-    url: '_index.css'
+    url: 'index.css'
   }, {
     elem: 'meta',
     attrs: {
@@ -14,10 +14,13 @@
   }],
   scripts: [{
     elem: 'js',
-    url: '_index.js'
+    url: 'index.js'
   }],
   content: [{
-    block: 'variables'
+    block: 'variables',
+    mix: {
+      block: 'hidden'
+    }
   }, {
     elem: 'header',
     content: [{
@@ -27,7 +30,7 @@
         content: [{
           elem: 'col',
           mods: {
-            mw: 8
+            mw: 4
           },
           content: 'ISNAPPY'
         }, {
@@ -36,8 +39,57 @@
             mw: 4
           },
           content: [{
-            block: 'b-auth',
-            content: '%=login_cf=%'
+            block: 'menu-call',
+            content: [{
+              elem: 'full-icon',
+              mix: [{
+                block: 'glyphicon'
+              }, {
+                block: 'glyphicon-list'
+              }]
+            }]
+          }]
+        }, {
+          elem: 'col',
+          mods: {
+            mw: 4
+          },
+          content: [{
+            block: 'auth-no',
+            content: [{
+              elem: 'welcome',
+              content: '%=login_cf=%'
+            }, {
+              elem: 'auth-button',
+              content: 'G+',
+              elemMods: {
+                social: 'goog'
+              },
+              mix: {
+                block: 'button'
+              }
+            }, {
+              elem: 'auth-button',
+              content: 'FB',
+              elemMods: {
+                social: 'fb'
+              },
+              mix: {
+                block: 'button'
+              }
+            }]
+          }, {
+            block: 'auth-profile',
+            content: [{
+              elem: 'name',
+              content: '%%myname'
+            }, {
+              elem: 'icon',
+              content: '%%myicon'
+            }, {
+              elem: 'settings',
+              content: 'stn, exit'
+            }]
           }]
         }]
       }]
@@ -51,7 +103,8 @@
         content: [{
           elem: 'col',
           mods: {
-            mw: 8
+            mw: 8,
+            sw: 12
           },
           content: [{
             block: 'movie-records-col',
@@ -69,7 +122,8 @@
         }, {
           elem: 'col',
           mods: {
-            mw: 4
+            mw: 4,
+            sw: 12
           },
           content: [{
             block: 'movie-templates-col',
