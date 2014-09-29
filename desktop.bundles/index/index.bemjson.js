@@ -6,6 +6,9 @@
     elem: 'css',
     url: 'index.css'
   }, {
+    elem: 'js',
+    url: './libs/modernizr.js'
+  }, {
     elem: 'meta',
     attrs: {
       name: 'viewport',
@@ -14,7 +17,10 @@
   }],
   scripts: [{
     elem: 'js',
-    url: 'index.js'
+    url: './libs/jquery.js'
+  }, {
+    elem: 'js',
+    url: './index-bundle.js'
   }],
   content: [{
     block: 'variables',
