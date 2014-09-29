@@ -1,0 +1,6 @@
+block 'menu-view' {
+  tag: 'div'
+  elem 'close' {
+    tag: 'div'
+  }
+}

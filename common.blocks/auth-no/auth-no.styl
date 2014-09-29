@@ -1,17 +1,24 @@
 .auth-no
   padding: 2px
   text-align: right
- /* display: none*/
+  border(red)
 
 .auth-no__welcome
   font-weight: bold
+  transition: width 2s, height 2s, background-color 2s, transform 2s
 
 .auth-no__auth-button
   padding: 1px
   color: white
+  border-radius: 5px
 
 .auth-no__auth-button_social_fb
-  background: blue
+  background: linear-gradient(blue, black)
+  &:hover
+    background: linear-gradient(lighten(blue, 10%), gray)
 
 .auth-no__auth-button_social_goog
-  background: red
+  background: linear-gradient(red, black)
+  &:hover
+    background: linear-gradient(lighten(red, 10%), gray)
+  

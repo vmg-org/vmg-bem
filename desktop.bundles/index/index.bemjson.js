@@ -23,10 +23,11 @@
     url: './index-bundle.js'
   }],
   content: [{
+    block: 'nib', //mixins for stylus
+    bem: false
+  }, {
     block: 'variables',
-    mix: {
-      block: 'hidden'
-    }
+    bem: false // no 'variables' class
   }, {
     elem: 'header',
     content: [{
@@ -36,13 +37,15 @@
         content: [{
           elem: 'col',
           mods: {
-            mw: 4
+            mw: 4,
+	    sw: 12
           },
           content: 'ISNAPPY'
         }, {
           elem: 'col',
           mods: {
-            mw: 4
+            mw: 4,
+	    sw: 12
           },
           content: [{
             block: 'menu-call',
@@ -58,7 +61,8 @@
         }, {
           elem: 'col',
           mods: {
-            mw: 4
+            mw: 4,
+	    sw: 12
           },
           content: [{
             block: 'auth-no',
@@ -121,7 +125,91 @@
               elem: 'workspace',
               content: [{
                 block: 'movie-records',
-                arr: ['sadf1', 'asdf2']
+                arr: [
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'sadf1',
+                  'asdf2'
+                ]
               }]
             }]
           }]
@@ -141,5 +229,32 @@
   }, {
     elem: 'footer',
     content: []
+  }, {
+    block: 'pip-popup', // all popups under html
+    mix: [{
+      block: 'menu-popup' // to open with JS and new styles
+    }, {
+      block: 'hidden'
+    }],
+    content: [{
+      elem: 'space',
+      content: [{
+        block: 'menu-view',
+        content: [{
+          elem: 'close',
+          mix: [{
+            block: 'glyphicon'
+          }, {
+            block: 'glyphicon-remove-circle'
+          }]
+        }, {
+          elem: 'header',
+          content: '%=menu_header=%'
+        }, {
+          elem: 'list',
+          content: 'super list with apps'
+        }]
+      }]
+    }]
   }]
 })
