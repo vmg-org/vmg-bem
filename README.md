@@ -40,5 +40,8 @@ echo "alias 'bempage'='bem create -l desktop.bundles -b'" >> ~/.bashrc
 - [Commands bem-tools](http://bem.info/tools/bem/bem-tools/commands/)
 
 ## Notes
+
 A bem-grid cloned from a repo 1.0.0-beta to common.blocks.
 Variables has been changed.
+Bem-grid uses js to check flex support of your browser; 
+@todo #44! move this logic to modernizr
