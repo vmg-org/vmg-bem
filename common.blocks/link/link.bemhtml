@@ -1,0 +1,13 @@
+block('link')(
+  tag()('a'),
+  attrs()(function() {
+    var ctx = this.ctx,
+      attrs = {};
+
+    ctx.url && (attrs.href = ctx.url)
+    ctx.title && (attrs.title = ctx.title);
+    ctx.target && (attrs.target = ctx.target);
+
+    return attrs;
+  })
+);

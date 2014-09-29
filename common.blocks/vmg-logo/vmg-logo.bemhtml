@@ -1,0 +1,11 @@
+block('vmg-logo')(
+  tag()('a'),
+  attrs()(function() {
+    return {
+      href: this.ctx.href
+    };
+  }),
+  elem('logo-span')(
+    tag()('span')
+  )
+);
