@@ -29,7 +29,7 @@
           block: 'movie-record-col',
           content: [{
             elem: 'header',
-            content: '%=movie-record_cf=%'
+            content: '%=movieRecord=%'
           }]
         }]
       }, {
@@ -40,7 +40,7 @@
         },
         content: [{
           block: 'other-movies-col',
-          content: 'other movies'
+          content: '%=otherMovies=%'
         }]
       }]
     }]

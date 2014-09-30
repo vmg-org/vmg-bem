@@ -29,7 +29,7 @@
           block: 'movie-records-col',
           content: [{
             elem: 'header',
-            content: '%=movie-records_cf=%'
+            content: '%=movieRecords=%'
           }, {
             elem: 'workspace',
             content: [{
@@ -48,7 +48,7 @@
         },
         content: [{
           block: 'movie-templates-col',
-          content: 'movie templates'
+          content: '%=movieTemplates=%'
         }]
       }]
     }]

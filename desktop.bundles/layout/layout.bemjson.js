@@ -1,13 +1,13 @@
 ({
   block: 'page',
-  title: '%=page-name%=', //overide title of a page
+  title: 'pagename', //overide title of a page
   favicon: 'favicon.ico',
   head: [{
     elem: 'css',
     url: 'layout.css' // merge css from layout and pages: combine and remove the same classes (during minification) - latter classes have priority
   }, {
     elem: 'js',
-    url: '/static/libs/modernizr.js'
+    url: './static/libs/modernizr.js'
   }, {
     elem: 'meta',
     attrs: {
@@ -17,7 +17,7 @@
   }],
   scripts: [{
     elem: 'js',
-    url: '/static/libs/jquery.js'
+    url: './static/libs/jquery.js'
   }, {
     elem: 'js',
     url: 'page-bundle.js'
@@ -43,7 +43,7 @@
               block: 'pull-left',
               content: [{
                 block: 'vmg-logo',
-                href: '/',
+                href: './',
                 content: [{
                   elem: 'logo-span'
                 }]
@@ -82,7 +82,7 @@
             block: 'auth-no',
             content: [{
               elem: 'welcome',
-              content: '%=login_cf=%'
+              content: '%=login=%'
             }, {
               elem: 'auth-button',
               content: 'G+',
@@ -125,7 +125,7 @@
     elem: 'footer',
     content: [{
       block: "license-info",
-      content: "license-is-neccessary"
+      content: "%=licenseInfo=%"
     }]
   }, {
     block: 'pip-popup', // all popups under html
@@ -147,7 +147,7 @@
           }]
         }, {
           elem: 'header',
-          content: '%=menu_header=%'
+          content: '%=menuTitle=%'
         }, {
           elem: 'list',
           content: 'super list with apps'
