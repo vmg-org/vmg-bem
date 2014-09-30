@@ -36,31 +36,31 @@
               block: 'movie-records',
               arr: [{
                 ttl: 'Movie preview image',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=13453245'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }, {
                 ttl: 'Other movie preview',
-                imgSrc: './img/movie-black.png',
+                imgSrc: './css/img/movie-black.png',
                 linkHref: './watch.html?v=12341324'
               }]
             }]
@@ -73,11 +73,40 @@
           sw: 12
         },
         content: [{
-          block: 'movie-templates-col',
+          block: 'best-templates-col',
           mix: {
             block: 'over-wrap'
           },
-          content: '%=movieTemplates=%'
+          content: [{
+            elem: 'header',
+            content: '%=movieTemplates=%'
+          }, {
+            elem: 'workspace',
+            content: [{
+              block: 'best-templates',
+              arr: [{
+                ttl: 'Template preview',
+                imgSrc: './css/img/movie-black.png',
+                linkHref: './template.html?v=13453245'
+              }, {
+                ttl: 'Template preview',
+                imgSrc: './css/img/movie-black.png',
+                linkHref: './template.html?v=12341324'
+              }, {
+                ttl: 'Template preview',
+                imgSrc: './css/img/movie-black.png',
+                linkHref: './template.html?v=12341324'
+              }, {
+                ttl: 'Template preview',
+                imgSrc: './css/img/movie-black.png',
+                linkHref: './template.html?v=12341324'
+              }, {
+                ttl: 'Template preview',
+                imgSrc: './css/img/movie-black.png',
+                linkHref: './template.html?v=12341324'
+              }]
+            }]
+          }]
         }]
       }]
     }]
