@@ -1,0 +1,13 @@
+block('movie-template')(
+  elem('title')(
+    tag()('h2')
+  ),
+  elem('preview')(
+    tag()('img'),
+    attrs()(function() {
+      return {
+        src: this.ctx.imgSrc
+      };
+    })
+  )
+);
