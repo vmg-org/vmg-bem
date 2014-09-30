@@ -15,9 +15,12 @@
       content: 'width=device-width, initial-scale=1'
     }
   }],
-  scripts: [{ // override scripts
+  scripts: [{
     elem: 'js',
     url: '/static/libs/jquery.js'
+  }, {
+    elem: 'js',
+    url: 'page-bundle.js'
   }],
   content: [{
     block: 'variables', // add it for all pages and for layout
@@ -117,7 +120,7 @@
     }]
   }, {
     elem: 'workspace',
-    content: 'page replacement'
+    content: '%%%%%'
   }, {
     elem: 'footer',
     content: [{
