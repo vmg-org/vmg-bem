@@ -1,0 +1,12 @@
+block('movie-preview')(
+  elem('watch')(
+    tag()('div'),
+    content()(function() {
+      return {
+        block: 'img-link',
+        linkHref: this.ctx.linkHref,
+        imgSrc: this.ctx.imgSrc
+      }
+    })
+  )
+)

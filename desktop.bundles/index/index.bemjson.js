@@ -13,9 +13,6 @@
     }
   }],
   content: [{
-    block: 'variables',
-    bem: false // no 'variables' class
-  }, {
     block: 'grid',
     content: [{
       block: 'row',
@@ -27,6 +24,9 @@
         },
         content: [{
           block: 'movie-records-col',
+          mix: {
+            block: 'over-wrap'
+          },
           content: [{
             elem: 'header',
             content: '%=movieRecords=%'
@@ -34,9 +34,35 @@
             elem: 'workspace',
             content: [{
               block: 'movie-records',
-              arr: [
-                'sadf1'
-              ]
+              arr: [{
+                ttl: 'Movie preview image',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=13453245'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }, {
+                ttl: 'Other movie preview',
+                imgSrc: './img/movie-black.png',
+                linkHref: './watch.html?v=12341324'
+              }]
             }]
           }]
         }]
@@ -48,6 +74,9 @@
         },
         content: [{
           block: 'movie-templates-col',
+          mix: {
+            block: 'over-wrap'
+          },
           content: '%=movieTemplates=%'
         }]
       }]

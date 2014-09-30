@@ -23,9 +23,6 @@
     url: 'page-bundle.js'
   }],
   content: [{
-    block: 'variables', // add it for all pages and for layout
-    bem: false // no 'variables' class
-  }, {
     elem: 'header',
     content: [{
       block: 'grid',

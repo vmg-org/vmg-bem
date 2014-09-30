@@ -13,23 +13,51 @@
     }
   }],
   content: [{
-    block: 'variables',
-    bem: false // no 'variables' class
-  }, {
     block: 'grid',
     content: [{
       block: 'row',
       content: [{
         elem: 'col',
         mods: {
-          mw: 8,
-          sw: 12
+          mw: 8
         },
         content: [{
           block: 'movie-record-col',
           content: [{
             elem: 'header',
-            content: '%=movieRecord=%'
+            content: [{
+              block: 'movie-player-wrap',
+              mix: {
+                block: 'over-wrap'
+              },
+              content: [{
+                block: 'movie-player'
+              }]
+            }, {
+              block: 'movie-info',
+              mix: {
+                block: 'over-wrap'
+              },
+              content: [{
+                elem: 'title',
+                content: '%%movie_title'
+              }, {
+                elem: 'description',
+                content: '%%movie_description'
+              }]
+            }, {
+              block: 'movie-social-tools',
+              mix: {
+                block: 'over-wrap'
+              },
+              content: 'likes and share'
+            }, {
+              block: 'movie-comments-wrap',
+              mix: {
+                block: 'over-wrap'
+              },
+              content: 'list of comments'
+            }]
           }]
         }]
       }, {
@@ -39,7 +67,16 @@
           sw: 12
         },
         content: [{
-          block: 'other-movies-col',
+          block: 'best-other-movies',
+          mix: {
+            block: 'over-wrap'
+          },
+          content: 'best other movies'
+        }, {
+          block: 'other-movies',
+          mix: {
+            block: 'over-wrap'
+          },
           content: '%=otherMovies=%'
         }]
       }]

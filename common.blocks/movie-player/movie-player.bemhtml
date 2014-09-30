@@ -1,0 +1,3 @@
+block('movie-player')(
+  tag()('video')
+);

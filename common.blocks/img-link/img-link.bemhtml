@@ -1,0 +1,22 @@
+block('img-link')(
+  tag()('a'),
+  content()(function() {
+    return {
+      elem: 'inner-img',
+      imgSrc: this.ctx.imgSrc
+    };
+  }),
+  attrs()(function() {
+    return {
+      href: this.ctx.linkHref
+    };
+  }),
+  elem('inner-img')(
+    tag()('img'),
+    attrs()(function() {
+      return {
+        src: this.ctx.imgSrc
+      };
+    })
+  )
+);
