@@ -1,7 +1,7 @@
 'use strict';
 
 var bhLib = require('bh');
-var bh = new(bhLib.BH);
+var bh = new(bhLib.BH); // jshint ignore:line
 var through2 = require('through2');
 
 exports.run = function() {

@@ -1,3 +1,7 @@
+/*
+ * Project tasks
+ * @todo #23! css create files from stylus
+ */
 var gulp = require('gulp');
 
 var jshint = require('gulp-jshint');
@@ -6,6 +10,7 @@ var notify = require('gulp-notify');
 //console.log(bh.apply(layout));
 var partialCombiner = require('./partial-combiner');
 var bhGenerator = require('./bh-generator');
+var cssStylConvertor = require('./css-styl-convertor');
 
 
 var pth = {};
@@ -38,6 +43,12 @@ gulp.task('bh', function() {
   gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
+});
+
+gulp.task('css', function() {
+  gulp.src(pth.dst + 'bemjson/*.bemjson.json')
+    .pipe(cssStylConvertor.run())
+    .pipe(gulp.dest(pth.dst + 'css/'));
 });
 
 var jshintNotify = function(file) {
