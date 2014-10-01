@@ -1,21 +1,16 @@
-libs/
 node_modules/
-.DS_Store
-.idea
-.project
-.svn
-npm-debug.log
+bower_components/
+.git/
+.grunt/
+.sass-cache/
+dst/
+dest/
+dev/
 doc/
-
-# bem
-.bem/cache/
-.enb/tmp/
-*bundles*/*/*.*
-!*bundles*/*/*.bemjson.js
-!*bundles*/.bem/*
-*pages*/*/*.*
-!*pages*/*/*.bemjson.js
-!*pages*/.bem/*
+devipad/
+dstipad/
+dstmetro/
+.ftppass
 
 # Linux temp and system files
 .directory

@@ -1,21 +1,74 @@
 var gulp = require('gulp');
-var gitLog = require('git-log');
-var exec = require('child_process').exec;
 
-gulp.task('gitlog', function(done) {
-  var tmpFilePath = 'doc/log-tmp.log';
-  var logFilePath = 'doc/log-201409.log';
-  var afterDate = new Date(2014, 8, 2); //new Date(Date.now() - (1000 * 60 * 60 * 24));
-  var beforeDate = new Date(2014, 9, 1);
+var jshint = require('gulp-jshint');
+var stylish = require('jshint-stylish');
+var notify = require('gulp-notify');
+//console.log(bh.apply(layout));
+var partialCombiner = require('./partial-combiner');
+var bhGenerator = require('./bh-generator');
 
-  var shellCommand = 'git log ' + gitLog.generateArgs(afterDate, beforeDate, tmpFilePath).join(' ');
-  console.log(shellCommand);
 
-  exec(shellCommand, function(err) {
-    if (err) {
-      return done(err);
+var pth = {};
+pth.pages = './pages/';
+pth.dst = './dst/';
+
+gulp.task('build', function() {
+  // concat files with templates
+  // put it to separate dir (in dst)
+
+  // create html from ready templates
+  // put it to dst for browsing
+
+  // get all block names from template
+  // @import all styl from blocks repo
+  // create css file and put to dst for browsing
+
+  // send to vmg-web clean templates
+  // join there with dictionary and other feats
+  //
+});
+
+gulp.task('layout', function() {
+  gulp.src(pth.pages + '*.bemjson.js')
+    .pipe(partialCombiner.run())
+    .pipe(gulp.dest(pth.dst + 'bemjson/'));
+});
+
+gulp.task('bh', function() {
+  gulp.src(pth.dst + 'bemjson/*.bemjson.json')
+    .pipe(bhGenerator.run())
+    .pipe(gulp.dest(pth.dst));
+});
+
+var jshintNotify = function(file) {
+  if (file.jshint.success) {
+    return false;
+  }
+
+  var errors = file.jshint.results.map(function(data) {
+    if (data.error) {
+      return "(" + data.error.line + ':' + data.error.character + ') ' + data.error.reason;
     }
+  }).join("\n");
+  return file.relative + " (" + file.jshint.results.length + " errors)\n" + errors;
+};
 
-    gitLog.createLog(tmpFilePath, logFilePath, done);
-  });
+gulp.task('jshint', function() {
+  return gulp.src(['./*.js', pth.pages + '**/*.js'])
+    .pipe(jshint('.jshintrc'))
+    .pipe(jshint.reporter(stylish))
+    .pipe(notify(jshintNotify));
+});
+
+function startExpress() {
+  var express = require('express');
+  var app = express();
+  app.use(express.static(pth.dst));
+  app.listen(1234);
+  console.log('http://localhost:1234');
+}
+
+gulp.task('connect', function() {
+
+  startExpress();
 });

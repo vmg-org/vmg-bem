@@ -1,0 +1,28 @@
+block('movie-records')(
+  tag()('div')
+  //  content()(
+  //    this.ctx.arr.map(function(mv) {
+  //      return {
+  //        elem: 'item',
+  //        content: mv
+  //      }
+  //    })
+  //  ),
+  //  elem('item')(
+  //    tag()('div'),
+  //    content()([{
+  //      block: 'movie-preview',
+  //      content: [{
+  //        elem: 'watch',
+  //        imgSrc: applyNext().imgSrc,
+  //        linkHref: applyNext().linkHref
+  //      }, {
+  //        elem: 'title',
+  //        content: applyNext().ttl
+  //      }, {
+  //        elem: 'rating'
+  //      }]
+  //    }])
+  //  )
+);
+//'Hello, ', applyNext(), '!!!'
