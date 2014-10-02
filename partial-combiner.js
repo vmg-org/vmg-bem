@@ -35,7 +35,7 @@ var handleObj = function(obj, parentPageId, keyName) {
   }
 };
 
-var findPattern = function(obj, parentPageId) {
+var findPattern = function(obj, parentPageId) { // jshint ignore:line
   Object.keys(obj).forEach(handleObj.bind(null, obj, parentPageId));
 };
 

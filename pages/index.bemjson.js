@@ -16,14 +16,14 @@ module.exports = {
     }, {
       elem: 'workspace',
       content: [{
-        block: 'grid',
+        block: 'bsp-container',
         content: [{
-          block: 'row',
+          block: 'bsp-row',
           content: [{
-            elem: 'col',
+            block: 'bsp-col',
             mods: {
-              mw: 8,
-              sw: 12
+              md: 8,
+              sm: 12
             },
             content: [{
               block: 'movie-records-col',
@@ -45,6 +45,7 @@ module.exports = {
                         elem: 'watch',
                         content: [{
                           block: 'img-link',
+			  tag: 'a',
                           attrs: {
                             href: './watch.html?asdf'
                           },
@@ -71,6 +72,7 @@ module.exports = {
                         elem: 'watch',
                         content: [{
                           block: 'img-link',
+			  tag: 'a',
                           attrs: {
                             href: './watch.html?asdf'
                           },
@@ -115,10 +117,10 @@ module.exports = {
               }]
             }]
           }, {
-            elem: 'col',
+            block: 'bsp-col',
             mods: {
-              mw: 4,
-              sw: 12
+              md: 4,
+              sm: 12
             },
             content: [{
               block: 'best-templates-col',

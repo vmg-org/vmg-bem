@@ -25,42 +25,33 @@ module.exports = {
               mw: 8
             },
             content: [{
-              block: 'movie-record-col',
+              block: 'movie-template',
+              mix: {
+                block: 'over-wrap'
+              },
               content: [{
-                elem: 'header',
+                elem: 'preview',
+                imgSrc: './css/img/movie-black.png'
+              }, {
+                elem: 'title',
+                content: 'Template title'
+              }, {
+                elem: 'episodes-header',
+                content: '%=episodes=%'
+              }, {
+                elem: 'episodes',
                 content: [{
-                  block: 'movie-player-wrap',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: [{
-                    block: 'movie-player',
-                    tag: 'video'
-                  }]
-                }, {
-                  block: 'movie-info',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: [{
-                    elem: 'title',
-                    content: '%%movie_title'
+                  block: 'template-episodes',
+                  arr: [{
+                    title: 'episode1',
+                    story: 'someStory'
                   }, {
-                    elem: 'description',
-                    content: '%%movie_description'
+                    title: 'episode2',
+                    story: 'someStory'
+                  }, {
+                    title: 'episode3',
+                    story: 'someStory'
                   }]
-                }, {
-                  block: 'movie-social-tools',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: 'likes and share'
-                }, {
-                  block: 'movie-comments-wrap',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: 'list of comments'
                 }]
               }]
             }]
@@ -71,17 +62,17 @@ module.exports = {
               sw: 12
             },
             content: [{
-              block: 'best-other-movies',
+              block: 'best-other-templates',
               mix: {
                 block: 'over-wrap'
               },
-              content: 'best other movies'
+              content: 'best other templates'
             }, {
-              block: 'other-movies',
+              block: 'other-templates',
               mix: {
                 block: 'over-wrap'
               },
-              content: '%=otherMovies=%'
+              content: 'other templates'
             }]
           }]
         }]
@@ -105,7 +96,7 @@ module.exports = {
       tag: 'script',
       bem: false,
       attrs: {
-        src: './js/watch-bundle.js'
+        src: './js/template-bundle.js'
       }
     }]
   }]

@@ -1,5 +1,0 @@
-block('episode-info')(
-  elem('title')(
-    tag()('h3')
-  )
-);

@@ -14,6 +14,7 @@ module.exports = [{
         elem: 'close',
         mix: [{
           block: 'glyphicon',
+	  tag: 'span',
           mods: {
             q: 'remove-circle'
           }

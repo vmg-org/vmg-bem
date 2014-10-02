@@ -1,6 +1,0 @@
-block 'menu-call' {
-  tag: 'div'
-  elem 'full-icon' {
-    tag: 'span'
-  }
-}

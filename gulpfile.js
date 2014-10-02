@@ -1,6 +1,8 @@
 /*
  * Project tasks
- * @todo #23! css create files from stylus
+ * @todo #23! join all tasks to one (bh after layout)
+ * @todo #23! change divs to accordings tags
+ * @todo #33! try to change all mixes to inner blocks (in styles)
  */
 var gulp = require('gulp');
 
@@ -14,11 +16,21 @@ var cssStylConvertor = require('./css-styl-convertor');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 
+var runSequence = require('run-sequence');
+
+var del = require('del');
+
 var pth = {};
 pth.pages = './pages/';
 pth.dst = './dst/';
 
-gulp.task('build', function() {
+gulp.task('build', function(cbk) {
+  runSequence('jshint',
+    'clean',
+    'layout',
+    'bh',
+    'css',
+    cbk);
   // concat files with templates
   // put it to separate dir (in dst)
 
@@ -34,20 +46,24 @@ gulp.task('build', function() {
   //
 });
 
+gulp.task('clean', function(next) {
+  del(pth.dst, next);
+});
+
 gulp.task('layout', function() {
-  gulp.src(pth.pages + '*.bemjson.js')
+  return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
     .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
 
 gulp.task('bh', function() {
-  gulp.src(pth.dst + 'bemjson/*.bemjson.json')
+  return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
 });
 
 gulp.task('css', function() {
-  gulp.src(pth.dst + 'bemjson/*.bemjson.json')
+  return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(cssStylConvertor.run())
     .pipe(stylus({
       //      inline: true,

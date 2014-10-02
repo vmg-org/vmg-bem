@@ -14,9 +14,13 @@ module.exports = [{
           block: 'pull-left',
           content: [{
             block: 'vmg-logo',
-            href: './',
+            tag: 'a',
+            attrs: {
+              href: './'
+            },
             content: [{
-              elem: 'logo-span'
+              elem: 'logo-span',
+              tag: 'span'
             }]
           }]
         }, {
@@ -25,13 +29,14 @@ module.exports = [{
             block: 'menu-call',
             content: [{
               elem: 'full-icon',
+              tag: 'span', // todo: #31! change mix to inner block
               mix: [{
-                  block: 'glyphicon',
-                  mods: {
-                    q: 'list'
-                  }
+                block: 'glyphicon',
+                tag: 'span',
+                mods: {
+                  q: 'list'
                 }
-              ]
+              }]
             }]
           }]
         }]
@@ -55,24 +60,21 @@ module.exports = [{
         block: 'auth-no',
         content: [{
           elem: 'welcome',
+          tag: 'span',
           content: '%=login=%'
         }, {
           elem: 'auth-button',
+          tag: 'button',
           content: 'G+',
           elemMods: {
             social: 'goog'
-          },
-          mix: {
-            block: 'button'
           }
         }, {
           elem: 'auth-button',
+          tag: 'button',
           content: 'FB',
           elemMods: {
             social: 'fb'
-          },
-          mix: {
-            block: 'button'
           }
         }]
       }, {

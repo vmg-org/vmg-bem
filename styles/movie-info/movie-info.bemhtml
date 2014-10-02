@@ -1,9 +1,0 @@
-block('movie-info')(
-  tag()('div'),
-  elem('title')(
-    tag()('h2')
-  ),
-  elem('description')(
-    tag()('div')
-  )
-)
