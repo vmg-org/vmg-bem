@@ -25,14 +25,14 @@ module.exports = [{
   elem: 'title',
   tag: 'title',
   bem: false,
-  content: '%=sitename=%'
+  content: '%=siteName=%: %=@@parentPage@@PageName=%'
 }, {
   elem: 'pagestyle',
   tag: 'link',
   bem: false,
   attrs: {
     rel: 'stylesheet',
-    href: './css/page-bundle.css' // one file per site (best cache) or one file per page (small size)
+    href: './css/@@parentPage@@-bundle.css' // one file per site (best cache) or one file per page (small size)
   }
 },{
   elem: 'favicon',

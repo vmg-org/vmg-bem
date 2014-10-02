@@ -11,7 +11,8 @@ var notify = require('gulp-notify');
 var partialCombiner = require('./partial-combiner');
 var bhGenerator = require('./bh-generator');
 var cssStylConvertor = require('./css-styl-convertor');
-
+var stylus = require('gulp-stylus');
+var nib = require('nib');
 
 var pth = {};
 pth.pages = './pages/';
@@ -48,6 +49,14 @@ gulp.task('bh', function() {
 gulp.task('css', function() {
   gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(cssStylConvertor.run())
+    .pipe(stylus({
+      //      inline: true,
+      //     sourceRoot: '..',
+      //    basePath: 'css'
+      //      linenos: true
+      use: nib(),
+      compress: true
+    }))
     .pipe(gulp.dest(pth.dst + 'css/'));
 });
 

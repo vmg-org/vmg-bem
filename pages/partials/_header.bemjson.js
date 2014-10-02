@@ -26,10 +26,12 @@ module.exports = [{
             content: [{
               elem: 'full-icon',
               mix: [{
-                block: 'glyphicon'
-              }, {
-                block: 'glyphicon-list'
-              }]
+                  block: 'glyphicon',
+                  mods: {
+                    q: 'list'
+                  }
+                }
+              ]
             }]
           }]
         }]

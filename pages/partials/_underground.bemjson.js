@@ -13,9 +13,10 @@ module.exports = [{
       content: [{
         elem: 'close',
         mix: [{
-          block: 'glyphicon'
-        }, {
-          block: 'glyphicon-remove-circle'
+          block: 'glyphicon',
+          mods: {
+            q: 'remove-circle'
+          }
         }]
       }, {
         elem: 'header',
