@@ -23,7 +23,7 @@ module.exports = {
             block: 'bsp-col',
             mods: {
               md: 8,
-	      lg: 8
+              lg: 8
             },
             content: [{
               block: 'movie-template',
@@ -32,10 +32,14 @@ module.exports = {
               },
               content: [{
                 elem: 'preview',
-                imgSrc: './css/img/movie-black.png'
+                tag: 'img',
+                attrs: {
+                  src: './css/img/movie-black.png'
+                }
               }, {
                 elem: 'title',
-                content: 'Template title'
+                tag: 'h2',
+                content: 'Crazy fox jumps'
               }, {
                 elem: 'episodes-header',
                 content: '%=episodes=%'
@@ -43,16 +47,21 @@ module.exports = {
                 elem: 'episodes',
                 content: [{
                   block: 'template-episodes',
-                  arr: [{
-                    title: 'episode1',
-                    story: 'someStory'
-                  }, {
-                    title: 'episode2',
-                    story: 'someStory'
-                  }, {
-                    title: 'episode3',
-                    story: 'someStory'
-                  }]
+                  content: [{
+                      elem: 'item',
+                      content: [{
+                        block: 'episode-info',
+                        content: [{
+                          elem: 'title',
+                          content: 'Over owl'
+                        }, {
+                          elem: 'story',
+                          content: 'A fox screams, an owl falls from a tree, and the fox starts to jump over the owl'
+                        }]
+                      }]
+                    }
+
+                  ]
                 }]
               }]
             }]

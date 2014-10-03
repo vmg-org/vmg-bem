@@ -6,8 +6,6 @@ function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
 
-// todo: #23! fix it @import "/styles/glyphicon-remove-circle/glyphicon-remove-circle.styl"
-// @import "/styles/glyphicon-list/glyphicon-list.styl"
 var handleItem = function(obj, resultArr, keyName) {
   if (keyName === 'block') {
     // if bem: false - don't add it: no class - no block

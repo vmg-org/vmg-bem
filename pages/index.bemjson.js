@@ -45,7 +45,7 @@ module.exports = {
                         elem: 'watch',
                         content: [{
                           block: 'img-link',
-			  tag: 'a',
+                          tag: 'a',
                           attrs: {
                             href: './watch.html?asdf'
                           },
@@ -72,7 +72,7 @@ module.exports = {
                         elem: 'watch',
                         content: [{
                           block: 'img-link',
-			  tag: 'a',
+                          tag: 'a',
                           attrs: {
                             href: './watch.html?asdf'
                           },
@@ -134,6 +134,20 @@ module.exports = {
                 elem: 'workspace',
                 content: [{
                   block: 'best-templates',
+                  content: [{
+                    elem: 'item',
+                    content: [{
+                      block: 'movie-preview',
+                      content: [{
+                        elem: 'watch'
+                      }, {
+                        elem: 'title',
+                        content: 'Mario on snowboard'
+                      }, {
+                        elem: 'rating'
+                      }]
+                    }]
+                  }],
                   arr: [{
                     ttl: 'Template preview',
                     imgSrc: './css/img/movie-black.png',

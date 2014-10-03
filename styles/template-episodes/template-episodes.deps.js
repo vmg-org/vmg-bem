@@ -1,5 +1,0 @@
-({
-  mustDeps: [{
-    block: 'episode-info'
-  }]
-});

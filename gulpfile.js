@@ -2,7 +2,6 @@
  * Project tasks
  * @todo #23! change divs to accordings tags
  * @todo #33! try to change all mixes to inner blocks (in styles)
- * @todo #23! try nib
  */
 var gulp = require('gulp');
 
@@ -18,21 +17,25 @@ var cssStylConvertor = require(gulpHelpersPath + 'css-styl-convertor');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 
-var runSequence = require('run-sequence');
+//var runSequence = require('run-sequence');
 
 var del = require('del');
 
 var pth = {};
 pth.pages = './pages/';
+pth.styles = './styles/';
+//pth.img = './static/img/';
+//pth.fonts = './static/fonts/'
+pth.cssResources = './css-resources/';
 pth.dst = './dst/';
 
-gulp.task('build', function(cbk) {
-  runSequence('jshint',
-    'clean',
-    'layout',
-    'bh',
-    'css',
-    cbk);
+gulp.task('build', ['css-resources', 'css', 'bh'], function() {
+  //  return runSequence('jshint',
+  //    'clean',
+  //    'layout',
+  //    'bh',
+  //    'css',
+  //    cbk);
   // concat files with templates
   // put it to separate dir (in dst)
 
@@ -48,23 +51,28 @@ gulp.task('build', function(cbk) {
   //
 });
 
-gulp.task('clean', function(next) {
+gulp.task('clean', ['jshint'], function(next) {
   del(pth.dst, next);
 });
 
-gulp.task('layout', function() {
+gulp.task('css-resources', ['clean'], function() {
+  return gulp.src(pth.cssResources + '**/*')
+    .pipe(gulp.dest(pth.dst + 'css/'));
+});
+
+gulp.task('layout', ['clean'], function() {
   return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
     .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
 
-gulp.task('bh', function() {
+gulp.task('bh', ['layout'], function() {
   return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
 });
 
-gulp.task('css', function() {
+gulp.task('css', ['layout'], function() {
   return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(cssStylConvertor.run())
     .pipe(stylus({
@@ -109,4 +117,8 @@ function startExpress() {
 gulp.task('connect', function() {
 
   startExpress();
+});
+
+gulp.task('watch', function() {
+  return gulp.watch([pth.pages + '**/*', pth.styles + '**/*'], ['build']);
 });
