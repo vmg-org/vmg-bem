@@ -15,12 +15,18 @@ var partialCombiner = require(gulpHelpersPath + 'partial-combiner');
 var translator = require(gulpHelpersPath + 'translator');
 var bhGenerator = require(gulpHelpersPath + 'bh-generator');
 var cssStylConvertor = require(gulpHelpersPath + 'css-styl-convertor');
+var modelImplementator = require(gulpHelpersPath + 'model-implementator');
+
 var stylus = require('gulp-stylus');
 var nib = require('nib');
-var vmgDict  = require('vmg-dict').getLocale('en');
+var vmgDict = require('vmg-dict').getLocale('en');
 //var runSequence = require('run-sequence');
 
 var del = require('del');
+
+//['node', 'gulp', 'taskName', 'isProd']
+var isProd = process.argv.indexOf('--prod') > 0;
+console.log('production: ' + isProd);
 
 var pth = {};
 pth.pages = './pages/';
@@ -28,7 +34,7 @@ pth.styles = './styles/';
 //pth.img = './static/img/';
 //pth.fonts = './static/fonts/'
 pth.cssResources = './css-resources/';
-pth.dst = './dst/';
+pth.dst = isProd ? './dst/' : './dev/';
 
 gulp.task('build', ['css-resources', 'css', 'bh'], function() {
   //  return runSequence('jshint',
@@ -64,6 +70,7 @@ gulp.task('css-resources', ['clean'], function() {
 gulp.task('layout', ['clean'], function() {
   return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
+    .pipe(modelImplementator.run(isProd ? false : true))
     .pipe(translator.run(vmgDict))
     .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
@@ -102,7 +109,7 @@ var jshintNotify = function(file) {
 };
 
 gulp.task('jshint', function() {
-  return gulp.src(['./*.js', pth.pages + '**/*.js'])
+  return gulp.src(['./*.js', gulpHelpersPath + '*.js', pth.pages + '**/*.js'])
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter(stylish))
     .pipe(notify(jshintNotify));

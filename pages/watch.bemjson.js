@@ -6,13 +6,13 @@ module.exports = {
     block: 'head',
     tag: 'head',
     bem: false,
-    content: '_head.bemjson.js'
+    content: '_head.bj.js'
   }, {
     block: 'page',
     tag: 'body',
     content: [{
       elem: 'header',
-      content: '_header.bemjson.js'
+      content: '_header.bj.js'
     }, {
       elem: 'workspace',
       content: [{
@@ -89,11 +89,11 @@ module.exports = {
       }]
     }, {
       elem: 'footer',
-      content: '_footer.bemjson.js'
+      content: '_footer.bj.js'
     }, {
       block: 'underground',
       bem: false,
-      content: '_underground.bemjson.js'
+      content: '_underground.bj.js'
     }, {
       block: 'jquery-script',
       tag: 'script',

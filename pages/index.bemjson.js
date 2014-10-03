@@ -6,13 +6,13 @@ module.exports = {
     block: 'head',
     tag: 'head',
     bem: false,
-    content: '_head.bemjson.js'
+    content: '_head.bj.js'
   }, {
     block: 'page',
     tag: 'body',
     content: [{
       elem: 'header',
-      content: '_header.bemjson.js'
+      content: '_header.bj.js'
     }, {
       elem: 'workspace',
       content: [{
@@ -37,82 +37,17 @@ module.exports = {
                 elem: 'workspace',
                 content: [{
                   block: 'movie-records',
-                  content: [{
+                  demo: true,
+                  retry: 5,
+                  content: [{ // for demo - remove this content for production (will be replaced in JS) or retry for development
                     elem: 'item',
-                    content: [{
-                      block: 'movie-preview',
-                      content: [{
-                        elem: 'watch',
-                        content: [{
-                          block: 'img-link',
-                          tag: 'a',
-                          attrs: {
-                            href: './watch.html?asdf'
-                          },
-                          content: [{
-                            elem: 'inner-img',
-                            tag: 'img',
-                            attrs: {
-                              src: './css/img/movie-black.png'
-                            }
-                          }]
-                        }]
-                      }, {
-                        elem: 'title',
-                        content: 'Krepkiy oreshek'
-                      }, {
-                        elem: 'rating'
-                      }]
-                    }]
-                  }, {
-                    elem: 'item',
-                    content: [{
-                      block: 'movie-preview',
-                      content: [{
-                        elem: 'watch',
-                        content: [{
-                          block: 'img-link',
-                          tag: 'a',
-                          attrs: {
-                            href: './watch.html?asdf'
-                          },
-                          content: [{
-                            elem: 'inner-img',
-                            tag: 'img',
-                            attrs: {
-                              src: './css/img/movie-black.png'
-                            }
-                          }]
-                        }]
-                      }, {
-                        elem: 'title',
-                        content: 'Krepkiy oreshek 2'
-                      }, {
-                        elem: 'rating'
-                      }]
+                    content: ['_movie-preview.bj.js', {
+                      block: 'glyphicon',
+                      mods: {
+                        q: 'list'
+                      }
                     }]
                   }]
-
-                  //              arr: [{
-                  //                ttl: 'Movie preview image',
-                  //                imgSrc: './css/img/movie-black.png',
-                  //                linkHref: './watch.html?v=13453245'
-                  //              }, {
-                  //                ttl: 'Other movie preview',
-                  //                imgSrc: './css/img/movie-black.png',
-                  //                linkHref: './watch.html?v=12341324'
-                  //              }]
-                  //      block: 'movie-preview',
-                  //      content: [{
-                  //        elem: 'watch',
-                  //        imgSrc: applyNext().imgSrc,
-                  //        linkHref: applyNext().linkHref
-                  //      }, {
-                  //        elem: 'title',
-                  //        content: applyNext().ttl
-                  //      }, {
-                  //        elem: 'rating'
-                  //      }]
                 }]
               }]
             }]
@@ -137,37 +72,9 @@ module.exports = {
                   content: [{
                     elem: 'item',
                     content: [{
-                      block: 'movie-preview',
-                      content: [{
-                        elem: 'watch'
-                      }, {
-                        elem: 'title',
-                        content: 'Mario on snowboard'
-                      }, {
-                        elem: 'rating'
-                      }]
+                      block: 'template-preview',
+                      content: '_template-preview.bj.js'
                     }]
-                  }],
-                  arr: [{
-                    ttl: 'Template preview',
-                    imgSrc: './css/img/movie-black.png',
-                    linkHref: './template.html?v=13453245'
-                  }, {
-                    ttl: 'Template preview',
-                    imgSrc: './css/img/movie-black.png',
-                    linkHref: './template.html?v=12341324'
-                  }, {
-                    ttl: 'Template preview',
-                    imgSrc: './css/img/movie-black.png',
-                    linkHref: './template.html?v=12341324'
-                  }, {
-                    ttl: 'Template preview',
-                    imgSrc: './css/img/movie-black.png',
-                    linkHref: './template.html?v=12341324'
-                  }, {
-                    ttl: 'Template preview',
-                    imgSrc: './css/img/movie-black.png',
-                    linkHref: './template.html?v=12341324'
                   }]
                 }]
               }]
@@ -177,11 +84,11 @@ module.exports = {
       }]
     }, {
       elem: 'footer',
-      content: '_footer.bemjson.js'
+      content: '_footer.bj.js'
     }, {
       block: 'underground',
       bem: false,
-      content: '_underground.bemjson.js'
+      content: '_underground.bj.js'
     }, {
       block: 'jquery-script',
       tag: 'script',
