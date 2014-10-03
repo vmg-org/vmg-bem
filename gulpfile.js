@@ -6,13 +6,15 @@
  */
 var gulp = require('gulp');
 
+var gulpHelpersPath = './gulp-helpers/';
+
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var notify = require('gulp-notify');
 //console.log(bh.apply(layout));
-var partialCombiner = require('./partial-combiner');
-var bhGenerator = require('./bh-generator');
-var cssStylConvertor = require('./css-styl-convertor');
+var partialCombiner = require(gulpHelpersPath + 'partial-combiner');
+var bhGenerator = require(gulpHelpersPath + 'bh-generator');
+var cssStylConvertor = require(gulpHelpersPath + 'css-styl-convertor');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 

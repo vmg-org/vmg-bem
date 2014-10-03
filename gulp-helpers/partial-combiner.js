@@ -8,7 +8,7 @@ var through2 = require('through2');
 var path = require('path');
 
 var pth = {
-  src: './pages/'
+  src: '../pages/'
 };
 
 // insert separated blocks to layout
