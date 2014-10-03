@@ -1,0 +1,23 @@
+{
+  "name": "vmg-bem",
+  "version": "0.1.0",
+  "homepage": "https://github.com/vmg-org/vmg-bem",
+  "authors": [
+    "IvanRave"
+  ],
+  "description": "Markup for VMG project",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "vmg"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
