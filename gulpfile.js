@@ -12,11 +12,12 @@ var stylish = require('jshint-stylish');
 var notify = require('gulp-notify');
 //console.log(bh.apply(layout));
 var partialCombiner = require(gulpHelpersPath + 'partial-combiner');
+var translator = require(gulpHelpersPath + 'translator');
 var bhGenerator = require(gulpHelpersPath + 'bh-generator');
 var cssStylConvertor = require(gulpHelpersPath + 'css-styl-convertor');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
-
+var vmgDict  = require('vmg-dict').getLocale('en');
 //var runSequence = require('run-sequence');
 
 var del = require('del');
@@ -63,6 +64,7 @@ gulp.task('css-resources', ['clean'], function() {
 gulp.task('layout', ['clean'], function() {
   return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
+    .pipe(translator.run(vmgDict))
     .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
 

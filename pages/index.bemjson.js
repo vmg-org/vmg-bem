@@ -187,7 +187,7 @@ module.exports = {
       tag: 'script',
       bem: false,
       attrs: {
-        src: './lib/jquery.js'
+        src: './libs/jquery.js'
       }
     }, {
       block: 'page-script',
