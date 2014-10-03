@@ -6,6 +6,7 @@
     "IvanRave"
   ],
   "description": "Markup for VMG project",
+  "main": "./dst/**/*",
   "moduleType": [
     "globals"
   ],
