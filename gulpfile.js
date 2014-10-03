@@ -1,8 +1,8 @@
 /*
  * Project tasks
- * @todo #23! join all tasks to one (bh after layout)
  * @todo #23! change divs to accordings tags
  * @todo #33! try to change all mixes to inner blocks (in styles)
+ * @todo #23! try nib
  */
 var gulp = require('gulp');
 

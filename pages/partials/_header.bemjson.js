@@ -1,12 +1,12 @@
 module.exports = [{
-  block: 'grid',
+  block: 'bsp-container',
   content: [{
-    block: 'row',
+    block: 'bsp-row',
     content: [{
-      elem: 'col',
+      block: 'bsp-col',
       mods: {
-        mw: 4,
-        sw: 12
+        lg: 4,
+        md: 4
       },
       content: [{
         block: 'clearfix',
@@ -42,19 +42,19 @@ module.exports = [{
         }]
       }]
     }, {
-      elem: 'col',
+      block: 'bsp-col',
       mods: {
-        mw: 4,
-        sw: 12
+        lg: 4,
+        md: 4
       },
       content: [{
         block: 'vmg-search'
       }]
     }, {
-      elem: 'col',
+      block: 'bsp-col',
       mods: {
-        mw: 4,
-        sw: 12
+        lg: 4,
+	md: 4
       },
       content: [{
         block: 'auth-no',

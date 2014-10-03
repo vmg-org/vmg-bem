@@ -16,13 +16,14 @@ module.exports = {
     }, {
       elem: 'workspace',
       content: [{
-        block: 'grid',
+        block: 'bsp-container',
         content: [{
-          block: 'row',
+          block: 'bsp-row',
           content: [{
-            elem: 'col',
+            block: 'bsp-col',
             mods: {
-              mw: 8
+              md: 8,
+	      lg: 8
             },
             content: [{
               block: 'movie-template',
@@ -56,10 +57,10 @@ module.exports = {
               }]
             }]
           }, {
-            elem: 'col',
+            block: 'bsp-col',
             mods: {
-              mw: 4,
-              sw: 12
+              lg: 4,
+              md: 4
             },
             content: [{
               block: 'best-other-templates',
