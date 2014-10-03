@@ -10,7 +10,6 @@ var gulpHelpersPath = './gulp-helpers/';
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
 var notify = require('gulp-notify');
-//console.log(bh.apply(layout));
 var partialCombiner = require(gulpHelpersPath + 'partial-combiner');
 var translator = require(gulpHelpersPath + 'translator');
 var bhGenerator = require(gulpHelpersPath + 'bh-generator');
@@ -34,10 +33,10 @@ pth.src = './src/';
 pth.pages = pth.src + 'pages/';
 pth.styles = pth.src + 'styles/';
 pth.cssResources = pth.src + 'css-resources/';
-
+pth.bems = './bems/'; // json files with clean bemhtml (without translate and model implements);
 pth.dst = isProd ? './dst/' : './dev/';
 
-gulp.task('build', ['css-resources', 'css', 'bh'], function() {
+gulp.task('build', ['css-resources', 'css', 'remake_bems'], function() {
   //  return runSequence('jshint',
   //    'clean',
   //    'layout',
@@ -71,21 +70,30 @@ gulp.task('css-resources', ['clean'], function() {
 gulp.task('layout', ['clean'], function() {
   return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
-    .pipe(modelImplementator.run(isProd ? false : true))
-    .pipe(translator.run(vmgDict))
-    .pipe(gulp.dest(pth.dst + 'bemjson/'));
+    .pipe(gulp.dest(pth.bems));
 });
 
-gulp.task('bh', ['layout'], function() {
+gulp.task('remake_bems', ['layout'], function() {
+  return gulp.src(pth.bems + '**.*')
+    .pipe(modelImplementator.run(isProd ? false : true))
+    .pipe(translator.run(vmgDict))
+    .pipe(bhGenerator.run())
+    .pipe(gulp.dest(pth.dst));
+    
+//    .pipe(gulp.dest(pth.dst + 'bemjson/'));
+});
+/*
+gulp.task('bh', ['remake_bems'], function() {
   return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
 });
-
+*/
 gulp.task('css', ['layout'], function() {
   var absPath = path.resolve(pth.styles);
 
-  return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
+  // looking blocks only - not required: remaked bems
+  return gulp.src(pth.bems + '*.bemjson.json')
     .pipe(cssStylConvertor.run(absPath))
     .pipe(stylus({
       //      inline: true,

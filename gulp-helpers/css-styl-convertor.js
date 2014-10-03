@@ -39,7 +39,7 @@ exports.run = function(stylesPath) {
     // find all blocks
     // we can find all eelems too, and exclude non-exising elements, but it is overtask
 
-    var bemjson = require(file.history[0]);
+    var bemjson = JSON.parse(file._contents.toString('utf8')); // require(file.history[0]);
 
     var arr = [];
     findAllBlocks(bemjson, arr);

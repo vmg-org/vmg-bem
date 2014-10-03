@@ -40,6 +40,7 @@ var findPattern = function(obj, parentPageId, withDemo, partialsPath) { // jshin
 //
 exports.run = function(withDemo) {
   return through2.obj(function(file, enc, cb) {
+    //	  file  - js with mobule.exports
     var obj = require(file.history[0]);
 
     var partialsPath = file.history[0].replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');

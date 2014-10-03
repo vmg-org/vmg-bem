@@ -6,8 +6,7 @@ var through2 = require('through2');
 
 exports.run = function() {
   return through2.obj(function(file, enc, cb) {
-    console.log(file.history);
-    var obj = require(file.history[0]);
+    var obj = JSON.parse(file._contents.toString('utf8'));
 
     var htmlCreated = bh.apply(obj);
 
