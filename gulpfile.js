@@ -16,7 +16,7 @@ var translator = require(gulpHelpersPath + 'translator');
 var bhGenerator = require(gulpHelpersPath + 'bh-generator');
 var cssStylConvertor = require(gulpHelpersPath + 'css-styl-convertor');
 var modelImplementator = require(gulpHelpersPath + 'model-implementator');
-
+var path = require('path');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var vmgDict = require('vmg-dict').getLocale('en');
@@ -29,11 +29,12 @@ var isProd = process.argv.indexOf('--prod') > 0;
 console.log('production: ' + isProd);
 
 var pth = {};
-pth.pages = './pages/';
-pth.styles = './styles/';
-//pth.img = './static/img/';
-//pth.fonts = './static/fonts/'
-pth.cssResources = './css-resources/';
+
+pth.src = './src/';
+pth.pages = pth.src + 'pages/';
+pth.styles = pth.src + 'styles/';
+pth.cssResources = pth.src + 'css-resources/';
+
 pth.dst = isProd ? './dst/' : './dev/';
 
 gulp.task('build', ['css-resources', 'css', 'bh'], function() {
@@ -82,8 +83,10 @@ gulp.task('bh', ['layout'], function() {
 });
 
 gulp.task('css', ['layout'], function() {
+  var absPath = path.resolve(pth.styles);
+
   return gulp.src(pth.dst + 'bemjson/*.bemjson.json')
-    .pipe(cssStylConvertor.run())
+    .pipe(cssStylConvertor.run(absPath))
     .pipe(stylus({
       //      inline: true,
       //     sourceRoot: '..',

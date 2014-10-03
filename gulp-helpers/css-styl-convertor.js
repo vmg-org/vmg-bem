@@ -1,6 +1,7 @@
 'use strict';
 
 var through2 = require('through2');
+var path = require('path');
 
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
@@ -33,7 +34,7 @@ var findAllBlocks = function(obj, resultArr) { // jshint ignore:line
   Object.keys(obj).forEach(handleItem.bind(null, obj, resultArr));
 };
 
-exports.run = function() {
+exports.run = function(stylesPath) {
   return through2.obj(function(file, enc, cb) {
     // find all blocks
     // we can find all eelems too, and exclude non-exising elements, but it is overtask
@@ -46,7 +47,7 @@ exports.run = function() {
     arr = arr.filter(onlyUnique);
 
     arr = arr.map(function(item) {
-      return '@import "../../styles/' + item + '/' + item + '.styl"';
+      return '@import "' + path.join(stylesPath, item, item) + '.styl"';
     });
 
     // import all blocks from /styles/block-name/block-name.styl
