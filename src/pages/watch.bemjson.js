@@ -32,27 +32,46 @@ module.exports = {
                 content: [{
                   block: 'over-wrap',
                   content: [{
-                    block: 'movie-player-wrap',
+                    block: 'movie-player-cover', // this is like movie-records
+                    demo: true,
+                    retry: 1,
                     content: [{
+                      // link to video loaded with movie info
+                      // insert only link to video (at this moment)
                       block: 'movie-player',
-                      tag: 'video'
+                      mdl: 'movie_record',
+                      content: [{
+                        elem: 'video',
+                        tag: 'video',
+                        attrs: {
+                          src: '@@video_url'
+                        }
+                      }]
                     }]
                   }]
                 }, {
                   block: 'over-wrap',
                   content: [{
-                    block: 'movie-info',
+                    block: 'movie-info-cover',
+                    demo: true,
+                    retry: 1,
                     content: [{
-                      elem: 'title',
-                      content: '%%movie_title'
-                    }, {
-                      elem: 'description',
-                      content: '%%movie_description'
+                      // info loaded together with link to video
+                      block: 'movie-info',
+                      mdl: 'movie_record',
+                      content: [{
+                        elem: 'title',
+                        content: '%%movie_title'
+                      }, {
+                        elem: 'description',
+                        content: '%%movie_description'
+                      }]
                     }]
                   }]
                 }, {
                   block: 'over-wrap',
                   content: [{
+                    // social tools, like count of likes and shares - loaded separatelly of video
                     block: 'movie-social-tools',
                     content: 'likes and share'
                   }]

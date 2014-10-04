@@ -9,7 +9,7 @@
 ## Markup
 - bemjson files contains all markup for project
 - there are partials for optimize development
-- use 'mix' parameter only for 'hidden' block; in other cases - put blocks to each other
+- dont use 'mix' parameter - put blocks to each other
 - styles written with Stylus; the folder contains only .styl files
 
 ## Tasks
