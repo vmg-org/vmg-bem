@@ -59,8 +59,25 @@ module.exports = {
                 }, {
                   block: 'over-wrap',
                   content: [{
+                    // comments loaded separately from a video
                     block: 'movie-comments-wrap',
-                    content: 'list of comments'
+                    content: [{
+                      elem: 'header',
+                      content: '@=movieComments=%'
+                    }, {
+                      elem: 'workspace',
+                      content: [{
+                        block: 'movie-comments',
+                        demo: true,
+                        retry: 10,
+                        content: [{
+                          elem: 'item',
+                          content: ['_movie-comment.bj.js']
+                        }]
+                      }]
+                    }, {
+                      elem: 'footer'
+                    }]
                   }]
                 }]
               }]
