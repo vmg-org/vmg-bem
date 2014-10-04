@@ -44,7 +44,8 @@ module.exports = {
                         elem: 'video',
                         tag: 'video',
                         attrs: {
-                          src: '@@video_url'
+                          src: '@@video_url',
+                          controls: true
                         }
                       }]
                     }]
@@ -61,10 +62,12 @@ module.exports = {
                       mdl: 'movie_record',
                       content: [{
                         elem: 'title',
-                        content: '%%movie_title'
+                        tag: 'h2',
+                        content: '@@movie_title'
                       }, {
                         elem: 'description',
-                        content: '%%movie_description'
+                        tag: 'h4',
+                        content: '@@movie_description'
                       }]
                     }]
                   }]
@@ -82,7 +85,7 @@ module.exports = {
                     block: 'movie-comments-wrap',
                     content: [{
                       elem: 'header',
-                      content: '@=movieComments=%'
+                      content: '%=movieComments=%'
                     }, {
                       elem: 'workspace',
                       content: [{

@@ -3,7 +3,7 @@ module.exports = {
   mdl: 'movie_comment',
   content: [{
     elem: 'author-name',
-    content: '@@author-name'
+    content: '@@author_name'
   }, {
     elem: 'comment-text',
     content: '@@comment_text'
