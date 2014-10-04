@@ -21,20 +21,19 @@ exports.run = function(dict) {
     //    var obj = JSON.parse(file._contents.toString('utf8'));
 
     var data = file._contents.toString('utf8');
-    //    console.log(data.match(rgx));
     // replace wods in "content" predicate, where string
     var arr = data.match(rgx);
-
-    arr.forEach(function(item) {
-      var key = dict[item.substr(2, item.length - 4)];
-      // if word in dictionary
-      if (key) {
-        data = data.replace(item, capitaliseFirstLetter(key));
-      } else {
-        console.log('no word in dict ' + item);
-      }
-    });
-
+    if (arr) {
+      arr.forEach(function(item) {
+        var key = dict[item.substr(2, item.length - 4)];
+        // if word in dictionary
+        if (key) {
+          data = data.replace(item, capitaliseFirstLetter(key));
+        } else {
+          console.log('no word in dict ' + item);
+        }
+      });
+    }
     file.contents = new Buffer(data);
     this.push(file);
     cbk();

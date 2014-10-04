@@ -14,7 +14,6 @@ var generateModels = function(obj, isGenerateDemo) {
 
     if (isGenerateDemo) {
       // some actions
-      console.log('true finded ');
       // take first item from content and replace it 'retry' times
       var demoItem = obj.content[0];
       var genArr = [];
@@ -22,7 +21,6 @@ var generateModels = function(obj, isGenerateDemo) {
       for (var i = 0; i < obj.retry; i += 1) {
         genArr.push(demoItem);
       }
-      console.log('genArr', genArr);
       obj.content = genArr;
     } else {
       // else clean content - will be replaced in JS
