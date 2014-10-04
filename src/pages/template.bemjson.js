@@ -26,28 +26,27 @@ module.exports = {
               lg: 8
             },
             content: [{
-              block: 'movie-template',
-              mix: {
-                block: 'over-wrap'
-              },
+              block: 'over-wrap',
               content: [{
-                elem: 'preview',
-                tag: 'img',
-                attrs: {
-                  src: './css/img/movie-black.png'
-                }
-              }, {
-                elem: 'title',
-                tag: 'h2',
-                content: 'Crazy fox jumps'
-              }, {
-                elem: 'episodes-header',
-                content: '%=episodes=%'
-              }, {
-                elem: 'episodes',
+                block: 'movie-template',
                 content: [{
-                  block: 'template-episodes',
+                  elem: 'preview',
+                  tag: 'img',
+                  attrs: {
+                    src: './css/img/movie-black.png'
+                  }
+                }, {
+                  elem: 'title',
+                  tag: 'h2',
+                  content: 'Crazy fox jumps'
+                }, {
+                  elem: 'episodes-header',
+                  content: '%=episodes=%'
+                }, {
+                  elem: 'episodes',
                   content: [{
+                    block: 'template-episodes',
+                    content: [{
                       elem: 'item',
                       content: [{
                         block: 'episode-info',
@@ -59,9 +58,8 @@ module.exports = {
                           content: 'A fox screams, an owl falls from a tree, and the fox starts to jump over the owl'
                         }]
                       }]
-                    }
-
-                  ]
+                    }]
+                  }]
                 }]
               }]
             }]
@@ -72,17 +70,17 @@ module.exports = {
               md: 4
             },
             content: [{
-              block: 'best-other-templates',
-              mix: {
-                block: 'over-wrap'
-              },
-              content: 'best other templates'
+              block: 'over-wrap',
+              content: [{
+                block: 'best-other-templates',
+                content: 'best other templates'
+              }]
             }, {
-              block: 'other-templates',
-              mix: {
-                block: 'over-wrap'
-              },
-              content: 'other templates'
+              block: 'over-wrap',
+              content: [{
+                block: 'other-templates',
+                content: 'other templates'
+              }]
             }]
           }]
         }]

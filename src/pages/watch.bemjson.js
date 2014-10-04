@@ -30,38 +30,38 @@ module.exports = {
               content: [{
                 elem: 'header',
                 content: [{
-                  block: 'movie-player-wrap',
-                  mix: {
-                    block: 'over-wrap'
-                  },
+                  block: 'over-wrap',
                   content: [{
-                    block: 'movie-player',
-                    tag: 'video'
+                    block: 'movie-player-wrap',
+                    content: [{
+                      block: 'movie-player',
+                      tag: 'video'
+                    }]
                   }]
                 }, {
-                  block: 'movie-info',
-                  mix: {
-                    block: 'over-wrap'
-                  },
+                  block: 'over-wrap',
                   content: [{
-                    elem: 'title',
-                    content: '%%movie_title'
-                  }, {
-                    elem: 'description',
-                    content: '%%movie_description'
+                    block: 'movie-info',
+                    content: [{
+                      elem: 'title',
+                      content: '%%movie_title'
+                    }, {
+                      elem: 'description',
+                      content: '%%movie_description'
+                    }]
                   }]
                 }, {
-                  block: 'movie-social-tools',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: 'likes and share'
+                  block: 'over-wrap',
+                  content: [{
+                    block: 'movie-social-tools',
+                    content: 'likes and share'
+                  }]
                 }, {
-                  block: 'movie-comments-wrap',
-                  mix: {
-                    block: 'over-wrap'
-                  },
-                  content: 'list of comments'
+                  block: 'over-wrap',
+                  content: [{
+                    block: 'movie-comments-wrap',
+                    content: 'list of comments'
+                  }]
                 }]
               }]
             }]
@@ -72,17 +72,17 @@ module.exports = {
               md: 4
             },
             content: [{
-              block: 'best-other-movies',
-              mix: {
-                block: 'over-wrap'
-              },
-              content: 'best other movies'
+              block: 'over-wrap',
+              content: [{
+                block: 'best-other-movies',
+                content: 'best other movies'
+              }]
             }, {
-              block: 'other-movies',
-              mix: {
-                block: 'over-wrap'
-              },
-              content: '%=otherMovies=%'
+              block: 'over-wrap',
+              content: [{
+                block: 'other-movies',
+                content: '%=otherMovies=%'
+              }]
             }]
           }]
         }]

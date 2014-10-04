@@ -1,7 +1,5 @@
 /*
  * Project tasks
- * @todo #23! change divs to accordings tags
- * @todo #33! try to change all mixes to inner blocks (in styles)
  */
 var gulp = require('gulp');
 

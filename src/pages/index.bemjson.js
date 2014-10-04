@@ -26,26 +26,26 @@ module.exports = {
               sm: 12
             },
             content: [{
-              block: 'movie-records-col',
-              mix: {
-                block: 'over-wrap'
-              },
+              block: 'over-wrap',
               content: [{
-                elem: 'header',
-                content: '%=movieRecords=%'
-              }, {
-                elem: 'workspace',
+                block: 'movie-records-col',
                 content: [{
-                  block: 'movie-records',
-                  demo: true,
-                  retry: 5,
-                  content: [{ // for demo - remove this content for production (will be replaced in JS) or retry for development
-                    elem: 'item',
-                    content: ['_movie-preview.bj.js', {
-                      block: 'glyphicon',
-                      mods: {
-                        q: 'list'
-                      }
+                  elem: 'header',
+                  content: '%=movieRecords=%'
+                }, {
+                  elem: 'workspace',
+                  content: [{
+                    block: 'movie-records',
+                    demo: true,
+                    retry: 5,
+                    content: [{ // for demo - remove this content for production (will be replaced in JS) or retry for development
+                      elem: 'item',
+                      content: ['_movie-preview.bj.js', {
+                        block: 'glyphicon',
+                        mods: {
+                          q: 'list'
+                        }
+                      }]
                     }]
                   }]
                 }]
@@ -58,22 +58,22 @@ module.exports = {
               sm: 12
             },
             content: [{
-              block: 'best-templates-col',
-              mix: {
-                block: 'over-wrap'
-              },
+              block: 'over-wrap',
               content: [{
-                elem: 'header',
-                content: '%=movieTemplates=%'
-              }, {
-                elem: 'workspace',
+                block: 'best-templates-col',
                 content: [{
-                  block: 'best-templates',
+                  elem: 'header',
+                  content: '%=movieTemplates=%'
+                }, {
+                  elem: 'workspace',
                   content: [{
-                    elem: 'item',
+                    block: 'best-templates',
                     content: [{
-                      block: 'template-preview',
-                      content: '_template-preview.bj.js'
+                      elem: 'item',
+                      content: [{
+                        block: 'template-preview',
+                        content: '_template-preview.bj.js'
+                      }]
                     }]
                   }]
                 }]

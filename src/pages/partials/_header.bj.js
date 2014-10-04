@@ -29,8 +29,8 @@ module.exports = [{
             block: 'menu-call',
             content: [{
               elem: 'full-icon',
-              tag: 'span', // todo: #31! change mix to inner block
-              mix: [{
+              tag: 'span', 
+              content: [{
                 block: 'glyphicon',
                 tag: 'span',
                 mods: {
@@ -54,7 +54,7 @@ module.exports = [{
       block: 'bsp-col',
       mods: {
         lg: 4,
-	md: 4
+        md: 4
       },
       content: [{
         block: 'auth-no',
