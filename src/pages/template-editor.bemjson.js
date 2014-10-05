@@ -39,7 +39,7 @@ module.exports = {
                   attrs: {
                     autofocus: true,
                     required: true,
-                    placeholder: '%=movieNameForExample=%'
+                    placeholder: '%=movieNameFex=%'
                       //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
                   }
                 }, {
@@ -218,7 +218,7 @@ module.exports = {
       tag: 'script',
       bem: false,
       attrs: {
-        src: './js/index-bundle.js'
+        src: './js/template-editor-bundle.js'
       }
     }]
   }]
