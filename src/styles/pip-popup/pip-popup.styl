@@ -1,5 +1,5 @@
-pip-popup_top-margin = 40px;
-pip-popup_width      = 80%;
+$pip-popup-top-margin = 40px;
+$pip-popup-width      = 80%;
 
 .pip-popup
   width: 100%;
@@ -8,12 +8,12 @@ pip-popup_width      = 80%;
   overflow: hidden;
   position: fixed;
   top: 0px;
-  z-index: popup_index;
+  z-index: $index-popup;
 
 /* width and height of this block - by content size */
 .pip-popup__space
-  margin: pip-popup_top-margin auto 0px auto;
-  width: pip-popup_width;
+  margin: $pip-popup-top-margin auto 0px auto;
+  width: $pip-popup-width;
   padding: 10px;
   background-color: #c5c5c5;
   border-radius: 5px;

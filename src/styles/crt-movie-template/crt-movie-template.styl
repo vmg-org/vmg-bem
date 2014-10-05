@@ -4,8 +4,16 @@
 .crt-movie-template__name
   font-weight: normal
 
+//  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 .crt-movie-template__inp-name
   width: 100%
+    &:focus
+      box-shadow: $box-shadow-primary
+
+.crt-movie-template__inp-name_state_warning
+  border: 1px solid $brand-warning
+    &:focus
+      box-shadow: $box-shadow-warning
 
 .crt-movie-template__duration-of-episodes
   margin-top: 8px

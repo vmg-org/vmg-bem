@@ -1,0 +1,58 @@
+// Global reset and styles
+// For every page
+@import "../variables"
+@import "../mixins"
+
+global-reset()
+
+// Reset the box-sizing
+//
+// Heads up! This reset may cause conflicts with some third-party widgets.
+// For recommendations on resolving such conflicts, see
+// http://getbootstrap.com/getting-started/#third-box-sizing
+*
+  box-sizing border-box
+*:before,
+*:after
+  box-sizing border-box
+
+h1,h2,h3,h4,h5,h6
+  font-weight: 500;
+  line-height: 1.1;
+  margin: .67rem
+
+h1
+  font-size: $font-size-h1
+
+h2
+  font-size: $font-size-h2
+
+h3
+  font-size: $font-size-h3
+
+h4
+  font-size: $font-size-h4
+
+h5
+  font-size: $font-size-h5
+
+h6
+  font-size: $font-size-h6
+
+input
+  font-size: $font-size-base
+  border: 1px solid #aaa
+  padding: 4px
+
+textarea
+  font-size: $font-size-base
+  border: 1px solid #aaa
+  padding: 4px
+
+a
+  color: $link-color
+  text-decoration: none
+  transition: color 0.2s ease
+  cursor:pointer
+    &:hover
+        color: $link-hover-color
