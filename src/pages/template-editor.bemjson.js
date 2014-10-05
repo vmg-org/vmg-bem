@@ -68,6 +68,9 @@ module.exports = {
                       }, {
                         elem: 'icon',
                         tag: 'span',
+                        attrs: {
+                          style: '@@genre_icon_style'
+                        },
                         content: [{
                           block: 'glyphicon',
                           tag: 'span',
@@ -107,6 +110,30 @@ module.exports = {
                   attrs: {
                     type: 'file'
                   }
+                }]
+              }]
+            }, {
+              block: 'over-wrap',
+              content: [{
+                block: 'hero-scope',
+                content: [{
+                  elem: 'header',
+                  content: '%=pickColorsForHero=%'
+                }, {
+                  elem: 'color-picker',
+                  content: 'a template image with hero'
+                }]
+              }]
+            }, {
+              block: 'over-wrap',
+              content: [{
+                block: 'animal-scope',
+                content: [{
+                  elem: 'header',
+                  content: '%=pickColorsForAnimal=%'
+                }, {
+                  elem: 'color-picker',
+                  content: 'images with animals'
                 }]
               }]
             }]
