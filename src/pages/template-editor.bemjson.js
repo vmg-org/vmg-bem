@@ -43,6 +43,42 @@ module.exports = {
                       //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
                   }
                 }, {
+                  elem: 'genre',
+                  content: '%=genreOfMovie=%'
+                }, {
+                  elem: 'inp-genre',
+                  content: [{
+                    block: 'movie-genres',
+                    demo: true,
+                    retry: 5,
+                    content: [{
+                      elem: 'item',
+                      tag: 'label',
+                      content: [{
+                        elem: 'checker',
+                        tag: 'input',
+                        attrs: {
+                          type: 'radio',
+                          name: 'movie-genre-radio'
+                        }
+                      }, {
+                        elem: 'name',
+                        tag: 'span',
+                        content: '@@genre_name'
+                      }, {
+                        elem: 'icon',
+                        tag: 'span',
+                        content: [{
+                          block: 'glyphicon',
+                          tag: 'span',
+                          mods: {
+                            q: 'tag'
+                          }
+                        }]
+                      }]
+                    }]
+                  }]
+                }, {
                   elem: 'duration-of-episodes',
                   content: '%=durationOfEpisodes=%'
                 }, {
@@ -164,9 +200,6 @@ module.exports = {
                   }
                 }]
               }]
-            }, {
-              block: 'over-wrap',
-              content: 'add tags'
             }, {
               block: 'over-wrap',
               content: [{
