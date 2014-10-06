@@ -11,7 +11,8 @@ module.exports = {
     block: 'page',
     tag: 'body',
     attrs: {
-      onkeyup: 'app.handlePageKeyUp(this, event, \'menu-popup\')'
+      onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
+      onload: "app.loadGenresOfMovie(this, 'movie-genres');"
     },
     content: [{
       elem: 'header',
@@ -52,7 +53,6 @@ module.exports = {
                   elem: 'inp-genre',
                   content: [{
                     block: 'movie-genres',
-                    trigg: 'app.fillMovieGenres',
                     demo: true,
                     retry: 5,
                     content: [{
@@ -65,7 +65,7 @@ module.exports = {
                           type: 'radio',
                           name: 'movie-genre-radio',
                           value: '@@genre_id',
-                          onclick: 'app.onSelectGenre(this)'
+                          onclick: "app.onSelectGenre(this, 'hero-scope', 'animal-scope')" // send all possible elements, which triggered
                         }
                       }, {
                         elem: 'name',
