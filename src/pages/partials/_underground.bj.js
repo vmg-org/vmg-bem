@@ -13,7 +13,7 @@ module.exports = [{
         content: [{
           elem: 'close',
           attrs: {
-            onclick: "app.turnPopup(this, 'menu-popup')"
+            onclick: "app.turnPopup(this, event, 'menu-popup')"
           },
           content: [{
             block: 'glyphicon',

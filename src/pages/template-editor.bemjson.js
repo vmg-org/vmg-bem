@@ -12,7 +12,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
-      onload: "app.loadGenresOfMovie(this, 'movie-genres');"
+      onload: "app.loadGenresOfMovie(this, event, 'movie-genres');"
     },
     content: [{
       elem: 'header',
@@ -65,7 +65,7 @@ module.exports = {
                           type: 'radio',
                           name: 'movie-genre-radio',
                           value: '@@genre_id',
-                          onclick: "app.onSelectGenre(this, 'hero-scope', 'animal-scope')" // send all possible elements, which triggered
+                          onclick: "app.onSelectGenre(this, event, 'hero-scope', 'animal-scope')" // send all possible elements, which triggered
                         }
                       }, {
                         elem: 'name',

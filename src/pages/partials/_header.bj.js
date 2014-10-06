@@ -28,7 +28,7 @@ module.exports = [{
           content: [{
             block: 'menu-call',
             attrs: {
-              onclick: 'app.turnPopup(this, \'menu-popup\')'
+              onclick: "app.turnPopup(this, event, 'menu-popup')"
             },
             content: [{
               elem: 'full-icon',
@@ -69,6 +69,9 @@ module.exports = [{
           elem: 'auth-button',
           tag: 'button',
           content: 'G+',
+          attrs: {
+            onclick: "app.fireAuth(this);"
+          },
           elemMods: {
             social: 'goog'
           }
@@ -76,6 +79,9 @@ module.exports = [{
           elem: 'auth-button',
           tag: 'button',
           content: 'FB',
+          attrs: {
+            onclick: "app.fireAuth(this);"
+          },
           elemMods: {
             social: 'fb'
           }
