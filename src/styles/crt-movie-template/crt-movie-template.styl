@@ -1,4 +1,6 @@
 $prv-margin-top = 8px
+$prv-icon-width = 17px
+$prv-inp-width = calc(100% \- 20px)
 
 .crt-movie-template
   padding: 6px
@@ -8,14 +10,21 @@ $prv-margin-top = 8px
 
 //  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 .crt-movie-template__inp-name
-  width: 100%
+  width: $prv-inp-width
     &:focus
       box-shadow: $box-shadow-primary
 
-.crt-movie-template__inp-name_state_warning
-  border: 1px solid $brand-warning
-    &:focus
-      box-shadow: $box-shadow-warning
+.crt-movie-template__help-name
+  color: $brand-warning
+  font-size: $prv-icon-width
+  margin-left: 3px
+    &:hover
+      color: darken($brand-warning, 8%)
+
+// .crt-movie-template__inp-name_state_warning
+//  border: 1px solid $brand-warning
+//    &:focus
+//      box-shadow: $box-shadow-warning
 
 .crt-movie-template__genre
   margin-top: $prv-margin-top

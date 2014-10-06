@@ -1,31 +1,51 @@
+$prv-icon-width = 17px
+$prv-icon-margin = 3px
+$prv-inp-width = calc(100% \- 20px)
+$prv-icon = $brand-warning
+$prv-hover-icon = lighten($prv-icon, 8%)
+
 .crt-episode
-  padding: 6px
   margin-bottom: 6px
 
 .crt-episode__header
   font-weight: normal
 
 .crt-episode__inp-name
-  width: 100%
+  width: $prv-inp-width
     &:focus
       box-shadow: $box-shadow-primary
 
-.crt-episode__inp-name_state_warning
-  border-color: $brand-warning
-
 .crt-episode__inp-story
-  width: 100%
+  display: block
+  float: left
+  width: $prv-inp-width
   height: 130px
     &:focus
       box-shadow: $box-shadow-primary
 
-.crt-episode__inp-story_state_warning
-  border-color: $brand-warning
-
-.crt-episode__inp-conditions
-  width: 100%
+.crt-episode__inp-conds
+  width: $prv-inp-width
     &:focus
       box-shadow: $box-shadow-primary
 
-.crt-episode__inp-conditions_state_warning
-  border-color: $brand-warning
+.crt-episode__help-name
+  color: $prv-icon
+  font-size: $prv-icon-width
+  margin-left: $prv-icon-margin
+    &:hover
+      color: $prv-hover-icon
+
+.crt-episode__help-story
+  color: $prv-icon
+  font-size: $prv-icon-width
+  margin-left: $prv-icon-margin
+    &:hover
+      color: $prv-hover-icon
+
+.crt-episode__help-conds
+  display: none  // by default - hide (allow empty)
+  color: $prv-icon
+  font-size: $prv-icon-width
+  margin-left: $prv-icon-margin
+    &:hover
+      color: $prv-hover-icon

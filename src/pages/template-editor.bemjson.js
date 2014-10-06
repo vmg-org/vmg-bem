@@ -12,7 +12,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
-      onload: "app.loadGenresOfMovie(this, event, 'movie-genres');"
+      onload: "app.loadGenresOfMovie(this, event, 'movie-genres'); app.loadCrtEpisodes(this, event, 'crt-episodes');"
     },
     content: [{
       elem: 'header',
@@ -43,9 +43,19 @@ module.exports = {
                   attrs: {
                     autofocus: true,
                     placeholder: '%=movieNameFex=%',
-                    onkeyup: 'app.checkInput(this)'
+                    onkeyup: 'app.checkInputNameOfTemplate(this)'
                       //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
                   }
+                }, {
+                  elem: 'help-name',
+                  tag: 'span',
+                  content: [{
+                    block: 'glyphicon',
+                    tag: 'span',
+                    mods: {
+                      q: 'exclamation-sign'
+                    }
+                  }]
                 }, {
                   elem: 'genre',
                   content: '%=genreOfMovie=%'
@@ -152,85 +162,70 @@ module.exports = {
             content: [{
               block: 'over-wrap',
               content: [{
-                block: 'crt-episode',
+                block: 'crt-episodes',
+                demo: true,
+                retry: 3,
+                mdl: 'crt_episode',
                 content: [{
-                  elem: 'header',
-                  content: '%=episode1=%'
-                }, {
-                  elem: 'inp-name',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode1Name=%'
-                  }
-                }, {
-                  elem: 'inp-story',
-                  tag: 'textarea',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode1Story=%'
-                  }
-                }, {
-                  elem: 'inp-conditions',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode1Conditions=%'
-                  }
-                }]
-              }, {
-                block: 'crt-episode',
-                content: [{
-                  elem: 'header',
-                  content: '%=episode2=%'
-                }, {
-                  elem: 'inp-name',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode2Name=%'
-                  }
-                }, {
-                  elem: 'inp-story',
-                  tag: 'textarea',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode2Story=%'
-                  }
-                }, {
-                  elem: 'inp-conditions',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode2Conditions=%'
-                  }
-                }]
-              }, {
-                block: 'crt-episode',
-                content: [{
-                  elem: 'header',
-                  content: '%=episode3=%'
-                }, {
-                  elem: 'inp-name',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode3Name=%'
-                  }
-                }, {
-                  elem: 'inp-story',
-                  tag: 'textarea',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode3Story=%'
-                  }
-                }, {
-                  elem: 'inp-conditions',
-                  tag: 'input',
-                  attrs: {
-                    required: true,
-                    placeholder: '%=episode3Conditions=%'
-                  }
+                  block: 'crt-episode',
+                  content: [{
+                    elem: 'header',
+                    content: '@@name_order'
+                  }, {
+                    elem: 'inp-name',
+                    tag: 'input',
+                    attrs: {
+                      placeholder: '@@ph_name',
+                      'data-bind': '@@order', // it is like value in radio button
+                      onkeyup: "app.checkInputNameOfEpisode(this, event, 'crt-episode__help-name');"
+                    }
+                  }, {
+                    elem: 'help-name',
+                    tag: 'span',
+                    content: [{
+                      block: 'glyphicon',
+                      tag: 'span',
+                      mods: {
+                        q: 'exclamation-sign'
+                      }
+                    }]
+                  }, {
+                    elem: 'inp-story',
+                    tag: 'textarea',
+                    attrs: {
+                      placeholder: '@@ph_story',
+                      'data-bind': '@@order',
+                      onkeyup: "app.checkInputStoryOfEpisode(this, event, 'crt-episode__help-story');"
+                    }
+                  }, {
+                    elem: 'help-story',
+                    tag: 'span',
+                    content: [{
+                      block: 'glyphicon',
+                      tag: 'span',
+                      mods: {
+                        q: 'exclamation-sign'
+                      }
+                    }]
+                  }, {
+                    elem: 'inp-conds',
+                    tag: 'input',
+                    attrs: {
+                      placeholder: '@@ph_conds',
+                      'data-bind': '@@order',
+                      onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');"
+                    }
+                  }, {
+                    elem: 'help-conds',
+                    tag: 'span',
+                    content: [{
+                      block: 'glyphicon',
+                      tag: 'span',
+                      mods: {
+                        q: 'exclamation-sign'
+                      }
+                    }]
+                  }]
                 }]
               }]
             }, {
