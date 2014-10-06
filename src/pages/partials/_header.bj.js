@@ -27,9 +27,12 @@ module.exports = [{
           block: 'pull-left',
           content: [{
             block: 'menu-call',
+            attrs: {
+              onclick: 'app.turnPopup(this, \'menu-popup\')'
+            },
             content: [{
               elem: 'full-icon',
-              tag: 'span', 
+              tag: 'span',
               content: [{
                 block: 'glyphicon',
                 tag: 'span',

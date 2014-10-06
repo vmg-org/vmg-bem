@@ -10,6 +10,9 @@ module.exports = {
   }, {
     block: 'page',
     tag: 'body',
+    attrs: {
+      onkeyup: 'app.handlePageKeyUp(this, event, \'menu-popup\')'
+    },
     content: [{
       elem: 'header',
       content: '_header.bj.js'
@@ -38,8 +41,8 @@ module.exports = {
                   tag: 'input',
                   attrs: {
                     autofocus: true,
-                    required: true,
-                    placeholder: '%=movieNameFex=%'
+                    placeholder: '%=movieNameFex=%',
+                    onkeyup: 'app.checkInput(this)'
                       //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
                   }
                 }, {
@@ -49,6 +52,7 @@ module.exports = {
                   elem: 'inp-genre',
                   content: [{
                     block: 'movie-genres',
+                    trigg: 'app.fillMovieGenres',
                     demo: true,
                     retry: 5,
                     content: [{
@@ -59,7 +63,9 @@ module.exports = {
                         tag: 'input',
                         attrs: {
                           type: 'radio',
-                          name: 'movie-genre-radio'
+                          name: 'movie-genre-radio',
+                          value: '@@genre_id',
+                          onclick: 'app.onSelectGenre(this)'
                         }
                       }, {
                         elem: 'name',
@@ -251,7 +257,10 @@ module.exports = {
                   }, {
                     elem: 'saving-btn',
                     tag: 'button',
-                    content: '%=publishTemplate=%'
+                    content: '%=publishTemplate=%',
+                    attrs: {
+                      onclick: 'app.publishTemplate(this)'
+                    }
                   }]
                 }]
               }]
