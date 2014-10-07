@@ -2,7 +2,7 @@ $prv-icon-width = 17px
 $prv-icon-margin = 3px
 $prv-inp-width = calc(100% \- 20px)
 $prv-icon = $brand-warning
-$prv-hover-icon = lighten($prv-icon, 8%)
+$prv-hover-icon = darken($prv-icon, 10%)
 
 .crt-episode
   margin-bottom: 6px
@@ -32,6 +32,7 @@ $prv-hover-icon = lighten($prv-icon, 8%)
   color: $prv-icon
   font-size: $prv-icon-width
   margin-left: $prv-icon-margin
+  cursor: pointer
     &:hover
       color: $prv-hover-icon
 
@@ -39,6 +40,7 @@ $prv-hover-icon = lighten($prv-icon, 8%)
   color: $prv-icon
   font-size: $prv-icon-width
   margin-left: $prv-icon-margin
+  cursor: pointer
     &:hover
       color: $prv-hover-icon
 
@@ -47,5 +49,27 @@ $prv-hover-icon = lighten($prv-icon, 8%)
   color: $prv-icon
   font-size: $prv-icon-width
   margin-left: $prv-icon-margin
+  cursor: pointer
     &:hover
       color: $prv-hover-icon
+
+.crt-episode__inp-name-wrap
+  position: relative
+  clearfix()
+
+.crt-episode__inp-story-wrap
+  position: relative
+  clearfix()
+
+.crt-episode__inp-conds-wrap
+  position: relative
+  clearfix()
+
+.crt-episode__tooltip-name
+  display: none
+
+.crt-episode__tooltip-story
+  display: none
+
+.crt-episode__tooltip-conds
+  display: none

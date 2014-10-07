@@ -172,58 +172,77 @@ module.exports = {
                     elem: 'header',
                     content: '@@name_order'
                   }, {
-                    elem: 'inp-name',
-                    tag: 'input',
-                    attrs: {
-                      placeholder: '@@ph_name',
-                      'data-bind': '@@order', // it is like value in radio button
-                      onkeyup: "app.checkInputNameOfEpisode(this, event, 'crt-episode__help-name');"
-                    }
-                  }, {
-                    elem: 'help-name',
-                    tag: 'span',
+                    elem: 'inp-name-wrap',
                     content: [{
-                      block: 'glyphicon',
-                      tag: 'span',
-                      mods: {
-                        q: 'exclamation-sign'
+                      elem: 'inp-name',
+                      tag: 'input',
+                      attrs: {
+                        placeholder: '@@ph_name',
+                        'data-bind': '@@order', // it is like value in radio button
+                        onkeyup: "app.checkInputNameOfEpisode(this, event, 'crt-episode__help-name');"
                       }
+                    }, {
+                      elem: 'help-name',
+                      tag: 'span',
+                      attrs: {
+                        onclick: "app.showTipNameOfEpisode(this, event, 'crt-episode__tooltip-name')",
+                        'data-bind': '@@order'
+                      },
+                      content: [{
+                        block: 'glyphicon',
+                        tag: 'span',
+                        mods: {
+                          q: 'exclamation-sign'
+                        }
+                      }]
+                    }, {
+                      elem: 'tooltip-name',
+                      content: [{
+                        block: 'tooltip',
+                        content: '@@tooltip_name'
+                      }]
                     }]
                   }, {
-                    elem: 'inp-story',
-                    tag: 'textarea',
-                    attrs: {
-                      placeholder: '@@ph_story',
-                      'data-bind': '@@order',
-                      onkeyup: "app.checkInputStoryOfEpisode(this, event, 'crt-episode__help-story');"
-                    }
-                  }, {
-                    elem: 'help-story',
-                    tag: 'span',
+                    elem: 'inp-story-wrap',
                     content: [{
-                      block: 'glyphicon',
-                      tag: 'span',
-                      mods: {
-                        q: 'exclamation-sign'
+                      elem: 'inp-story',
+                      tag: 'textarea',
+                      attrs: {
+                        placeholder: '@@ph_story',
+                        'data-bind': '@@order',
+                        onkeyup: "app.checkInputStoryOfEpisode(this, event, 'crt-episode__help-story');"
                       }
+                    }, {
+                      elem: 'help-story',
+                      tag: 'span',
+                      content: [{
+                        block: 'glyphicon',
+                        tag: 'span',
+                        mods: {
+                          q: 'exclamation-sign'
+                        }
+                      }]
                     }]
                   }, {
-                    elem: 'inp-conds',
-                    tag: 'input',
-                    attrs: {
-                      placeholder: '@@ph_conds',
-                      'data-bind': '@@order',
-                      onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');"
-                    }
-                  }, {
-                    elem: 'help-conds',
-                    tag: 'span',
+                    elem: 'inp-conds-wrap',
                     content: [{
-                      block: 'glyphicon',
-                      tag: 'span',
-                      mods: {
-                        q: 'exclamation-sign'
+                      elem: 'inp-conds',
+                      tag: 'input',
+                      attrs: {
+                        placeholder: '@@ph_conds',
+                        'data-bind': '@@order',
+                        onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');"
                       }
+                    }, {
+                      elem: 'help-conds',
+                      tag: 'span',
+                      content: [{
+                        block: 'glyphicon',
+                        tag: 'span',
+                        mods: {
+                          q: 'exclamation-sign'
+                        }
+                      }]
                     }]
                   }]
                 }]
