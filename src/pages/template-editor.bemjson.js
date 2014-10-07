@@ -20,6 +20,35 @@ module.exports = {
     }, {
       elem: 'workspace',
       content: [{
+        block: 'bsp-container',
+        content: [{
+          block: 'bsp-row',
+          content: [{
+            block: 'bsp-col',
+            mods: {
+              md: 12
+            },
+            content: [{
+              block: 'crt-notif-wrap',
+              content: [{
+                elem: 'close',
+                attrs: {
+                  onclick: "app.hideElems(this, event, 'crt-notif-wrap__notif');"
+                },
+                content: [{
+                  block: 'glyphicon',
+                  tag: 'span',
+                  mods: {
+                    q: 'remove'
+                  }
+                }]
+              }, {
+                elem: 'notif'
+              }]
+            }]
+          }]
+        }]
+      }, {
         // page content
         block: 'bsp-container',
         content: [{
@@ -38,23 +67,35 @@ module.exports = {
                   elem: 'header',
                   content: '%=myMovieTemplate=%'
                 }, {
-                  elem: 'inp-name',
-                  tag: 'input',
-                  attrs: {
-                    autofocus: true,
-                    placeholder: '%=movieNameFex=%',
-                    onkeyup: 'app.checkInputNameOfTemplate(this)'
-                      //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
-                  }
-                }, {
-                  elem: 'help-name',
-                  tag: 'span',
+                  elem: 'inp-name-wrap',
                   content: [{
-                    block: 'glyphicon',
-                    tag: 'span',
-                    mods: {
-                      q: 'exclamation-sign'
+                    elem: 'inp-name',
+                    tag: 'input',
+                    attrs: {
+                      autofocus: true,
+                      placeholder: '%=movieNameFex=%',
+                      onkeyup: "app.checkInputNameOfTemplate(this, event, 'crt-movie-template__help-name')"
+                        //  maxLength: '@@maxLength' // need models definitions for this purposes - if a model is changed - change auto
                     }
+                  }, {
+                    elem: 'help-name',
+                    tag: 'span',
+                    attrs: {
+                      onclick: "app.showTipNameOfTemplate(this, event, 'crt-movie-template__tooltip-name');"
+                    },
+                    content: [{
+                      block: 'glyphicon',
+                      tag: 'span',
+                      mods: {
+                        q: 'exclamation-sign'
+                      }
+                    }]
+                  }, {
+                    elem: 'tooltip-name',
+                    content: [{
+                      block: 'tooltip',
+                      content: 'Max length: 50<br>Min length: 3' // get it from JS in perfect world
+                    }]
                   }]
                 }, {
                   elem: 'genre',
@@ -215,12 +256,22 @@ module.exports = {
                     }, {
                       elem: 'help-story',
                       tag: 'span',
+                      attrs: {
+                        onclick: "app.showTipStoryOfEpisode(this, event, 'crt-episode__tooltip-story')",
+                        'data-bind': '@@order'
+                      },
                       content: [{
                         block: 'glyphicon',
                         tag: 'span',
                         mods: {
                           q: 'exclamation-sign'
                         }
+                      }]
+                    }, {
+                      elem: 'tooltip-story',
+                      content: [{
+                        block: 'tooltip',
+                        content: '@@tooltip_story'
                       }]
                     }]
                   }, {
@@ -236,12 +287,22 @@ module.exports = {
                     }, {
                       elem: 'help-conds',
                       tag: 'span',
+                      attrs: {
+                        onclick: "app.showTipCondsOfEpisode(this, event, 'crt-episode__tooltip-conds')",
+                        'data-bind': '@@order'
+                      },
                       content: [{
                         block: 'glyphicon',
                         tag: 'span',
                         mods: {
                           q: 'exclamation-sign'
                         }
+                      }]
+                    }, {
+                      elem: 'tooltip-conds',
+                      content: [{
+                        block: 'tooltip',
+                        content: '@@tooltip_conds'
                       }]
                     }]
                   }]
@@ -271,9 +332,9 @@ module.exports = {
                   }, {
                     elem: 'saving-btn',
                     tag: 'button',
-                    content: '%=publishTemplate=%',
+                    content: '%=createTemplate=%',
                     attrs: {
-                      onclick: 'app.publishTemplate(this)'
+                      onclick: "app.createTemplate(this, event, 'crt-notif-wrap__notif')"
                     }
                   }]
                 }]
