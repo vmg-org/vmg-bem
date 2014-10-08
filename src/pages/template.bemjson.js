@@ -49,15 +49,28 @@ module.exports = {
                     elem: 'name',
                     tag: 'h2',
                     content: '@@name'
-                  }, {}, {
-                    elem: 'duration-of-episodes-str',
-                    content: '@@duration_of_episodes_str' // number + ' seconds'
                   }, {
-                    elem: 'created-str',
-                    content: '@@created_str'
+                    elem: 'finished-str-header',
+                    content: [{
+                      elem: 'finished-str-header',
+                      tag: 'span',
+                      content: '%=youCanParticipateUntil=%'
+                    }, {
+                      elem: 'finished-str', // when a template is finished, author choose best episodes (or our moderator). if no best choice - author prolong the template (3 days). Selected episodes - are closed.
+                      tag: 'span',
+                      content: '@@finished_str'
+                    }]
                   }, {
-                    elem: 'finished-str', // when a template is finished, author choose best episodes (or our moderator). if no best choice - author prolong the template (3 days). Selected episodes - are closed.
-                    content: '@@finished_str'
+                    elem: 'duration-of-episodes-str-wrap',
+                    content: [{
+                      elem: 'duration-of-episodes-str-header',
+                      tag: 'span',
+                      content: '%=durationOfEpisodesEquals=%'
+                    }, {
+                      elem: 'duration-of-episodes-str',
+                      tag: 'span',
+                      content: '@@duration_of_episodes_str' // number + ' seconds'
+                    }]
                   }, {
                     elem: 'prolong-fnc', // author can prolong this template, max - 3 times
                     tag: 'button',
@@ -70,18 +83,6 @@ module.exports = {
                     elem: 'remove-fnc',
                     tag: 'button',
                     content: '%=removeTemplate=%'
-                  }, {
-                    elem: 'share-fnc',
-                    tag: 'button',
-                    content: '%=shareTemplate=%'
-                  }, {
-                    elem: 'like-fnc',
-                    tag: 'button',
-                    content: '%=likeTemplate=%'
-                  }, {
-                    elem: 'dislike-fnc',
-                    tag: 'button',
-                    content: '%=dislikeTemplate=%'
                   }]
                 }]
               }]
@@ -95,14 +96,28 @@ module.exports = {
                   block: 'shw-genre-tag',
                   mdl: 'genre_tag',
                   content: [{
+                    elem: 'header',
+                    tag: 'span',
+                    content: '%=genreOfMovie=%'
+                  }, {
                     elem: 'name',
+                    tag: 'span',
                     content: '@@name'
+                      //                    elem: 'color-scheme',
+                      //                    content: '@@color_scheme'
                   }, {
-                    elem: 'color-scheme',
-                    content: '@@color_scheme'
-                  }, {
-                    elem: 'color',
-                    content: '@@color' //some icon with color	  
+                    elem: 'color-icon',
+                    tag: 'span',
+                    attrs: {
+                      style: '@@style'
+                    },
+                    content: [{
+                      block: 'glyphicon',
+                      tag: 'span',
+                      mods: {
+                        q: 'tag'
+                      }
+                    }]
                   }]
                 }]
               }]
@@ -116,26 +131,54 @@ module.exports = {
                   block: 'shw-episode',
                   mdl: 'episode_template',
                   content: [{
-                    elem: 'header',
-                    content: '%=episode=%'
-                  }, {
-                    elem: 'order_in_movie',
-                    content: '@@order_in_movie'
-                  }, {
-                    elem: 'name',
-                    content: '@@name'
+                    elem: 'header-wrap',
+                    tag: 'h4',
+                    content: [{
+                      elem: 'header',
+                      tag: 'span',
+                      content: '%=episode=%'
+                    }, {
+                      elem: 'order-in-movie',
+                      tag: 'span',
+                      content: '@@order_in_movie'
+                    }, {
+                      elem: 'name',
+                      tag: 'span',
+                      content: '@@name'
+                    }]
                   }, {
                     elem: 'story',
                     content: '@@story'
                   }, {
-                    elem: 'conds',
-                    content: '@@conds'
+                    elem: 'conds-wrap',
+                    content: [{
+                      elem: 'conds-header',
+                      tag: 'span',
+                      content: 'Conditions:'
+                    }, {
+                      elem: 'conds',
+                      tag: 'span',
+                      content: '@@conds'
+                    }]
                   }, {
-                    elem: 'count-of-bids',
-                    content: '@@count_of_bids'
-                  }, {
-                    elem: 'count-of-variants',
-                    content: '@@count_of_variants'
+                    elem: 'count-wrap',
+                    content: [{
+                      elem: 'count-of-bids-header',
+                      tag: 'span',
+                      content: '%=countOfBids=%'
+                    }, {
+                      elem: 'count-of-bids',
+                      tag: 'span',
+                      content: '@@count_of_bids'
+                    }, {
+                      elem: 'count-of-variants-header',
+                      tag: 'span',
+                      content: '%=countOfVariants=%'
+                    }, {
+                      elem: 'count-of-variants',
+                      tag: 'span',
+                      content: '@@count_of_variants'
+                    }]
                   }, {
                     elem: 'tweet-fnc',
                     tag: 'button',
@@ -154,6 +197,21 @@ module.exports = {
                     content: '%=showAttachedVideos=%'
                   }]
                 }]
+              }]
+            }, {
+              block: 'over-wrap',
+              content: [{
+                elem: 'share-fnc',
+                tag: 'button',
+                content: '%=shareTemplate=%'
+              }, {
+                elem: 'like-fnc',
+                tag: 'button',
+                content: '%=likeTemplate=%'
+              }, {
+                elem: 'dislike-fnc',
+                tag: 'button',
+                content: '%=dislikeTemplate=%'
               }]
             }]
           }, {

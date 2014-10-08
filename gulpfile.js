@@ -68,13 +68,13 @@ gulp.task('css-resources', ['clean'], function() {
 gulp.task('layout', ['clean'], function() {
   return gulp.src(pth.pages + '*.bemjson.js')
     .pipe(partialCombiner.run())
+    .pipe(translator.run(vmgDict))
     .pipe(gulp.dest(pth.bems));
 });
 
 gulp.task('remake_bems', ['layout'], function() {
   return gulp.src(pth.bems + '**.*')
     .pipe(modelImplementator.run(isProd ? false : true))
-    .pipe(translator.run(vmgDict))
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
     
