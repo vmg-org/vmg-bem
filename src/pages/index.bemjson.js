@@ -12,7 +12,9 @@ module.exports = {
     tag: 'body',
     attrs: {
       onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
-      onload: "app.fillMovieRecords(this, event, 'movie-records')"
+      onload: "app.fillMovieRecords(this, event, 'movie-records'); app.fireAuth(this);",
+      'data-auth-no': 'auth-no',
+      'data-auth-profile': 'auth-profiles'
     },
     content: [{
       elem: 'header',

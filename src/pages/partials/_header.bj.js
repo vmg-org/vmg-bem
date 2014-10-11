@@ -68,9 +68,21 @@ module.exports = [{
         }, {
           elem: 'auth-button',
           tag: 'button',
+          content: 'Dev',
+          attrs: {
+            onclick: "app.startAuth(this);",
+            'data-bind': 'dev'
+          },
+          elemMods: {
+            social: 'dev'
+          }
+        }, {
+          elem: 'auth-button',
+          tag: 'button',
           content: 'G+',
           attrs: {
-            onclick: "app.fireAuth(this);"
+            onclick: "app.startAuth(this);",
+            'data-bind': 'goog'
           },
           elemMods: {
             social: 'goog'
@@ -79,24 +91,38 @@ module.exports = [{
           elem: 'auth-button',
           tag: 'button',
           content: 'FB',
-          attrs: {
-            onclick: "app.fireAuth(this);"
-          },
           elemMods: {
             social: 'fb'
+          },
+          attrs: {
+            onclick: "app.startAuth(this);",
+            'data-bind': 'fb'
           }
         }]
       }, {
-        block: 'auth-profile',
+        block: 'auth-profiles',
+        demo: true,
+        retry: 1,
         content: [{
-          elem: 'name',
-          content: '%%myname'
-        }, {
-          elem: 'icon',
-          content: '%%myicon'
-        }, {
-          elem: 'settings',
-          content: 'stn, exit'
+          block: 'auth-profile',
+          mdl: 'social_profile',
+          content: [{
+            elem: 'logout', // and settings for example
+            attrs: {
+              title: 'Log out',
+              onclick: 'app.logout()' // send a req to remove a session, update the page
+            },
+            content: [{
+              block: 'glyphicon',
+              tag: 'span',
+              mods: {
+                q: 'log-out'
+              }
+            }]
+          }, {
+            elem: 'display-name',
+            content: '@@display_name' // and @@photo_url for example
+          }]
         }]
       }]
     }]
