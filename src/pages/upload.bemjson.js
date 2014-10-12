@@ -12,7 +12,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fillMovieRecords(this, event, 'movie-records'); app.fireAuth(this);",
+      'onload': "app.fireAuth(this);",
       'data-auth-no': 'auth-no',
       'data-auth-profile': 'auth-profiles',
       'data-goog-btn': 'auth-no__auth-button_social_goog',
@@ -42,10 +42,19 @@ module.exports = {
                   elem: 'workspace',
                   content: [{
                     block: 'upl-selector',
+                    attrs: {
+                      'ondrop': 'app.handleDropFile(this, event)',
+                      'ondragenter': 'app.handleDragEnterFile(this, event)',
+                      'ondragover': 'app.handleDragOverFile(this,event)',
+                      'data-player': 'upl-player', // show it
+                      'data-video-content': 'upl-player__video-content', // add src
+                      'data-selector': 'upl-selector' // hide it			 
+                    },
                     content: [{
                         elem: 'file-wrap',
                         content: [{
                           elem: 'file-opener',
+                          tag: 'span',
                           attrs: {
                             onclick: "app.fireFileSelector(this, event, 'upl-selector__file-input');"
                           },
@@ -65,17 +74,25 @@ module.exports = {
                         elem: 'file-input',
                         tag: 'input',
                         attrs: {
+                          type: 'file',
                           accept: 'video/*',
-                          onchange: 'app.handleUpload(this)'
+                          onchange: "app.handleUpload(this)",
+                          'data-player': 'upl-player', // show it
+                          'data-video-content': 'upl-player__video-content', // add src
+                          'data-selector': 'upl-selector' // hide it			 
                         }
                       }]
                       // if you want to choose other video - click "Cancel" under video
                       // After Cancelling - refresh a page (to free resources) or hide/show blocks
-                      // Need place for drag-drop
-                      //                  }, {
-                      //                    block: 'upl-player',
-                      //		    bem: false
-                      //                    content: 'Player with uploaded video'
+                  }, {
+                    block: 'upl-player',
+                    content: [{
+                      elem: 'video-content',
+                      tag: 'video',
+                      attrs: {
+                        controls: true
+                      }
+                    }]
                   }]
                 }]
               }]
@@ -102,7 +119,7 @@ module.exports = {
       tag: 'script',
       bem: false,
       attrs: {
-        src: './js/index-bundle.js'
+        src: './js/upload-bundle.js'
       }
     }]
   }]
