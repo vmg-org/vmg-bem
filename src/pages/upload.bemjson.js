@@ -37,53 +37,45 @@ module.exports = {
             content: [{
               block: 'over-wrap',
               content: [{
-                block: 'movie-records-col',
+                block: 'ratio16-9',
                 content: [{
-                  elem: 'header',
-                  content: '%=movieRecords=%'
-                }, {
                   elem: 'workspace',
                   content: [{
-                    block: 'movie-records',
-                    demo: true,
-                    retry: 5,
-                    content: [{ // for demo - remove this content for production (will be replaced in JS) or retry for development
-                      elem: 'item',
-                      content: ['_movie-preview.bj.js', {
-                        block: 'glyphicon',
-                        mods: {
-                          q: 'list'
+                    block: 'upl-selector',
+                    content: [{
+                        elem: 'file-wrap',
+                        content: [{
+                          elem: 'file-opener',
+                          attrs: {
+                            onclick: "app.fireFileSelector(this, event, 'upl-selector__file-input');"
+                          },
+                          content: [{
+                            block: 'glyphicon',
+                            tag: 'span',
+                            mods: {
+                              q: 'open'
+                            }
+                          }]
+                        }, {
+                          elem: 'description',
+                          content: 'Select a file or drag it'
+                        }]
+
+                      }, {
+                        elem: 'file-input',
+                        tag: 'input',
+                        attrs: {
+                          accept: 'video/*',
+                          onchange: 'app.handleUpload(this)'
                         }
                       }]
-                    }]
-                  }]
-                }]
-              }]
-            }]
-          }, {
-            block: 'bsp-col',
-            mods: {
-              md: 4,
-              sm: 12
-            },
-            content: [{
-              block: 'over-wrap',
-              content: [{
-                block: 'best-templates-col',
-                content: [{
-                  elem: 'header',
-                  content: '%=movieTemplates=%'
-                }, {
-                  elem: 'workspace',
-                  content: [{
-                    block: 'best-templates',
-                    content: [{
-                      elem: 'item',
-                      content: [{
-                        block: 'template-preview',
-                        content: '_template-preview.bj.js'
-                      }]
-                    }]
+                      // if you want to choose other video - click "Cancel" under video
+                      // After Cancelling - refresh a page (to free resources) or hide/show blocks
+                      // Need place for drag-drop
+                      //                  }, {
+                      //                    block: 'upl-player',
+                      //		    bem: false
+                      //                    content: 'Player with uploaded video'
                   }]
                 }]
               }]
