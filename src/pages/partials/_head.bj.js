@@ -34,13 +34,28 @@ module.exports = [{
     rel: 'stylesheet',
     href: './css/@@parentPage@@-bundle.css' // one file per site (best cache) or one file per page (small size)
   }
-},{
+}, {
+  elem: 'videojs-style',
+  tag: 'link',
+  bem: false,
+  attrs: {
+    rel: 'stylesheet',
+    href: '//vjs.zencdn.net/4.9.1/video-js.css'
+  }
+}, {
+  elem: 'videojs-script',
+  tag: 'script',
+  bem: false,
+  attrs: {
+    src: '//vjs.zencdn.net/4.9.1/video.js'
+  }
+}, {
   elem: 'favicon',
   tag: 'link',
   bem: false,
   attrs: {
     rel: 'shortcut icon',
-    href: 'favicon.ico' 
+    href: 'favicon.ico'
   }
 }];
 

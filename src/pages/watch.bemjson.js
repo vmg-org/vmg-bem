@@ -36,21 +36,45 @@ module.exports = {
                 content: [{
                   block: 'over-wrap',
                   content: [{
-                    block: 'movie-player-cover', // this is like movie-records
-                    demo: true,
-                    retry: 1,
+                    block: 'ratio16-9',
                     content: [{
-                      // link to video loaded with movie info
-                      // insert only link to video (at this moment)
-                      block: 'movie-player',
-                      mdl: 'movie_record',
+                      elem: 'workspace',
                       content: [{
-                        elem: 'video',
-                        tag: 'video',
-                        attrs: {
-                          src: '@@video_url',
-                          controls: true
-                        }
+                        // link to video loaded with movie info
+                        // inserted using javascript (create a video element dynamically)
+                        block: 'movie-player-cover', // this is like movie-records
+                        content: 'here uploaded a player with video'
+                          // demo: true,
+                          // retry: 1,
+                          // content: [{
+                          //   // insert only link to video (at this moment)
+                          //   block: 'movie-player',
+                          //   mdl: 'movie_record',
+                          //   content: [{
+                          //     elem: 'video',
+                          //     tag: 'video',
+                          //     mix: [{
+                          //       block: 'video-js',
+                          //       bem: false
+                          //     }, {
+                          //       block: 'vjs-default-skin',
+                          //       bem: false
+                          //     }],
+                          //     attrs: {
+                          //       controls: true,
+                          //       'data-setup': '{"width": "100%", "height": "100%"}'
+                          //     },
+                          //     content: [{
+                          //       elem: 'source1',
+                          //       tag: 'source',
+                          //       bem: false,
+                          //       attrs: {
+                          //         type: 'video/mp4',
+                          //         src: 'https://s3.amazonaws.com/vmg-bucket/converted/966808401-web.mp4', // @@video_url
+                          //       }
+                          //     }]
+                          //   }]
+                          // }]
                       }]
                     }]
                   }]
