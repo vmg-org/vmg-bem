@@ -43,11 +43,11 @@ module.exports = [{
     href: '//vjs.zencdn.net/4.9.1/video-js.css'
   }
 }, {
-  elem: 'videojs-script',
+  elem: 'mdrnzr',
   tag: 'script',
   bem: false,
   attrs: {
-    src: '//vjs.zencdn.net/4.9.1/video.js'
+    src: './libs/modernizr.js' // shiv for videojs; and other tools
   }
 }, {
   elem: 'favicon',

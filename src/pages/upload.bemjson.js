@@ -1,3 +1,9 @@
+/**
+ * Page for uploading
+ * @todo: #33! Add info about episode_bid (check auth too)
+ * @todo: #41! remove vjs script
+ */
+
 module.exports = {
   block: 'html',
   tag: 'html',
@@ -47,7 +53,6 @@ module.exports = {
                       'ondragenter': 'app.handleDragEnterFile(this, event)',
                       'ondragover': 'app.handleDragOverFile(this,event)',
                       'data-player': 'upl-player', // show it
-                      'data-video-content': 'upl-player__video-content', // add src
                       'data-selector': 'upl-selector' // hide it			 
                     },
                     content: [{
@@ -78,7 +83,6 @@ module.exports = {
                           accept: 'video/*',
                           onchange: "app.handleUpload(this)",
                           'data-player': 'upl-player', // show it
-                          'data-video-content': 'upl-player__video-content', // add src
                           'data-selector': 'upl-selector' // hide it			 
                         }
                       }]
@@ -86,13 +90,7 @@ module.exports = {
                       // After Cancelling - refresh a page (to free resources) or hide/show blocks
                   }, {
                     block: 'upl-player',
-                    content: [{
-                      elem: 'video-content',
-                      tag: 'video',
-                      attrs: {
-                        controls: true
-                      }
-                    }]
+                    content: 'video loading...'
                   }]
                 }]
               }]
@@ -120,6 +118,21 @@ module.exports = {
       bem: false,
       attrs: {
         src: './js/upload-bundle.js'
+      }
+    }, {
+      // page script initialize window.FileAPI (with some options);
+      elem: 'file-api-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        src: './libs/file-api/FileAPI.min.js'
+      }
+    }, {
+      elem: 'videojs-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        src: '//vjs.zencdn.net/4.9.1/video.js'
       }
     }]
   }]

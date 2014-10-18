@@ -175,6 +175,13 @@ module.exports = {
       attrs: {
         src: './js/watch-bundle.js'
       }
+    }, {
+      elem: 'videojs-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        src: '//vjs.zencdn.net/4.9.1/video.js'
+      }
     }]
   }]
 };
