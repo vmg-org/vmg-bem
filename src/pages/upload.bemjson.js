@@ -18,7 +18,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fireAuth(this);",
+      'onload': "app.fireAuth(this); app.initUpload(this, event, 'upl-selector', 'upl-selector__file-input', 'upl-loader');",
       'data-auth-no': 'auth-no',
       'data-auth-profile': 'auth-profiles',
       'data-goog-btn': 'auth-no__auth-button_social_goog',
@@ -47,14 +47,10 @@ module.exports = {
                 content: [{
                   elem: 'workspace',
                   content: [{
+                    block: 'upl-loader',
+                    content: 'init...'
+                  }, {
                     block: 'upl-selector',
-                    attrs: {
-                      'ondrop': 'app.handleDropFile(this, event)',
-                      'ondragenter': 'app.handleDragEnterFile(this, event)',
-                      'ondragover': 'app.handleDragOverFile(this,event)',
-                      'data-player': 'upl-player', // show it
-                      'data-selector': 'upl-selector' // hide it			 
-                    },
                     content: [{
                         elem: 'file-wrap',
                         content: [{
@@ -79,21 +75,25 @@ module.exports = {
                         elem: 'file-input',
                         tag: 'input',
                         attrs: {
-                          type: 'file',
-                          accept: 'video/*',
-                          onchange: "app.handleUpload(this)",
-                          'data-player': 'upl-player', // show it
-                          'data-selector': 'upl-selector' // hide it			 
+                          type: 'file', // onChange - dynamically
+                          accept: 'video/*'
                         }
                       }]
                       // if you want to choose other video - click "Cancel" under video
                       // After Cancelling - refresh a page (to free resources) or hide/show blocks
-                  }, {
-                    block: 'upl-player',
-                    content: 'video loading...'
                   }]
                 }]
               }]
+            }]
+          }, {
+            block: 'bsp-col',
+            mods: {
+              md: 4,
+              sm: 12
+            },
+            content: [{
+              block: 'over-wrap',
+              content: 'Movie, episode, bid info'
             }]
           }]
         }]

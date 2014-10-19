@@ -47,10 +47,7 @@ module.exports = {
                 block: 'ratio16-9',
                 content: [{
                   elem: 'workspace',
-                  content: [{
-                    block: 'upl-player',
-                    content: 'video loading...'
-                  }]
+                  content: 'conversion...'                  
                 }]
               }]
             }]
