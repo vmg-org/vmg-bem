@@ -21,37 +21,7 @@ module.exports = {
       elem: 'workspace',
       content: [{
         block: 'bsp-container',
-        content: [{
-          block: 'bsp-row',
-          content: [{
-            block: 'bsp-col',
-            mods: {
-              md: 12
-            },
-            content: [{
-              block: 'crt-notif-wrap',
-              content: [{
-                elem: 'close',
-                attrs: {
-                  onclick: "app.hideElems(this, event, 'crt-notif-wrap__notif');"
-                },
-                content: [{
-                  block: 'glyphicon',
-                  tag: 'span',
-                  mods: {
-                    q: 'remove'
-                  }
-                }]
-              }, {
-                elem: 'notif'
-              }]
-            }]
-          }]
-        }]
-      }, {
-        // page content
-        block: 'bsp-container',
-        content: [{
+        content: ['_notif-row.bj.js', {
           block: 'bsp-row',
           content: [{
             block: 'bsp-col',
@@ -334,7 +304,7 @@ module.exports = {
                     tag: 'button',
                     content: '%=createTemplate=%',
                     attrs: {
-                      onclick: "app.createTemplate(this, event, 'crt-notif-wrap__notif')"
+                      onclick: "app.createTemplate(this, event, 'notif-wrap__notif')"
                     }
                   }]
                 }]

@@ -18,7 +18,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fireAuth(this); app.initUpload(this, event, 'upl-selector', 'upl-selector__file-input', 'upl-loader');",
+      'onload': "app.fireAuth(this); app.initUpload(this, event, 'upl-selector', 'upl-selector__file-input', 'upl-loader', 'notif-wrap__notif');",
       'data-auth-no': 'auth-no',
       'data-auth-profile': 'auth-profiles',
       'data-goog-btn': 'auth-no__auth-button_social_goog',
@@ -32,7 +32,7 @@ module.exports = {
       elem: 'workspace',
       content: [{
         block: 'bsp-container',
-        content: [{
+        content: ['_notif-row.bj.js', {
           block: 'bsp-row',
           content: [{
             block: 'bsp-col',
