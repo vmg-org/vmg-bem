@@ -19,7 +19,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fireAuth(this); app.checkConversion(this, event, 'enh-loader', 'enh-player', 'enh-slider', 'enh-slider__fnc-cut', 'enh-slider__inp-start', 'enh-slider__inp-stop', 'notif-wrap__notif'); ",
+      'onload': "app.fireAuth(this); app.initData(this, event, 'enh-loader', 'enh-player', 'enh-slider', 'enh-slider__fnc-cut', 'enh-slider__inp-start', 'enh-slider__inp-stop', 'notif-wrap__notif'); ",
       'data-auth-no': 'auth-no',
       'data-auth-profile': 'auth-profiles',
       'data-goog-btn': 'auth-no__auth-button_social_goog',
