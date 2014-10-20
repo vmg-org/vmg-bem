@@ -19,7 +19,7 @@ module.exports = {
     tag: 'body',
     attrs: {
       'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fireAuth(this);",
+      'onload': "app.fireAuth(this); app.checkConversion(this, event, 'enh-loader', 'enh-player', 'enh-slider', 'enh-slider__fnc-cut', 'enh-slider__inp-start', 'enh-slider__inp-stop', 'notif-wrap__notif'); ",
       'data-auth-no': 'auth-no',
       'data-auth-profile': 'auth-profiles',
       'data-goog-btn': 'auth-no__auth-button_social_goog',
@@ -33,7 +33,7 @@ module.exports = {
       elem: 'workspace',
       content: [{
         block: 'bsp-container',
-        content: [{
+        content: ['_notif-row.bj.js', {
           block: 'bsp-row',
           content: [{
             block: 'bsp-col',
@@ -47,9 +47,48 @@ module.exports = {
                 block: 'ratio16-9',
                 content: [{
                   elem: 'workspace',
-                  content: 'conversion...'                  
+                  content: [{
+                    block: 'enh-loader',
+                    content: 'conversion...'
+                  }, {
+                    block: 'enh-player'
+                  }]
                 }]
               }]
+            }, {
+              block: 'over-wrap',
+              content: [{
+                block: 'enh-slider',
+                content: [{
+                  elem: 'lbl-cutting',
+                  tag: 'span',
+                  content: 'Specify range to cut: '
+                }, {
+                  elem: 'inp-start',
+                  tag: 'input'
+                }, {
+                  elem: 'lbl-between',
+                  tag: 'span',
+                  content: ' - '
+                }, {
+                  elem: 'inp-stop',
+                  tag: 'input'
+                }, {
+                  elem: 'fnc-cut',
+                  tag: 'button',
+                  content: 'Cut'
+                }]
+              }]
+            }]
+          }, {
+            block: 'bsp-col',
+            mods: {
+              md: 4,
+              sm: 12
+            },
+            content: [{
+              block: 'over-wrap',
+              content: 'Movie, episode, bid info'
             }]
           }]
         }]

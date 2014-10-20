@@ -11,6 +11,10 @@
 - there are partials for optimize development
 - dont use 'mix' parameter - put blocks to each other
 - styles written with Stylus; the folder contains only .styl files
+- name convention for elements:
+    - button (or link like button): fnc-some-name
+    - input (or textarea): inp-some-name
+    - label (or span like label): lbl-some-name
 
 ## Data
 - Format: @@my_param_name - matching a regular expresssion: @@\w+
