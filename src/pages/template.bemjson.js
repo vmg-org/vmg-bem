@@ -180,21 +180,21 @@ module.exports = {
                       content: '@@count_of_variants'
                     }]
                   }, {
-                    elem: 'tweet-fnc',
+                    elem: 'fnc-tweet-story',
                     tag: 'button',
-                    content: '%=tweetEpisode=%'
+                    content: '%=fncTweetEpisode=%'
                   }, {
-                    elem: 'take-fnc', // start to snap it
+                    elem: 'fnc-upload-later', // start to snap it
                     tag: 'button',
-                    content: '%=takeEpisode=%'
+                    content: '%=fncUploadLater=%'
                   }, {
-                    elem: 'attach-video-fnc',
+                    elem: 'fnc-upload-now', // go to upload.html?v=id_of_media_spec (redirect from a client, to show addt msg and assign query param
                     tag: 'button',
-                    content: '%=attachVideo=%'
+                    content: '%=fncUploadNow=%'
                   }, {
-                    elem: 'attached-videos-fnc', // author can watch videos, but choose - only when template is finished
+                    elem: 'fnc-show-attachments', // author can watch videos, but choose - only when template is finished
                     tag: 'button',
-                    content: '%=showAttachedVideos=%'
+                    content: '%=fncShowAttachments=%'
                   }]
                 }]
               }]
