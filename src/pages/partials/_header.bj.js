@@ -70,8 +70,8 @@ module.exports = [{
           tag: 'button',
           content: 'Dev',
           attrs: {
-            onclick: "app.startAuth(this);",
-            'data-bind': 'dev'
+            // onclick: "app.startAuth(this);",
+            //'data-bind': 'dev'
           },
           elemMods: {
             social: 'dev'
@@ -81,8 +81,8 @@ module.exports = [{
           tag: 'button',
           content: 'G+',
           attrs: {
-            onclick: "app.startAuth(this);",
-            'data-bind': 'goog'
+            // onclick: "app.startAuth(this);",
+            // 'data-bind': 'goog'
           },
           elemMods: {
             social: 'goog'
@@ -95,8 +95,8 @@ module.exports = [{
             social: 'fb'
           },
           attrs: {
-            onclick: "app.startAuth(this);",
-            'data-bind': 'fb'
+            //            onclick: "app.startAuth(this);",
+            //            'data-bind': 'fb'
           }
         }]
       }, {
@@ -109,8 +109,8 @@ module.exports = [{
           content: [{
             elem: 'logout', // and settings for example
             attrs: {
-              title: 'Log out',
-              onclick: 'app.logout()' // send a req to remove a session, update the page
+              title: 'Log out'
+                // onclick: 'app.logout()' // send a req to remove a session, update the page
             },
             content: [{
               block: 'glyphicon',

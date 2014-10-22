@@ -11,9 +11,7 @@ module.exports = {
     block: 'page',
     tag: 'body',
     attrs: {
-      onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
-      // load together movie info and episodes (in one request)
-      onload: "app.loadMovieTemplate(this, event, 'shw-movie-templates', 'shw-genre-tags', 'shw-episodes');"
+      //      onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')"
     },
     content: [{
       elem: 'header',
