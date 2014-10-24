@@ -10,9 +10,6 @@ module.exports = {
   }, {
     block: 'page',
     tag: 'body',
-    attrs: {
-      //      onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')"
-    },
     content: [{
       elem: 'header',
       content: '_header.bj.js'
@@ -20,7 +17,7 @@ module.exports = {
       elem: 'workspace',
       content: [{
         block: 'bsp-container',
-        content: [{
+        content: ['_notif-row.bj.js', {
           block: 'bsp-row',
           content: [{
             block: 'bsp-col',

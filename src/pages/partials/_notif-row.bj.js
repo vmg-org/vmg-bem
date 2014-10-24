@@ -9,9 +9,6 @@ module.exports = {
       block: 'notif-wrap',
       content: [{
         elem: 'close',
-        attrs: {
-          onclick: "app.hideElems(this, event, 'notif-wrap__notif');"
-        },
         content: [{
           block: 'glyphicon',
           tag: 'span',

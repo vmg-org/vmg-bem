@@ -10,15 +10,6 @@ module.exports = {
   }, {
     block: 'page',
     tag: 'body',
-    attrs: {
-      'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fillMovieRecords(this, event, 'movie-records'); app.fireAuth(this);",
-      'data-auth-no': 'auth-no',
-      'data-auth-profile': 'auth-profiles',
-      'data-goog-btn': 'auth-no__auth-button_social_goog',
-      'data-fb-btn': 'auth-no__auth-button_social_fb',
-      'data-dev-btn': 'auth-no__auth-button_social_dev'
-    },
     content: [{
       elem: 'header',
       content: '_header.bj.js'

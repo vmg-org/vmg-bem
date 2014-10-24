@@ -16,15 +16,6 @@ module.exports = {
   }, {
     block: 'page',
     tag: 'body',
-    attrs: {
-      'onkeyup': "app.hidePopupByEscape(this, event, 'menu-popup')",
-      'onload': "app.fireAuth(this); app.initUpload(this, event, 'upl-selector', 'upl-selector__file-input', 'upl-loader', 'notif-wrap__notif');",
-      'data-auth-no': 'auth-no',
-      'data-auth-profile': 'auth-profiles',
-      'data-goog-btn': 'auth-no__auth-button_social_goog',
-      'data-fb-btn': 'auth-no__auth-button_social_fb',
-      'data-dev-btn': 'auth-no__auth-button_social_dev'
-    },
     content: [{
       elem: 'header',
       content: '_header.bj.js'
@@ -56,9 +47,6 @@ module.exports = {
                         content: [{
                           elem: 'file-opener',
                           tag: 'span',
-                          attrs: {
-                            onclick: "app.fireFileSelector(this, event, 'upl-selector__file-input');"
-                          },
                           content: [{
                             block: 'glyphicon',
                             tag: 'span',

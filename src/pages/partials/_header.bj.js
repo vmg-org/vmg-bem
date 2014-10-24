@@ -27,9 +27,6 @@ module.exports = [{
           block: 'pull-left',
           content: [{
             block: 'menu-call',
-            attrs: {
-              onclick: "app.turnPopup(this, event, 'menu-popup')"
-            },
             content: [{
               elem: 'full-icon',
               tag: 'span',
@@ -69,10 +66,6 @@ module.exports = [{
           elem: 'auth-button',
           tag: 'button',
           content: 'Dev',
-          attrs: {
-            // onclick: "app.startAuth(this);",
-            //'data-bind': 'dev'
-          },
           elemMods: {
             social: 'dev'
           }
@@ -80,10 +73,6 @@ module.exports = [{
           elem: 'auth-button',
           tag: 'button',
           content: 'G+',
-          attrs: {
-            // onclick: "app.startAuth(this);",
-            // 'data-bind': 'goog'
-          },
           elemMods: {
             social: 'goog'
           }
@@ -93,10 +82,6 @@ module.exports = [{
           content: 'FB',
           elemMods: {
             social: 'fb'
-          },
-          attrs: {
-            //            onclick: "app.startAuth(this);",
-            //            'data-bind': 'fb'
           }
         }]
       }, {
@@ -110,7 +95,6 @@ module.exports = [{
             elem: 'logout', // and settings for example
             attrs: {
               title: 'Log out'
-                // onclick: 'app.logout()' // send a req to remove a session, update the page
             },
             content: [{
               block: 'glyphicon',
