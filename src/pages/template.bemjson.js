@@ -35,15 +35,18 @@ module.exports = {
                   block: 'shw-movie-template',
                   mdl: 'movie_template',
                   content: [{
-                    elem: 'preview-img',
-                    tag: 'img',
-                    attrs: {
-                      src: '@@preview_img_url'
-                    }
-                  }, {
-                    elem: 'name',
-                    tag: 'h2',
-                    content: '@@name'
+                    elem: 'header-wrap',
+                    content: [{
+                      elem: 'preview-img',
+                      tag: 'img',
+                      attrs: {
+                        src: '@@preview_img_url'
+                      }
+                    }, {
+                      elem: 'name',
+                      tag: 'h2',
+                      content: '@@name'
+                    }]
                   }, {
                     elem: 'finished-str-header',
                     content: [{

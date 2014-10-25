@@ -9,7 +9,7 @@ module.exports = {
       tag: 'a',
       bem: false,
       attrs: {
-        href: '@@url'
+        href: '@@url_to_watch'
       },
       content: [{
         elem: 'img', // img to link to watch

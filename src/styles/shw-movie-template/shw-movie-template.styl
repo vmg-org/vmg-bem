@@ -1,9 +1,20 @@
+$prv-img-width = 100px
+
 .shw-movie-template__preview-img
-  width: 100px
-  height: 100px
+  width: $prv-img-width
   background: black
-  float: right
+  float: left
   display: block
+
+.shw-movie-template__header-wrap
+  clearfix()
+
+.shw-movie-template__name
+  word-wrap: break-word;
+  margin-left: $prv-img-width + 16px
+  margin-top: 0
+  margin-right: 0
+  margin-bottom: 0
 
 .shw-movie-template__finished-str
   margin-left: 8px
