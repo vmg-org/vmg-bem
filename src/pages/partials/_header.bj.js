@@ -65,13 +65,6 @@ module.exports = [{
         }, {
           elem: 'auth-button',
           tag: 'button',
-          content: 'Dev',
-          elemMods: {
-            social: 'dev'
-          }
-        }, {
-          elem: 'auth-button',
-          tag: 'button',
           content: 'G+',
           elemMods: {
             social: 'goog'
@@ -82,6 +75,13 @@ module.exports = [{
           content: 'FB',
           elemMods: {
             social: 'fb'
+          }
+        }, {
+          elem: 'auth-button',
+          tag: 'button',
+          content: 'Dev',
+          elemMods: {
+            social: 'dev'
           }
         }]
       }, {
