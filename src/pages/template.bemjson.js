@@ -167,7 +167,7 @@ module.exports = {
                     }, {
                       elem: 'count-of-bids',
                       tag: 'span',
-                      content: '@@count_of_bids'
+                      content: '@@episode_bid_count_non_ready'
                     }, {
                       elem: 'count-of-variants-header',
                       tag: 'span',
@@ -175,7 +175,7 @@ module.exports = {
                     }, {
                       elem: 'count-of-variants',
                       tag: 'span',
-                      content: '@@count_of_variants'
+                      content: '@@episode_bid_count_ready'
                     }]
                   }, {
                     elem: 'fnc-tweet-story',
