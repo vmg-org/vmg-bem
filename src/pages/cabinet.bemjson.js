@@ -26,7 +26,69 @@ module.exports = {
               sm: 12
             },
             content: [{
-              block: 'over-wrap'
+              block: 'over-wrap',
+              content: [{
+                // active bid - movie template info
+                block: 'cbn-act-movie-scope',
+                demo: true,
+                retry: 1,
+                content: [{
+                  block: 'cbn-act-movie',
+                  mdl: 'movie_template',
+                  content: [{
+                    elem: 'name',
+                    content: '@@name'
+                  }, {
+                    elem: 'created',
+                    content: '@@created'
+                  }, {
+                    elem: 'fnc-view',
+                    tag: 'button',
+                    attrs: {
+                      'data-id': '@@id'
+                    },
+                    content: '%=fncViewMovieTemplate=%'
+                  }]
+                }]
+              }, {
+                block: 'cbn-act-episode-scope',
+                demo: true,
+                retry: 1,
+                content: [{
+                  block: 'cbn-act-episode',
+                  mdl: 'episode_template',
+                  content: [{
+                    elem: 'name',
+                    content: '@@name'
+                  }, {
+                    elem: 'story',
+                    content: '@@story'
+                  }]
+                }]
+              }, {
+                block: 'cbn-act-bid-scope',
+                demo: true,
+                retry: 1,
+                content: [{
+                  block: 'cbn-act-bid',
+                  mdl: 'episode_bid',
+                  content: [{
+                    elem: 'fnc-upload',
+                    tag: 'button',
+                    attrs: {
+                      'data-id': '@@id_of_media_spec'
+                    },
+                    content: '%=fncUploadToBid=%'
+                  }, {
+                    elem: 'fnc-cancel',
+                    tag: 'button',
+                    attrs: {
+                      'data-id': '@@id_of_media_spec'
+                    },
+                    content: '%=fncCancelBid=%'
+                  }]
+                }]
+              }]
             }]
           }, {
             block: 'bsp-col',
