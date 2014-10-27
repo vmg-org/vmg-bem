@@ -180,19 +180,35 @@ module.exports = {
                   }, {
                     elem: 'fnc-tweet-story',
                     tag: 'button',
-                    content: '%=fncTweetEpisode=%'
+                    content: '%=fncTweetEpisode=%',
+                    attrs: {
+                      'data-order': '@@order_in_movie',
+                      'data-id': '@@id'
+                    }
                   }, {
                     elem: 'fnc-upload-later', // start to snap it
                     tag: 'button',
-                    content: '%=fncUploadLater=%'
+                    content: '%=fncUploadLater=%',
+                    attrs: {
+                      'data-order': '@@order_in_movie',
+                      'data-id': '@@id'
+                    }
                   }, {
                     elem: 'fnc-upload-now', // go to upload.html?v=id_of_media_spec (redirect from a client, to show addt msg and assign query param
                     tag: 'button',
-                    content: '%=fncUploadNow=%'
+                    content: '%=fncUploadNow=%',
+                    attrs: {
+                      'data-order': '@@order_in_movie',
+                      'data-id': '@@id'
+                    }
                   }, {
                     elem: 'fnc-show-attachments', // author can watch videos, but choose - only when template is finished
                     tag: 'button',
-                    content: '%=fncShowAttachments=%'
+                    content: '%=fncShowAttachments=%',
+                    attrs: {
+                      'data-order': '@@order_in_movie',
+                      'data-id': '@@id'
+                    }
                   }]
                 }]
               }]
