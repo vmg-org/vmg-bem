@@ -111,7 +111,8 @@ module.exports = {
                   elem: 'inp-duration-of-episodes',
                   tag: 'select',
                   attrs: {
-                    required: true
+                    required: true,
+                    onchange: 'app.onChangeDurationOfEpisodes(this, event);'
                   },
                   content: [{
                     elem: 'c15',

@@ -98,6 +98,34 @@ module.exports = {
             },
             content: [{
               block: 'over-wrap',
+              content: [{
+                block: 'cbn-opened-template-header',
+                bem: false,
+                content: '%=myOpenedTemplates=%'
+              }, {
+                block: 'cbn-opened-template-scope',
+                demo: true,
+                retry: 5,
+                content: [{
+                  block: 'cbn-opened-template',
+                  mdl: 'movie_template',
+                  content: [{
+                    elem: 'link_to_watch',
+                    tag: 'a',
+                    attrs: {
+                      href: '@@link_to_watch'
+                    },
+                    content: [{
+                      elem: 'name',
+                      tag: 'span',
+                      content: '@@name'
+                    }]
+                  }, {
+                    elem: 'finished',
+                    content: '@@finished_str'
+                  }]
+                }]
+              }]
             }]
           }]
         }]
