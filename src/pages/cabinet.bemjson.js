@@ -43,9 +43,9 @@ module.exports = {
                     content: '@@created'
                   }, {
                     elem: 'fnc-view',
-                    tag: 'button',
+                    tag: 'a',
                     attrs: {
-                      'data-id': '@@id'
+                      'href': '@@url_to_view'
                     },
                     content: '%=fncViewMovieTemplate=%'
                   }]

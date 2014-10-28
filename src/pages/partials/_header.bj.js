@@ -104,8 +104,23 @@ module.exports = [{
               }
             }]
           }, {
-            elem: 'display-name',
-            content: '@@display_name' // and @@photo_url for example
+            elem: 'display-name-link',
+            tag: 'a',
+            attrs: {
+              href: './cabinet.html'
+            },
+            content: [{
+              elem: 'display-name',
+              tag: 'span',
+              content: '@@display_name' // and @@photo_url for example
+            }]
+          }, {
+            elem: 'link-to-upload',
+            tag: 'a',
+            attrs: {
+              href: './template-editor.html'
+            },
+            content: '%=createTemplate=%'
           }]
         }]
       }]

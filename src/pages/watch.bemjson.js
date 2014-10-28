@@ -10,10 +10,6 @@ module.exports = {
   }, {
     block: 'page',
     tag: 'body',
-    attrs: {
-      onkeyup: "app.hidePopupByEscape(this, event, 'menu-popup')",
-      onload: "app.fillMovie(this, event, 'movie-info-cover', 'movie-player-cover'); app.fillComments(this, event, 'movie-comments'); app.updateCommentsByInterval(this, event, 'movie-comments');"
-    },
     content: [{
       elem: 'header',
       content: '_header.bj.js'

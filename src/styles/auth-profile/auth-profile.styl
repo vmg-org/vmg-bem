@@ -1,16 +1,23 @@
 .auth-profile
   clearfix()
+  padding: 2px 0
 
 .auth-profile__display-name
-  padding: 6px
+  padding: 7px
   float: right
+  border: 1px solid $link-color
+  background: #fefefe
 
 .auth-profile__logout
-  padding: 2px
+  padding: 3px
   color: $link-color
   float: right
   margin-left: 8px
   cursor: pointer
-  font-size: 1.2rem
+  font-size: 1.6rem
     &:hover
       color: $link-hover-color
+
+.auth-profile__link-to-upload
+  button-schema()
+  button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
