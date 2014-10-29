@@ -126,6 +126,54 @@ module.exports = {
                   }]
                 }]
               }]
+            }, {
+              block: 'over-wrap',
+              content: [{
+                block: 'cbn-ready-bid-header',
+                bem: false,
+                content: '%=myReadyBids=%'
+              }, {
+                block: 'cbn-ready-bid-scope',
+                demo: true,
+                retry: 5,
+                content: [{
+                  block: 'cbn-ready-bid',
+                  mdl: 'episode_bid',
+                  content: [{
+                    elem: 'movie-name-wrap',
+                    content: [{
+                      elem: 'link-to-template',
+                      tag: 'a',
+                      attrs: {
+                        href: '@@link_to_template'
+                      },
+                      content: [{
+                        elem: 'movie-name',
+                        tag: 'span',
+                        content: '@@episode_template_item__movie_template_item__name'
+                      }]
+                    }]
+                  }, {
+                    elem: 'created-wrap',
+                    content: [{
+                      elem: 'created-header',
+                      tag: 'span',
+                      content: 'Created: '
+                    }, {
+                      elem: 'created',
+		      tag: 'span',
+                      content: '@@created_str'
+                    }]
+                  }, {
+                    elem: 'fnc-watch-video',
+                    tag: 'button',
+                    content: '%=fncWatchVideo=%'
+                  }, {
+                    //  elem: 'episode-name',
+                    //  content: "@@episode_template_item__name"
+                  }]
+                }]
+              }]
             }]
           }]
         }]
