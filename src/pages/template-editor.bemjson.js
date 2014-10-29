@@ -187,7 +187,8 @@ module.exports = {
                       attrs: {
                         placeholder: '@@ph_name',
                         'data-bind': '@@order', // it is like value in radio button
-                        onkeyup: "app.checkInputNameOfEpisode(this, event, 'crt-episode__help-name');"
+                        onkeyup: "app.checkInputNameOfEpisode(this, event, 'crt-episode__help-name');",
+                        value: '@@name'
                       }
                     }, {
                       elem: 'help-name',
@@ -219,7 +220,8 @@ module.exports = {
                         placeholder: '@@ph_story',
                         'data-bind': '@@order',
                         onkeyup: "app.checkInputStoryOfEpisode(this, event, 'crt-episode__help-story');"
-                      }
+                      },
+                      content: '@@story'
                     }, {
                       elem: 'help-story',
                       tag: 'span',
@@ -249,7 +251,8 @@ module.exports = {
                       attrs: {
                         placeholder: '@@ph_conds',
                         'data-bind': '@@order',
-                        onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');"
+                        onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');",
+			value: '@@conds'
                       }
                     }, {
                       elem: 'help-conds',
@@ -299,7 +302,7 @@ module.exports = {
                   }, {
                     elem: 'saving-btn',
                     tag: 'button',
-                    content: '%=createTemplate=%',
+                    content: '%=saveTemplate=%',
                     attrs: {
                       onclick: "app.createTemplate(this, event, 'notif-wrap__notif')"
                     }
