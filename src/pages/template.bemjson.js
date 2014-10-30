@@ -209,6 +209,9 @@ module.exports = {
                       'data-order': '@@order_in_movie',
                       'data-id': '@@id'
                     }
+                  }, {
+                    elem: 'attachments',
+                    content: ['_att-row.bj.js']
                   }]
                 }]
               }]

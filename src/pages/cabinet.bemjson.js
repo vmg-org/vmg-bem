@@ -17,7 +17,7 @@ module.exports = {
       elem: 'workspace',
       content: [{
         block: 'bsp-container',
-        content: [{
+        content: ['_notif-row.bj.js', {
           block: 'bsp-row',
           content: [{
             block: 'bsp-col',
@@ -29,7 +29,7 @@ module.exports = {
               block: 'over-wrap',
               content: [{
                 // active bid - movie template info
-                block: 'cbn-act-movie-scope',
+                block: 'cbn-act-movie-scope', // 'operator', 'author'
                 demo: true,
                 retry: 1,
                 content: [{
@@ -161,7 +161,7 @@ module.exports = {
                       content: 'Created: '
                     }, {
                       elem: 'created',
-		      tag: 'span',
+                      tag: 'span',
                       content: '@@created_str'
                     }]
                   }, {
