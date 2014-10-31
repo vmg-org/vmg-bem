@@ -48,7 +48,7 @@ module.exports = {
                       content: '@@name'
                     }]
                   }, {
-                    elem: 'finished-str-header',
+                    elem: 'finished-str-header-wrap',
                     content: [{
                       elem: 'finished-str-header',
                       tag: 'span',
@@ -72,10 +72,16 @@ module.exports = {
                   }, {
                     elem: 'prolong-fnc', // author can prolong this template, max - 3 times
                     tag: 'button',
+                    attrs: {
+                      onclick: '@@fnc_prolong'
+                    },
                     content: '%=prolongTemplate=%'
                   }, {
                     elem: 'edit-fnc', // author can edit only of no bids
                     tag: 'button',
+                    attrs: {
+                      onclick: '@@fnc_move_to_edit'
+                    },
                     content: '%=editTemplate=%'
                   }, {
                     elem: 'remove-fnc',
@@ -206,12 +212,18 @@ module.exports = {
                     tag: 'button',
                     content: '%=fncShowAttachments=%',
                     attrs: {
+                      onclick: '@@fnc_show_atts',
                       'data-order': '@@order_in_movie',
-                      'data-id': '@@id'
+                      'data-id': '@@id',
+		      'data-for': 'shw-episode__attachments'
                     }
                   }, {
                     elem: 'attachments',
+                    attrs: {
+                      'data-id': '@@id'
+                    },
                     content: ['_att-row.bj.js']
+                      // here will be loaded att-row when user clicks to fncShowAttachments
                   }]
                 }]
               }]
@@ -273,6 +285,13 @@ module.exports = {
       bem: false,
       attrs: {
         src: './js/template-bundle.js'
+      }
+    }, {
+      elem: 'videojs-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        src: '//vjs.zencdn.net/4.9.1/video.js'
       }
     }]
   }]
