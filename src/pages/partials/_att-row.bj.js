@@ -17,21 +17,19 @@ module.exports = {
         demo: true,
         retry: 10,
         content: [{
-          elem: 'item',
+          block: 'att-info',
           mdl: 'episode_bid',
           content: [{
-            block: 'att-info',
-            content: [{
-              elem: 'preview',
-              tag: 'img', //clickable image to watch and moder a video
-              attrs: {
-                onclick: '@@fnc_play'
-              }
-            }, {
-              elem: 'moder-rating', // approved, banned, best etc.
-              tag: 'span',
-              content: '@@moder_rating_str'
-            }]
+            elem: 'preview',
+            tag: 'img', //clickable image to watch and moder a video
+            attrs: {
+              onclick: '@@fnc_play',
+              src: '@@media_spec_item__preview_img_url'
+            }
+          }, {
+            elem: 'moder-rating', // approved, banned, best etc.
+            tag: 'span',
+            content: '@@moder_rating_str'
           }]
         }]
       }]
@@ -43,8 +41,6 @@ module.exports = {
       },
       content: [{
         block: 'att-content-scope',
-        demo: true,
-        retry: 1,
         content: [{
           elem: 'item',
           mdl: 'episode_bid',

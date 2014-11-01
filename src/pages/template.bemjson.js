@@ -197,7 +197,8 @@ module.exports = {
                     content: '%=fncUploadLater=%',
                     attrs: {
                       'data-order': '@@order_in_movie',
-                      'data-id': '@@id'
+                      'data-id': '@@id',
+                      onclick: '@@fnc_upload_later'
                     }
                   }, {
                     elem: 'fnc-upload-now', // go to upload.html?v=id_of_media_spec (redirect from a client, to show addt msg and assign query param
@@ -205,7 +206,8 @@ module.exports = {
                     content: '%=fncUploadNow=%',
                     attrs: {
                       'data-order': '@@order_in_movie',
-                      'data-id': '@@id'
+                      'data-id': '@@id',
+                      onclick: '@@fnc_upload_now'
                     }
                   }, {
                     elem: 'fnc-show-attachments', // author can watch videos, but choose - only when template is finished
@@ -215,7 +217,7 @@ module.exports = {
                       onclick: '@@fnc_show_atts',
                       'data-order': '@@order_in_movie',
                       'data-id': '@@id',
-		      'data-for': 'shw-episode__attachments'
+                      'data-for': 'shw-episode__attachments'
                     }
                   }, {
                     elem: 'attachments',
