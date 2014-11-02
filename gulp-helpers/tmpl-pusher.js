@@ -1,6 +1,7 @@
 /** @module */
 var through2 = require('through2');
-exports.run = function() {
+
+exports.run = function() {	
   return through2.obj(function(file, enc, cb) {
     var data = file._contents.toString('utf8');
     data = JSON.stringify(data);

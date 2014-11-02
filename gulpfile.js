@@ -3,6 +3,7 @@
  */
 var gulp = require('gulp');
 
+var critical = require('critical');
 var gulpHelpersPath = './gulp-helpers/';
 
 var jshint = require('gulp-jshint');
@@ -151,4 +152,48 @@ gulp.task('connect', function() {
 
 gulp.task('watch', function() {
   return gulp.watch([pth.pages + '**/*', pth.styles + '**/*'], ['build']);
+});
+
+gulp.task('critical', function(done) {
+  critical.inline({
+    base: 'dst/',
+    src: 'index.html',
+    dest: 'inlined.html'
+  });
+  done();
+  //  critical.generate({
+  //    base: 'dst/',
+  //    src: 'index.html',
+  //    dest: 'styles/main.css',
+  //    width: 320,
+  //    height: 480
+  //  });
+  //    critical.generateInline({
+  //    // Your base directory
+  //    base: './dst/',
+  //
+  //    // HTML source
+  //    src: 'index.html',
+  //
+  //    // Your CSS Files (optional)
+  //    //  css: ['./dst/css/index.css'],
+  //
+  //    // Viewport width
+  //    width: 320,
+  //
+  //    // Viewport height
+  //    height: 480,
+  //
+  //    // Target for final HTML output
+  //    htmlTarget: 'index-critical.html',
+  //
+  //    // Target for generated critical-path CSS (which we inline)
+  //    // styleTarget: 'css/index-critical.css',
+  //
+  //    // Minify critical-path CSS when inlining
+  //    minify: true,
+  //
+  //    // Extract inlined styles from referenced stylesheets
+  //    extract: true
+  //  });
 });
