@@ -1,0 +1,24 @@
+// States of this block: 
+// 0 not-rated
+// 1 rated-bad
+// 2 rated-good
+// 3 not-best
+// 4 best
+// box-shadow-color may change too different of type of a block
+.att-info-1
+  padding: 8px 2px
+  box-shadow:  red 5px 5px 6px
+  
+// img
+.att-info-1__preview
+  width: 100px
+  cursor: pointer
+  border: 1px solid #cecece
+  &:hover
+    border: 1px solid red  
+
+// if a rating exists
+.att-info-1__moder-rating
+  margin-left: 4px
+  color: red
+  font-size: 1.2rem
