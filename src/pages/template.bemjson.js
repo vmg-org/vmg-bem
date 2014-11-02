@@ -26,56 +26,20 @@ module.exports = {
               lg: 8
             },
             content: [{
-              block: 'over-wrap',
-              content: [{
-                block: 'shw-movie-templates',
-                demo: true,
-                retry: 1,
-                content: ['_shw-movie-template.bj.js']
-              }]
+              block: 'shw-movie-templates',
+              demo: true,
+              retry: 1,
+              content: ['_shw-movie-template.bj.js']
             }, {
-              block: 'over-wrap',
-              content: [{
-                block: 'shw-genre-tags',
-                demo: true,
-                retry: 1,
-                content: [{
-                  block: 'shw-genre-tag',
-                  mdl: 'genre_tag',
-                  content: [{
-                    elem: 'header',
-                    tag: 'span',
-                    content: '%=genreOfMovie=%'
-                  }, {
-                    elem: 'name',
-                    tag: 'span',
-                    content: '@@name'
-                      //                    elem: 'color-scheme',
-                      //                    content: '@@color_scheme'
-                  }, {
-                    elem: 'color-icon',
-                    tag: 'span',
-                    attrs: {
-                      style: '@@style'
-                    },
-                    content: [{
-                      block: 'glyphicon',
-                      tag: 'span',
-                      mods: {
-                        q: 'tag'
-                      }
-                    }]
-                  }]
-                }]
-              }]
+              block: 'shw-movie-genre-scope',
+              demo: true,
+              retry: 1,
+              content: ['_shw-movie-genre.bj.js']
             }, {
-              block: 'over-wrap',
-              content: [{
-                block: 'shw-episodes',
-                demo: true,
-                retry: 3,
-                content: ['_shw-episode.bj.js']
-              }]
+              block: 'shw-episodes',
+              demo: true,
+              retry: 3,
+              content: ['_shw-episode.bj.js']
             }, {
               block: 'over-wrap',
               content: [{

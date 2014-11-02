@@ -1,0 +1,1 @@
+"<div class=\"shw-movie-genre\"><span class=\"shw-movie-genre__header\">Type (genre)</span><span class=\"shw-movie-genre__name\">{{genre_tag_item.name}}</span><span class=\"shw-movie-genre__color-icon\" style=\"{{genre_tag_item.style}}\"><span class=\"glyphicon glyphicon_q_tag\"></span></span></div>"

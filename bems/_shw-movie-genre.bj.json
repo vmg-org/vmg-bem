@@ -1,0 +1,1 @@
+{"block":"shw-movie-genre","mdl":"movie_genre","content":[{"elem":"header","tag":"span","content":"Type (genre)"},{"elem":"name","tag":"span","content":"{{genre_tag_item.name}}"},{"elem":"color-icon","tag":"span","attrs":{"style":"{{genre_tag_item.style}}"},"content":[{"block":"glyphicon","tag":"span","mods":{"q":"tag"}}]}]}
