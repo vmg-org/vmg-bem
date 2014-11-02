@@ -224,7 +224,55 @@ module.exports = {
                     attrs: {
                       'data-id': '@@id'
                     },
-                    content: ['_att-row.bj.js']
+                    content: [{
+                        block: 'att-row',
+                        content: [{
+                          block: 'bsp-row',
+                          content: [{
+                            block: 'bsp-col',
+                            mods: {
+                              md: 4,
+                              lg: 4
+                            },
+                            content: [{
+                              block: 'att-info-scope',
+                              attrs: {
+                                'data-id': '@@id' // id of episode template
+                              },
+                              demo: true,
+                              retry: 10,
+                              content: [
+                                '_att-info-0.bj.js'
+                              ]
+                            }]
+                          }, {
+                            block: 'bsp-col',
+                            mods: {
+                              md: 8,
+                              lg: 8
+                            },
+                            content: [{
+                              block: 'att-content-scope',
+                              content: [{
+                                elem: 'item',
+                                content: [{
+                                  block: 'ratio16-9',
+                                  content: [{
+                                    elem: 'workspace',
+                                    content: [{
+                                      block: 'att-player',
+                                      attrs: {
+                                        'data-id': '@@id' // id_of_episode_template
+                                      },
+                                      content: 'player'
+                                    }]
+                                  }]
+                                }]
+                              }]
+                            }]
+                          }]
+                        }]
+                      }]
                       // here will be loaded att-row when user clicks to fncShowAttachments
                   }]
                 }]

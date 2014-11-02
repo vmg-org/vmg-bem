@@ -18,7 +18,8 @@ var handleObj = function(obj, parentPageId, withDemo, partialsPath, keyName) {
   } else if (typeof obj[keyName] === 'string') {
     var matches = obj[keyName].match(rgx);
     if (matches) {
-      var partialJson = require(partialsPath + matches[0]);
+      var partialFile = path.join(partialsPath, matches[0]);
+      var partialJson = require(partialFile);
       partialJson = JSON.parse(JSON.stringify(partialJson).replace(/@@parentPage@@/g, parentPageId));
 
       obj[keyName] = partialJson;
@@ -31,13 +32,13 @@ var findPattern = function(obj, parentPageId, withDemo, partialsPath) { // jshin
 };
 
 //
-exports.run = function(withDemo) {
+exports.run = function(withDemo, partialsPath) {
   return through2.obj(function(file, enc, cb) {
     //	  file  - js with mobule.exports
     var obj = require(file.path);
 
-    var partialsPath = file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
-    var parentPageId = path.basename(file.path).replace(/.bemjson.js$/, '');
+    //   var partialsPath = file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
+    var parentPageId = path.basename(file.path).replace(/.bemjson.js$/, '').replace(/.bj.js$/, '');
 
     console.log(parentPageId);
     //	  var obj = JSON.parse(file._contents.toString('utf8'));

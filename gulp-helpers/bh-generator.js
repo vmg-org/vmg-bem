@@ -11,7 +11,7 @@ exports.run = function() {
     var htmlCreated = bh.apply(obj);
 
     file.contents = new Buffer(htmlCreated);
-    file.history[0] = file.history[0].replace('.bemjson.json', '.html');
+    file.history[0] = file.history[0].replace(/.bemjson.json$/, '.html').replace(/.bj.json$/, '.html');
 
     this.push(file);
 

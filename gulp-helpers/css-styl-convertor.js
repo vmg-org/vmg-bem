@@ -54,6 +54,7 @@ exports.run = function(stylesPath) {
     var readyContent = arr.join('\n');
     file.contents = new Buffer(readyContent);
     file.history[0] = file.history[0].replace('.bemjson.json', '-bundle.styl');
+    file.history[0] = file.history[0].replace('.bj.json', '-bundle.styl');
     this.push(file);
     cb();
   });

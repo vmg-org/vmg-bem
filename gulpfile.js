@@ -66,8 +66,11 @@ gulp.task('css-resources', ['clean'], function() {
 });
 
 gulp.task('layout', ['clean'], function() {
-  return gulp.src(pth.pages + '*.bemjson.js')
-    .pipe(partialCombiner.run())
+
+  //  var absPath = path.resolve(pth.styles);
+  var partialsPath = path.resolve(pth.pages, 'partials'); // file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
+  return gulp.src([pth.pages + '*.bemjson.js', pth.pages + 'partials/*.bj.js'])
+    .pipe(partialCombiner.run(true, partialsPath))
     .pipe(translator.run(vmgDict))
     .pipe(gulp.dest(pth.bems));
 });
@@ -77,8 +80,8 @@ gulp.task('remake_bems', ['layout'], function() {
     .pipe(modelImplementator.run(isProd ? false : true))
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
-    
-//    .pipe(gulp.dest(pth.dst + 'bemjson/'));
+
+  //    .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
 /*
 gulp.task('bh', ['remake_bems'], function() {
