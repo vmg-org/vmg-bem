@@ -1,5 +1,5 @@
 // undeground blocks with highest z-index
-module.exports = [{
+module.exports = {
   block: 'menu-popup', // to open with JS and styles
   content: [{
     block: 'pip-popup', // all popups under html
@@ -26,4 +26,4 @@ module.exports = [{
       }]
     }]
   }]
-}];
+};

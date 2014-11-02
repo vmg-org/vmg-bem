@@ -9,12 +9,7 @@ module.exports = {
   block: 'html',
   tag: 'html',
   bem: false,
-  content: [{
-    block: 'head',
-    tag: 'head',
-    bem: false,
-    content: '_head.bj.js'
-  }, {
+  content: ['_head.bj.js', {
     block: 'page',
     tag: 'body',
     content: [{
@@ -87,11 +82,7 @@ module.exports = {
     }, {
       elem: 'footer',
       content: '_footer.bj.js'
-    }, {
-      block: 'underground',
-      bem: false,
-      content: '_underground.bj.js'
-    }, {
+    }, '_underground.bj.js', {
       block: 'jquery-script',
       tag: 'script',
       bem: false,

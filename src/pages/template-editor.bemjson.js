@@ -2,12 +2,7 @@ module.exports = {
   block: 'html',
   tag: 'html',
   bem: false,
-  content: [{
-    block: 'head',
-    tag: 'head',
-    bem: false,
-    content: '_head.bj.js'
-  }, {
+  content: ['_head.bj.js', {
     block: 'page',
     tag: 'body',
     content: [{
@@ -252,7 +247,7 @@ module.exports = {
                         placeholder: '@@ph_conds',
                         'data-bind': '@@order',
                         onkeyup: "app.checkInputCondsOfEpisode(this, event, 'crt-episode__help-conds');",
-			value: '@@conds'
+                        value: '@@conds'
                       }
                     }, {
                       elem: 'help-conds',
@@ -316,11 +311,7 @@ module.exports = {
     }, {
       elem: 'footer',
       content: '_footer.bj.js'
-    }, {
-      block: 'underground',
-      bem: false,
-      content: '_underground.bj.js'
-    }, {
+    }, '_underground.bj.js', {
       block: 'jquery-script',
       tag: 'script',
       bem: false,
