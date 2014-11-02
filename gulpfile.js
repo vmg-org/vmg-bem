@@ -17,6 +17,7 @@ var path = require('path');
 var stylus = require('gulp-stylus');
 var nib = require('nib');
 var vmgDict = require('vmg-dict').getLocale('en');
+var tmplPusher = require(gulpHelpersPath + 'tmpl-pusher');
 //var runSequence = require('run-sequence');
 
 var del = require('del');
@@ -33,8 +34,9 @@ pth.styles = pth.src + 'styles/';
 pth.cssResources = pth.src + 'css-resources/';
 pth.bems = './bems/'; // json files with clean bemhtml (without translate and model implements);
 pth.dst = isProd ? './dst/' : './dev/';
+pth.tmpl = './tmpl';
 
-gulp.task('build', ['css-resources', 'css', 'remake_bems'], function() {
+gulp.task('build', ['css-resources', 'css', 'remake_bems', 'push_to_templ'], function() {
   //  return runSequence('jshint',
   //    'clean',
   //    'layout',
@@ -83,6 +85,13 @@ gulp.task('remake_bems', ['layout'], function() {
 
   //    .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
+
+gulp.task('push_to_templ', ['remake_bems'], function() {
+  return gulp.src(pth.dst + '_*.html')
+    .pipe(tmplPusher.run())
+    .pipe(gulp.dest(pth.tmpl));
+});
+
 /*
 gulp.task('bh', ['remake_bems'], function() {
   return gulp.src(pth.dst + 'bemjson/*.bemjson.json')

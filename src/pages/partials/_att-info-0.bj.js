@@ -5,24 +5,33 @@ module.exports = {
     elem: 'preview',
     tag: 'img', //clickable image to watch and moder a video
     attrs: {
-      onclick: '@@fnc_play',
-      src: '@@media_spec_item__preview_img_url'
+      onclick: '{{fnc_play}}',
+      src: '{{media_spec_item.preview_img_url}}'
     }
   }, {
     elem: 'moder-rating', // approved, banned, best etc.
     tag: 'span',
-    content: '@@moder_rating_str'
+    content: '{{moder_rating_str}}'
   }, {
     elem: 'fnc-good', // accessible if no moder_rating
     tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_good}}'
+    },
     content: '%=fncGoodVideo=%'
   }, {
     elem: 'fnc-bad', // accessible if no moder_rating
     tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_bad}}'
+    },
     content: '%=fncBadVideo=%'
   }, {
     elem: 'fnc-best', // accessible for author if template is closed and no best video yet
     tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_best}}'
+    },
     content: '%=fncBestVideo=%'
   }]
 };
