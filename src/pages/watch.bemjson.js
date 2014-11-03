@@ -156,18 +156,19 @@ module.exports = {
         src: './libs/jquery.js'
       }
     }, {
+      elem: 'videojs-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        //       src: '//vjs.zencdn.net/4.9.1/video.js'
+        src: './libs/video.js'
+      }
+    }, {
       block: 'page-script',
       tag: 'script',
       bem: false,
       attrs: {
         src: './js/watch-bundle.js'
-      }
-    }, {
-      elem: 'videojs-script',
-      tag: 'script',
-      bem: false,
-      attrs: {
-        src: '//vjs.zencdn.net/4.9.1/video.js'
       }
     }]
   }]

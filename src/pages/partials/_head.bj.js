@@ -44,7 +44,8 @@ module.exports = {
     bem: false,
     attrs: {
       rel: 'stylesheet',
-      href: '//vjs.zencdn.net/4.9.1/video-js.css'
+      href: './css/video-js.min.css'
+        //     href: '//vjs.zencdn.net/4.9.1/video-js.css'
     }
   }, {
     elem: 'mdrnzr',

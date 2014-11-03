@@ -78,14 +78,15 @@ module.exports = {
     bem: false,
     tag: 'script',
     attrs: {
-      src: './js/template-bundle.js'
+      src: './libs/video.js'
+        //      src: '//vjs.zencdn.net/4.9.1/video.js'
     }
   }, {
     elem: '',
     bem: false,
     tag: 'script',
     attrs: {
-      src: '//vjs.zencdn.net/4.9.1/video.js'
+      src: './js/template-bundle.js'
     }
   }]
 };

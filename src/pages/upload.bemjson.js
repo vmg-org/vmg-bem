@@ -92,11 +92,12 @@ module.exports = {
         src: './libs/jquery.js'
       }
     }, {
-      block: 'page-script',
+      elem: 'videojs-script',
       tag: 'script',
       bem: false,
       attrs: {
-        src: './js/upload-bundle.js'
+        src: './libs/video.js'
+          //  src: '//vjs.zencdn.net/4.9.1/video.js'
       }
     }, {
       // page script initialize window.FileAPI (with some options);
@@ -107,11 +108,11 @@ module.exports = {
         src: './libs/file-api/FileAPI.min.js'
       }
     }, {
-      elem: 'videojs-script',
+      block: 'page-script',
       tag: 'script',
       bem: false,
       attrs: {
-        src: '//vjs.zencdn.net/4.9.1/video.js'
+        src: './js/upload-bundle.js'
       }
     }]
   }]
