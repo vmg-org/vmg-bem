@@ -20,7 +20,7 @@ module.exports = {
             block: 'shw-movie-templates',
             demo: true,
             retry: 1,
-            content: ['_shw-movie-template.bj.js']
+            content: ['_shw-movie--usual.bj.js', '_shw-movie--author.bj.js']
           }, {
             block: 'shw-movie-genre-scope',
             demo: true,

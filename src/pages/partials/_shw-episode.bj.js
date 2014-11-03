@@ -110,7 +110,9 @@ module.exports = {
               retry: 10,
               content: [
                 '_att-info-0.bj.js',
-                '_att-info-1.bj.js'
+                '_att-info-1.bj.js',
+                '_att-info-2.bj.js',
+                '_att-info-4.bj.js'
               ]
             }]
           }, {

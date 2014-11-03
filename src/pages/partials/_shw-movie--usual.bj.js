@@ -1,5 +1,5 @@
 module.exports = {
-  block: 'shw-movie-template',
+  block: 'shw-movie--usual',
   mdl: 'movie_template',
   content: [{
     elem: 'header-wrap',
@@ -36,23 +36,5 @@ module.exports = {
       tag: 'span',
       content: '{{duration_of_episodes_str}}' // number + ' seconds'
     }]
-  }, {
-    elem: 'prolong-fnc', // author can prolong this template, max - 3 times
-    tag: 'button',
-    attrs: {
-      onclick: '{{fnc_prolong}}'
-    },
-    content: '%=prolongTemplate=%'
-  }, {
-    elem: 'edit-fnc', // author can edit only of no bids
-    tag: 'button',
-    attrs: {
-      onclick: '{{fnc_move_to_edit}}'
-    },
-    content: '%=editTemplate=%'
-  }, {
-    elem: 'remove-fnc',
-    tag: 'button',
-    content: '%=removeTemplate=%'
   }]
 };

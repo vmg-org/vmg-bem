@@ -100,19 +100,20 @@ module.exports = {
           //  src: '//vjs.zencdn.net/4.9.1/video.js'
       }
     }, {
+      block: 'page-script',
+      tag: 'script',
+      bem: false,
+      attrs: {
+        src: './js/upload-bundle.js'
+      }
+    }, {
+      // load after main script! init uses
       // page script initialize window.FileAPI (with some options);
       elem: 'file-api-script',
       tag: 'script',
       bem: false,
       attrs: {
         src: './libs/file-api/FileAPI.min.js'
-      }
-    }, {
-      block: 'page-script',
-      tag: 'script',
-      bem: false,
-      attrs: {
-        src: './js/upload-bundle.js'
       }
     }]
   }]

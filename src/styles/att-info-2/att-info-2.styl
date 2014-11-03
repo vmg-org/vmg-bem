@@ -5,24 +5,30 @@
 // 3 not-best
 // 4 best
 // box-shadow-color may change too different of type of a block
-.att-info-1
+.att-info-2
   padding: 8px 2px
-  box-shadow:  red 5px 5px 6px
+  box-shadow:  green 5px 5px 6px
   
 // img
-.att-info-1__preview
+.att-info-2__preview
   width: 100px
   cursor: pointer
   border: 1px solid #cecece
   &:hover
-    border: 1px solid red  
+    border: 1px solid green
 
 // if a rating exists
-.att-info-1__moder-rating
+.att-info-2__moder-rating
   margin-left: 4px
-  color: red
+  color: green
   font-size: 1.2rem
 
-.att-info-1__fnc-rate-none
+// if rating - is good
+// after clicking and approving - disable all others - rebuild all blocks
+.att-info-2__fnc-best
+  button-schema()
+  button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
+
+.att-info-2__fnc-rate-none
   button-schema()
   button-variant($btn-default-color, $btn-default-bg, $btn-default-border)

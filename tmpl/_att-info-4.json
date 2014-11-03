@@ -1,0 +1,1 @@
+"<div class=\"att-info-4\"><img class=\"att-info-4__preview\" onclick=\"{{fnc_play}}\" src=\"{{media_spec_item.preview_img_url}}\"/><span class=\"att-info-4__moder-rating\">{{moder_rating_str}}</span><button class=\"att-info-4__fnc-rate-none\" onclick=\"{{fnc_rate_none}}\">%=fncRateNone=%</button></div>"

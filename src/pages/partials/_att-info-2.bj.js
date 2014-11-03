@@ -1,5 +1,5 @@
 module.exports = {
-  block: 'att-info-0',
+  block: 'att-info-2',
   mdl: 'episode_bid',
   content: [{
     elem: 'preview',
@@ -13,18 +13,18 @@ module.exports = {
     tag: 'span',
     content: '{{moder_rating_str}}'
   }, {
-    elem: 'fnc-good', // accessible if no moder_rating
+    elem: 'fnc-best', // accessible for author if template is closed and no best video yet
     tag: 'button',
     attrs: {
-      onclick: '{{fnc_rate_good}}'
+      onclick: '{{fnc_rate_best}}'
     },
-    content: '%=fncGoodVideo=%'
+    content: '%=fncBestVideo=%'
   }, {
-    elem: 'fnc-bad', // accessible if no moder_rating
+    elem: 'fnc-rate-none',
     tag: 'button',
     attrs: {
-      onclick: '{{fnc_rate_bad}}'
+      onclick: '{{fnc_rate_none}}'
     },
-    content: '%=fncBadVideo=%'
+    content: '%=fncRateNone=%'
   }]
 };

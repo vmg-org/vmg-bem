@@ -12,5 +12,12 @@ module.exports = {
     elem: 'moder-rating', // approved, banned, best etc.
     tag: 'span',
     content: '{{moder_rating_str}}'
+  }, {
+    elem: 'fnc-rate-none',
+    tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_none}}'
+    },
+    content: '%=fncRateNone=%'
   }]
 };
