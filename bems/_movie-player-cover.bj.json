@@ -1,1 +1,1 @@
-{"block":"movie-player-cover","retry":3,"demo":true,"content":[{"block":"wch-player","mdl":"episode_template","attrs":{"data-id":"{{id}}"},"content":"vjs wrap"}]}
+{"block":"movie-player-cover","content":[{"elem":"vid","tag":"video","mix":[{"block":"video-js"},{"block":"vjs-default-skin"}]}]}

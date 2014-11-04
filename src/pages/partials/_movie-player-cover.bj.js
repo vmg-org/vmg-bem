@@ -2,9 +2,15 @@ module.exports = {
   // link to video loaded with movie info
   // inserted using javascript (create a video element dynamically)
   block: 'movie-player-cover', // this is like movie-records
-  retry: 3,
-  demo: true,
-  content: ['_wch-player.bj.js']
+  content: [{
+      elem: 'vid',
+      tag: 'video',
+      mix: [{
+        block: 'video-js'
+      }, {
+        block: 'vjs-default-skin'
+      }]
+    }]
     //   // insert only link to video (at this moment)
     //   block: 'movie-player',
     //   mdl: 'movie_record',
