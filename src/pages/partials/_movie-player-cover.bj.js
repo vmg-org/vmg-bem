@@ -4,12 +4,12 @@ module.exports = {
   block: 'movie-player-cover', // this is like movie-records
   content: [{
       elem: 'vid',
-      tag: 'video',
-      mix: [{
-        block: 'video-js'
-      }, {
-        block: 'vjs-default-skin'
-      }]
+      tag: 'video'
+        //      mix: [{
+        //        block: 'video-js'	
+        //      }, {
+        //        block: 'vjs-default-skin'
+        //      }]
     }]
     //   // insert only link to video (at this moment)
     //   block: 'movie-player',

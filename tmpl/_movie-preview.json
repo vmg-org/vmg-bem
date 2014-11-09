@@ -1,1 +1,1 @@
-"<div class=\"movie-preview\"><div class=\"movie-preview__watch\"><a href=\"@@url_to_watch\"><img src=\"@@img_preview_url\"/></a></div><div class=\"movie-preview__title\">@@upper_name</div><div class=\"movie-preview__rating\"></div></div>"
+"<div class=\"movie-preview\"><div class=\"movie-preview__watch\"><a href=\"@@url_to_watch\"><img src=\"@@img_preview_url\"/></a></div><div class=\"movie-preview__title\">@@upper_name</div><div class=\"movie-preview__rating\"></div><div class=\"movie-preview__duration\">@@duration_str</div></div>"

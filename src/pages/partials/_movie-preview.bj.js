@@ -26,5 +26,8 @@ module.exports = {
     content: '@@upper_name'
   }, {
     elem: 'rating'
+  }, {
+    elem: 'duration',
+    content: '@@duration_str'
   }]
 };

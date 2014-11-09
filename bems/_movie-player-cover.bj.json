@@ -1,1 +1,1 @@
-{"block":"movie-player-cover","content":[{"elem":"vid","tag":"video","mix":[{"block":"video-js"},{"block":"vjs-default-skin"}]}]}
+{"block":"movie-player-cover","content":[{"elem":"vid","tag":"video"}]}

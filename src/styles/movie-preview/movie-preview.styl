@@ -1,17 +1,30 @@
+$prv-width = 200px
+
 .movie-preview
   position: relative
 
 .movie-preview__watch
   display: block
   background: black
-  width: 200px
-  height: 150px
+  width: $prv-width
 
 .movie-preview__title
   margin-top: 4px
   word-wrap: break-word
+  width: $prv-width
 
 .movie-preview__rating
   position: absolute
   top: 10px
   right: 10px
+
+.movie-preview__duration
+  position: absolute
+  top: 0
+  left: 0  
+  width: 36px
+  height: 20px
+  padding: 1px 0 0 4px
+  background-color: #555
+  color: #eee
+  font-size: 0.9rem 
