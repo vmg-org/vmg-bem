@@ -13,7 +13,7 @@ module.exports = {
     tag: 'body',
     content: [{
       elem: 'header',
-      content: '_header.bj.js'
+      content: ['_site-header.bj.js']
     }, {
       elem: 'workspace',
       content: [{
@@ -83,8 +83,8 @@ module.exports = {
       }]
     }, {
       elem: 'footer',
-      content: '_footer.bj.js'
-    }, '_underground.bj.js', {
+      content: ['_license-info.bj.js']
+    }, '_menu-popup.bj.js', {
       block: 'jquery-script',
       tag: 'script',
       bem: false,

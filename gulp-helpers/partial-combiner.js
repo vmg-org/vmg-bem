@@ -18,7 +18,8 @@ var handleObj = function(obj, parentPageId, partialsPath, keyName) {
   } else if (typeof obj[keyName] === 'string') {
     var matches = obj[keyName].match(rgx);
     if (matches) {
-      var partialFile = path.join(partialsPath, matches[0]);
+      var blockName = matches[0].substr(1).replace('.bj.js', '');
+      var partialFile = path.join(partialsPath, blockName, blockName + '.bj.js');
       var partialJson = require(partialFile);
       partialJson = JSON.parse(JSON.stringify(partialJson).replace(/@@parentPage@@/g, parentPageId));
 

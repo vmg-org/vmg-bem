@@ -72,8 +72,7 @@ gulp.task('css-resources', ['clean'], function() {
 
 gulp.task('layout', ['clean'], function() {
 
-  //  var absPath = path.resolve(pth.styles);
-  var partialsPath = path.resolve(pth.pages, 'partials'); // file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
+  var partialsPath = path.resolve(pth.styles); // file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
   return gulp.src([pth.pages + '*.bemjson.js', pth.pages + 'partials/*.bj.js'])
     .pipe(partialCombiner.run(true, partialsPath))
     .pipe(translator.run(vmgDict))
