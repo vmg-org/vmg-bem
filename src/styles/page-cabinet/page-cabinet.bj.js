@@ -18,68 +18,7 @@ module.exports = {
           },
           content: [{
             block: 'over-wrap',
-            content: [{
-              // active bid - movie template info
-              block: 'cbn-act-movie-scope', // 'operator', 'author'
-              demo: true,
-              retry: 1,
-              content: [{
-                block: 'cbn-act-movie',
-                mdl: 'movie_template',
-                content: [{
-                  elem: 'name',
-                  content: '@@name'
-                }, {
-                  elem: 'created',
-                  content: '@@created'
-                }, {
-                  elem: 'fnc-view',
-                  tag: 'a',
-                  attrs: {
-                    'href': '@@url_to_view'
-                  },
-                  content: '%=fncViewMovieTemplate=%'
-                }]
-              }]
-            }, {
-              block: 'cbn-act-episode-scope',
-              demo: true,
-              retry: 1,
-              content: [{
-                block: 'cbn-act-episode',
-                mdl: 'episode_template',
-                content: [{
-                  elem: 'name',
-                  content: '@@name'
-                }, {
-                  elem: 'story',
-                  content: '@@story'
-                }]
-              }]
-            }, {
-              block: 'cbn-act-bid-scope',
-              demo: true,
-              retry: 1,
-              content: [{
-                block: 'cbn-act-bid',
-                mdl: 'episode_bid',
-                content: [{
-                  elem: 'fnc-upload',
-                  tag: 'button',
-                  attrs: {
-                    'data-id': '@@id_of_media_spec'
-                  },
-                  content: '%=fncUploadToBid=%'
-                }, {
-                  elem: 'fnc-cancel',
-                  tag: 'button',
-                  attrs: {
-                    'data-id': '@@id_of_media_spec'
-                  },
-                  content: '%=fncCancelBid=%'
-                }]
-              }]
-            }]
+            content: ['_cbn-act-movie-scope.bj.js', '_cbn-act-episode-scope.bj.js', '_cbn-act-bid-scope.bj.js']
           }]
         }, {
           block: 'bsp-col',

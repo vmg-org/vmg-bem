@@ -73,24 +73,25 @@ gulp.task('css-resources', ['clean'], function() {
 gulp.task('layout', ['clean'], function() {
 
   var partialsPath = path.resolve(pth.styles); // file.path.replace(/\/[a-zA-Z0-9_\.\-]+$/, '/partials/');
-  return gulp.src([pth.pages + '*.bemjson.js', pth.pages + 'partials/*.bj.js'])
+  return gulp.src([pth.pages + '*.bemjson.js', pth.styles + '**/*.bj.js'])
     .pipe(partialCombiner.run(true, partialsPath))
     .pipe(translator.run(vmgDict))
     .pipe(gulp.dest(pth.bems));
 });
 
 gulp.task('remake_bems', ['layout'], function() {
-  return gulp.src(pth.bems + '**.*')
+  return gulp.src(pth.bems + '*.*')
     .pipe(modelImplementator.run(isProd ? false : true))
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
-
-  //    .pipe(gulp.dest(pth.dst + 'bemjson/'));
 });
 
 gulp.task('push_to_templ', ['remake_bems'], function() {
-  return gulp.src(pth.dst + '_*.html')
-    .pipe(tmplPusher.run())
+
+  return gulp.src(pth.bems + '**/*.bj.json')
+    .pipe(modelImplementator.run(isProd ? false : true))
+    .pipe(bhGenerator.run())
+    .pipe(tmplPusher.run(pth.tmpl))
     .pipe(gulp.dest(pth.tmpl));
 });
 

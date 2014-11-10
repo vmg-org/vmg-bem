@@ -1,6 +1,5 @@
 /*
  * @todo: #33! Add info about episode_bid (check auth too)
- * @todo: #41! remove vjs script
  */
 module.exports = {
   block: 'page-upload',
@@ -22,45 +21,7 @@ module.exports = {
           },
           content: [{
             block: 'over-wrap',
-            content: [{
-              block: 'ratio16-9',
-              content: [{
-                elem: 'workspace',
-                content: [{
-                  block: 'upl-loader',
-                  content: 'init...'
-                }, {
-                  block: 'upl-selector',
-                  content: [{
-                      elem: 'file-wrap',
-                      content: [{
-                        elem: 'file-opener',
-                        tag: 'span',
-                        content: [{
-                          block: 'glyphicon',
-                          tag: 'span',
-                          mods: {
-                            q: 'open'
-                          }
-                        }]
-                      }, {
-                        elem: 'description',
-                        content: 'Select a file or drag it'
-                      }]
-
-                    }, {
-                      elem: 'file-input',
-                      tag: 'input',
-                      attrs: {
-                        type: 'file', // onChange - dynamically
-                        accept: 'video/*'
-                      }
-                    }]
-                    // if you want to choose other video - click "Cancel" under video
-                    // After Cancelling - refresh a page (to free resources) or hide/show blocks
-                }]
-              }]
-            }]
+            content: ['_upl-wrap.bj.js']
           }]
         }, {
           block: 'bsp-col',
@@ -79,22 +40,14 @@ module.exports = {
     elem: 'footer',
     content: ['_license-info.bj.js']
   }, '_menu-popup.bj.js', {
-    block: 'jquery-script',
+    elem: 'jquery-script',
     tag: 'script',
     bem: false,
     attrs: {
       src: './libs/jquery.js'
     }
   }, {
-    elem: 'videojs-script',
-    tag: 'script',
-    bem: false,
-    attrs: {
-      src: './libs/video.js'
-        //  src: '//vjs.zencdn.net/4.9.1/video.js'
-    }
-  }, {
-    block: 'page-script',
+    elem: 'page-script',
     tag: 'script',
     bem: false,
     attrs: {

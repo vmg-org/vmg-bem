@@ -1,0 +1,1 @@
+"<div class=\"cbn-act-bid\"><button class=\"cbn-act-bid__fnc-upload\" onclick=\"{{fnc_act_bid_upload}}\">{{lbl_act_bid_upload}}</button><button class=\"cbn-act-bid__fnc-cancel\" onclick=\"{{fnc_act_bid_cancel}}\">{{lbl_act_bid_cancel}}</button></div>"

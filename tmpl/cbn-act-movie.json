@@ -1,0 +1,1 @@
+"<div class=\"cbn-act-movie\"><div class=\"cbn-act-movie__name\">{{name}}</div><div class=\"cbn-act-movie__created\">{{created}}</div><a class=\"cbn-act-movie__fnc-view\" href=\"{{url_to_view}}\">View movie template</a></div>"

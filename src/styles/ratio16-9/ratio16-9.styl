@@ -1,13 +1,6 @@
+// TODO: #43! change links to this style (to mixins)
 .ratio16-9
-  position: relative
-    &:before
-      content: ""
-      display: block
-      padding-top: 56.25%
+  ratio16x9()
 
 .ratio16-9__workspace
-  position: absolute
-  top: 0
-  bottom: 0
-  right: 0
-  left: 0
+  ratio16x9workspace()

@@ -1,3 +1,4 @@
+// Declined att
 module.exports = {
   block: 'att-info-1',
   mdl: 'episode_bid',

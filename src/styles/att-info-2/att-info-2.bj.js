@@ -1,3 +1,4 @@
+// approved att
 module.exports = {
   block: 'att-info-2',
   mdl: 'episode_bid',
@@ -13,12 +14,26 @@ module.exports = {
     tag: 'span',
     content: '{{moder_rating_str}}'
   }, {
-    elem: 'fnc-best', // accessible for author if template is closed and no best video yet
+    elem: 'fnc-gold', // accessible for author if template is closed and no best video yet
     tag: 'button',
     attrs: {
-      onclick: '{{fnc_rate_best}}'
+      onclick: '{{fnc_rate_gold}}'
     },
-    content: '%=fncBestVideo=%'
+    content: '%=gold=%'
+  }, {
+    elem: 'fnc-silver', // accessible for author if template is closed and no best video yet
+    tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_silver}}'
+    },
+    content: '%=silver=%'
+  }, {
+    elem: 'fnc-bronze', // accessible for author if template is closed and no best video yet
+    tag: 'button',
+    attrs: {
+      onclick: '{{fnc_rate_bronze}}'
+    },
+    content: '%=bronze=%'
   }, {
     elem: 'fnc-rate-none',
     tag: 'button',
