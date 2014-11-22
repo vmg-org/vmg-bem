@@ -6,7 +6,18 @@ module.exports = {
     content: ['_site-header.bj.js']
   }, {
     elem: 'workspace',
-    content: 'main page'
+    content: [{
+      block: 'tmp-welcome',
+      bem: false,
+      content: [{
+        elem: 'link',
+	tag: 'a',
+	attrs: {
+	  href: './explore.html'
+	},
+	content: 'Explore ISNAPPY'
+      }]
+    }]
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
