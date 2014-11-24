@@ -59,35 +59,7 @@ module.exports = {
           lg: 4,
           md: 4
         },
-        content: [{
-          block: 'auth-no',
-          content: [{
-            elem: 'welcome',
-            tag: 'span',
-            content: '%=login=%'
-          }, {
-            elem: 'auth-button',
-            tag: 'button',
-            content: 'G+',
-            elemMods: {
-              social: 'goog'
-            }
-          }, {
-            elem: 'auth-button',
-            tag: 'button',
-            content: 'FB',
-            elemMods: {
-              social: 'fb'
-            }
-          }, {
-            elem: 'auth-button',
-            tag: 'button',
-            content: 'Dev',
-            elemMods: {
-              social: 'dev'
-            }
-          }]
-        }, {
+        content: ['_auth-no.bj.js', {
           block: 'auth-profiles',
           demo: true,
           retry: 1,
