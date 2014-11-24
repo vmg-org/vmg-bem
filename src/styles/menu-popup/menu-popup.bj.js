@@ -1,28 +1,26 @@
 // undeground blocks with highest z-index
+// todo: #33! hide a block by outer click; remove an effect
 module.exports = {
   block: 'menu-popup', // to open with JS and styles
   content: [{
-    block: 'pip-popup', // all popups under html
+    elem: 'space',
     content: [{
-      elem: 'space',
+      block: 'menu-view',
       content: [{
-        block: 'menu-view',
+        elem: 'close',
         content: [{
-          elem: 'close',
-          content: [{
-            block: 'glyphicon',
-            tag: 'span',
-            mods: {
-              q: 'remove-circle'
-            }
-          }]
-        }, {
-          elem: 'header',
-          content: '%=menuTitle=%'
-        }, {
-          elem: 'list',
-          content: 'super list with apps'
+          block: 'glyphicon',
+          tag: 'span',
+          mods: {
+            q: 'remove-circle'
+          }
         }]
+      }, {
+        elem: 'header',
+        content: '%=menuTitle=%'
+      }, {
+        elem: 'list',
+        content: 'super list with apps'
       }]
     }]
   }]
