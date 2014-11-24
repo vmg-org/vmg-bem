@@ -11,17 +11,17 @@ module.exports = {
       bem: false,
       content: [{
         elem: 'link',
-	tag: 'a',
-	attrs: {
-	  href: './explore.html'
-	},
-	content: 'Explore ISNAPPY'
+        tag: 'a',
+        attrs: {
+          href: './explore.html'
+        },
+        content: 'Explore ISNAPPY'
       }]
     }]
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, '_menu-popup.bj.js', {
+  }, '_menu-popup.bj.js', '_auth-popup.bj.js', {
     block: 'jquery-script',
     tag: 'script',
     bem: false,

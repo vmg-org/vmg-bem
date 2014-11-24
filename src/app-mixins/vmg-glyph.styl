@@ -1,8 +1,3 @@
-/**
- * Glyphicon
- * @todo #43! Change all icons to app-mixin: vmg-glyph($icon-code)
- */
-
 $icon-font-dir = './fonts/'
 
 @font-face
@@ -10,7 +5,7 @@ $icon-font-dir = './fonts/'
   src: url($icon-font-dir + 'glyphicons-halflings-regular.eot')
   src: url($icon-font-dir + 'glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url($icon-font-dir + 'glyphicons-halflings-regular.woff') format('woff'), url($icon-font-dir + 'glyphicons-halflings-regular.ttf') format('truetype'), url($icon-font-dir + 'glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg')
 
-.glyphicon
+vmg-glyph($icon-code)
   position: relative;
   top: 1px;
   display: inline-block;
@@ -20,6 +15,8 @@ $icon-font-dir = './fonts/'
   line-height: 1;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  &:before
+    content: $icon-code
 
 .glyphicon_q_open:before
   content: "\e167"

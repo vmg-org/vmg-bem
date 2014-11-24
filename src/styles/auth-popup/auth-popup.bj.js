@@ -1,0 +1,19 @@
+/**
+ * Popup wrap for login elements
+ *    buttons to login through social providers
+ *    possible: elements to login/register through project provider
+ *    only wrap without content: without auth-scope
+ *    to possible existing auth-scope without a popup-wrap
+ */
+module.exports = {
+  block: 'auth-popup',
+  content: [{
+    elem: 'space',
+    content: [{
+      elem: 'close',
+      content: [{
+        elem: 'close-icon'
+      }]
+    }]
+  }]
+};

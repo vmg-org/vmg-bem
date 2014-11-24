@@ -28,20 +28,7 @@ module.exports = {
             }]
           }, {
             block: 'pull-left',
-            content: [{
-              block: 'menu-call',
-              content: [{
-                elem: 'full-icon',
-                tag: 'span',
-                content: [{
-                  block: 'glyphicon',
-                  tag: 'span',
-                  mods: {
-                    q: 'list'
-                  }
-                }]
-              }]
-            }]
+            content: ['_menu-call.bj.js']
           }]
         }]
       }, {
