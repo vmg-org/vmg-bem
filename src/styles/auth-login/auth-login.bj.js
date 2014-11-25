@@ -1,14 +1,12 @@
 /**
- * A block for non-auth users
- *    show a button to open an auth-login block
- * @todo #33! move a logic to auth-login
- */ 
+ * Auth buttons, description, social providers
+ *     No cancel button - there is a close button in a popup window
+ */
 module.exports = {
-   block: 'auth-no',
+  block: 'auth-login',
   content: [{
-    elem: 'welcome',
-    tag: 'span',
-    content: '%=login=%'
+    elem: 'header',
+    content: 'Login'
   }, {
     elem: 'auth-button',
     tag: 'button',

@@ -2,7 +2,7 @@
  * Popup wrap for login elements
  *    buttons to login through social providers
  *    possible: elements to login/register through project provider
- *    only wrap without content: without auth-scope
+ *    only wrap without content: without auth-login
  *    to possible existing auth-scope without a popup-wrap
  */
 module.exports = {
