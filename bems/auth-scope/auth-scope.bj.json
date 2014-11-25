@@ -1,0 +1,1 @@
+{"block":"auth-scope","demo":true,"retry":1,"content":[{"block":"auth-no","attrs":{"onclick":"{{open_login_popup}}"},"content":[{"elem":"icon","tag":"span"},{"elem":"welcome","tag":"span","content":"Login"}]}]}

@@ -1,31 +1,12 @@
 .auth-no
+  width: 50px
   padding: 2px
   text-align: right
   display: none
 
+.auth-no__icon
+  vmg-glyph("\e161")
+
 .auth-no__welcome
   display: none
   transition: width 2s, height 2s, background-color 2s, transform 2s
-
-.auth-no__auth-button
-  padding: 4px
-  color: white
-  border-radius: 2px
-
-.auth-no__auth-button_social_fb
-  display: none
-  background: linear-gradient(blue, black)
-  &:hover
-    background: linear-gradient(lighten(blue, 10%), gray)
-
-.auth-no__auth-button_social_goog
-  display: none
-  background: linear-gradient(red, black)
-  &:hover
-    background: linear-gradient(lighten(red, 10%), gray)
-  
-.auth-no__auth-button_social_dev
-  display: none
-  background: linear-gradient(gray, black)
-  &:hover
-    background: linear-gradient(lighten(black, 10%), gray)

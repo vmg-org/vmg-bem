@@ -46,7 +46,7 @@ module.exports = {
           lg: 4,
           md: 4
         },
-        content: ['_auth-no.bj.js', {
+        content: ['_auth-scope.bj.js', {
           block: 'auth-profiles',
           demo: true,
           retry: 1,
