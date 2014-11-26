@@ -25,9 +25,7 @@ var tmplPusher = require(gulpHelpersPath + 'tmpl-pusher');
 
 var del = require('del');
 
-//['node', 'gulp', 'taskName', 'isProd']
-var isProd = process.argv.indexOf('--prod') > 0;
-console.log('production: ' + isProd);
+//['node', 'gulp', 'taskName']
 
 var pth = {};
 
@@ -36,7 +34,7 @@ pth.pages = pth.src + 'pages/';
 pth.styles = pth.src + 'styles/';
 pth.cssResources = pth.src + 'css-resources/';
 pth.bems = './bems/'; // json files with clean bemhtml (without translate and model implements);
-pth.dst = isProd ? './dst/' : './dev/';
+pth.dst = './dst/';
 pth.tmpl = './tmpl';
 
 gulp.task('build', ['css-resources', 'css', 'remake_bems', 'push_to_templ'], function() {
@@ -81,7 +79,7 @@ gulp.task('layout', ['clean'], function() {
 
 gulp.task('remake_bems', ['layout'], function() {
   return gulp.src(pth.bems + '*.*')
-    .pipe(modelImplementator.run(isProd ? false : true))
+    .pipe(modelImplementator.run(false))
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(pth.dst));
 });
@@ -89,7 +87,7 @@ gulp.task('remake_bems', ['layout'], function() {
 gulp.task('push_to_templ', ['remake_bems'], function() {
 
   return gulp.src(pth.bems + '**/*.bj.json')
-    .pipe(modelImplementator.run(isProd ? false : true))
+    .pipe(modelImplementator.run(false))
     .pipe(bhGenerator.run())
     .pipe(tmplPusher.run(pth.tmpl))
     .pipe(gulp.dest(pth.tmpl));
