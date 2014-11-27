@@ -8,3 +8,11 @@
 
 .page-index__footer
   page__footer()
+
+// hided elements by default
+// sometimes inline elements marked as blocks: display: block
+//    this behaviour doesn't support with hided elements at startup
+//    with !important tag - we cannot show elements (by jQuery or a style tag)
+.auth-popup
+.auth-login__auth-button
+  display: none;

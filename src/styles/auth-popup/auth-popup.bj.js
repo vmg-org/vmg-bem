@@ -11,7 +11,7 @@ module.exports = {
     elem: 'space',
     content: [{
       elem: 'workspace',
-      content: 'some block with info'
+      content: ['_auth-login.bj.js']
     }, {
       elem: 'close',
       content: [{
