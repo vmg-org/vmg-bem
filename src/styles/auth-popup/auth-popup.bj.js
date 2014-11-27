@@ -7,6 +7,9 @@
  */
 module.exports = {
   block: 'auth-popup',
+  attrs: {
+    onclick: '{{fnc_close_auth_popup_out}}'
+  },
   content: [{
     elem: 'space',
     content: [{
@@ -14,6 +17,9 @@ module.exports = {
       content: ['_auth-login.bj.js']
     }, {
       elem: 'close',
+      attrs: {
+        'onclick': '{{fnc_close_auth_popup}}'
+      },
       content: [{
         elem: 'close-icon',
         content: '&#xe014;'
