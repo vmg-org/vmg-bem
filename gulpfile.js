@@ -4,7 +4,7 @@
 var gulp = require('gulp');
 var gitLog = require('git-log');
 var exec = require('child_process').exec;
-
+var fs = require('fs');
 var critical = require('critical');
 var gulpHelpersPath = './gulp-helpers/';
 
@@ -22,10 +22,12 @@ var nib = require('nib');
 var vmgDict = require('vmg-dict').getLocale('en');
 var tmplPusher = require(gulpHelpersPath + 'tmpl-pusher');
 //var runSequence = require('run-sequence');
-
+var gulpUtil = require('gulp-util');
 var del = require('del');
 
 //['node', 'gulp', 'taskName']
+
+var blockName = gulpUtil.env.block;
 
 var pth = {};
 
@@ -35,6 +37,7 @@ pth.styles = pth.src + 'styles/';
 pth.bems = './bems/'; // json files with clean bemhtml (without translate and model implements);
 pth.dst = './dst/';
 pth.tmpl = './tmpl';
+pth.blockout = './blockout/';
 
 gulp.task('build', ['css', 'remake_bems', 'push_to_templ'], function() {
   //  return runSequence('jshint',
@@ -208,4 +211,91 @@ gulp.task('critical', function(done) {
   //    // Extract inlined styles from referenced stylesheets
   //    extract: true
   //  });
+});
+
+gulp.task('item-css', function() {
+  var blocksPath;
+  var dstBlocksPath;
+  if (!blockName) {
+    //    throw new Error('required: --block=name-of-block');
+    blocksPath = path.join(pth.styles, '**', '*.styl');
+    dstBlocksPath = path.join('blockout');
+  } else {
+    blocksPath = path.join(pth.styles, blockName, blockName + '.styl');
+    dstBlocksPath = path.join('blockout', blockName);
+  }
+
+  return gulp.src(blocksPath)
+    .pipe(stylus({
+      //      inline: true,
+      //     sourceRoot: '..',
+      //    basePath: 'css'
+      //      linenos: true
+      use: nib(),
+      compress: true
+    }))
+    .pipe(gulp.dest(dstBlocksPath));
+});
+
+gulp.task('item-bh', function() {
+  var blocksPath;
+  var dstBlocksPath;
+  if (!blockName) {
+    //    throw new Error('required: --block=name-of-block');
+    blocksPath = path.join(pth.styles, '**', '*.bj.js');
+    dstBlocksPath = path.join('blockout');
+  } else {
+    blocksPath = path.join(pth.styles, blockName, blockName + '.bj.js');
+    dstBlocksPath = path.join('blockout', blockName);
+  }
+  var partialsPath = path.resolve(pth.styles);
+  return gulp.src(blocksPath)
+    .pipe(partialCombiner.run(true, partialsPath))
+    .pipe(translator.run(vmgDict))
+    .pipe(gulp.dest(dstBlocksPath));
+});
+
+gulp.task('item-html', ['item-bh'], function() {
+  var blocksPath;
+  var dstBlocksPath;
+  if (!blockName) {
+    //    throw new Error('required: --block=name-of-block');
+    blocksPath = path.join(pth.blockout, '**', '*.bj.json');
+    dstBlocksPath = pth.blockout;
+  } else {
+    blocksPath = path.join(pth.blockout, blockName, blockName + '.bj.json');
+    dstBlocksPath = path.join(pth.blockout, blockName);
+  }
+
+  return gulp.src(blocksPath)
+    .pipe(modelImplementator.run(false))
+    .pipe(bhGenerator.run())
+    .pipe(gulp.dest(dstBlocksPath));
+});
+
+/**
+ * Only for one block
+ *    Out html file for browsering
+ */
+gulp.task('item-out', ['item-html', 'item-bh', 'item-css'], function(done) {
+  if (!blockName) {
+    throw new Error('required: --block=name');
+  }
+
+  var outHtml = fs.readFileSync(path.join(pth.blockout, blockName, blockName + '.html'));
+  outHtml = '<html><head><link rel="stylesheet" href="' + blockName + '.css" /></head><body>' + outHtml + '</body></html>';
+  var outPath = path.join(pth.blockout, blockName, 'out.html');
+  fs.writeFile(outPath, outHtml, done);
+});
+
+function startExpressBlock() {
+  var express = require('express');
+  var app = express();
+  app.use(express.static(pth.blockout));
+  app.listen(22222);
+  console.log('http://localhost:22222');
+}
+
+gulp.task('connect-block', function() {
+  startExpressBlock();
 });

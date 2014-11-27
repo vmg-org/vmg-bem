@@ -10,6 +10,9 @@ module.exports = {
   content: [{
     elem: 'space',
     content: [{
+      elem: 'workspace',
+      content: 'some block with info'
+    }, {
       elem: 'close',
       content: [{
         elem: 'close-icon'

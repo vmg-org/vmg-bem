@@ -5,6 +5,7 @@ bower_components/
 .sass-cache/
 dev/
 doc/
+blockout/
 .ftppass
 
 # Linux temp and system files
