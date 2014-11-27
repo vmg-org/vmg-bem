@@ -32,12 +32,11 @@ var pth = {};
 pth.src = './src/';
 pth.pages = pth.src + 'pages/';
 pth.styles = pth.src + 'styles/';
-pth.cssResources = pth.src + 'css-resources/';
 pth.bems = './bems/'; // json files with clean bemhtml (without translate and model implements);
 pth.dst = './dst/';
 pth.tmpl = './tmpl';
 
-gulp.task('build', ['css-resources', 'css', 'remake_bems', 'push_to_templ'], function() {
+gulp.task('build', ['css', 'remake_bems', 'push_to_templ'], function() {
   //  return runSequence('jshint',
   //    'clean',
   //    'layout',
@@ -61,11 +60,6 @@ gulp.task('build', ['css-resources', 'css', 'remake_bems', 'push_to_templ'], fun
 
 gulp.task('clean', ['jshint'], function(next) {
   del(pth.dst, next);
-});
-
-gulp.task('css-resources', ['clean'], function() {
-  return gulp.src(pth.cssResources + '**/*')
-    .pipe(gulp.dest(pth.dst + 'css/'));
 });
 
 gulp.task('layout', ['clean'], function() {
