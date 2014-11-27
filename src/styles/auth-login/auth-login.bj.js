@@ -8,34 +8,9 @@ module.exports = {
     elem: 'header',
     content: 'Login'
   }, {
-    elem: 'btn-wrap',
-    content: [{
-      elem: 'auth-button',
-      tag: 'button',
-      content: 'G+',
-      elemMods: {
-        social: 'goog'
-      }
-    }]
-  }, {
-    elem: 'btn-wrap',
-    content: [{
-      elem: 'auth-button',
-      tag: 'button',
-      content: 'FB',
-      elemMods: {
-        social: 'fb'
-      }
-    }]
-  }, {
-    elem: 'btn-wrap',
-    content: [{
-      elem: 'auth-button',
-      tag: 'button',
-      content: 'Dev',
-      elemMods: {
-        social: 'dev'
-      }
-    }]
+    elem: 'buttons',
+    retry: 3,
+    demo: true,
+    content: ['_auth-button.bj.js']
   }]
 };

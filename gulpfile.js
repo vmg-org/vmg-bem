@@ -24,6 +24,8 @@ var tmplPusher = require(gulpHelpersPath + 'tmpl-pusher');
 //var runSequence = require('run-sequence');
 var gulpUtil = require('gulp-util');
 var del = require('del');
+var bhLib = require('bh');
+var bh = new(bhLib.BH); // jshint ignore:line
 
 //['node', 'gulp', 'taskName']
 
@@ -237,6 +239,7 @@ gulp.task('item-css', function() {
     .pipe(gulp.dest(dstBlocksPath));
 });
 
+/*
 gulp.task('item-bh', function() {
   var blocksPath;
   var dstBlocksPath;
@@ -255,7 +258,8 @@ gulp.task('item-bh', function() {
     .pipe(gulp.dest(dstBlocksPath));
 });
 
-gulp.task('item-html', ['item-bh'], function() {
+
+gulp.task('item-html', function() {
   var blocksPath;
   var dstBlocksPath;
   if (!blockName) {
@@ -272,19 +276,29 @@ gulp.task('item-html', ['item-bh'], function() {
     .pipe(bhGenerator.run())
     .pipe(gulp.dest(dstBlocksPath));
 });
+*/
 
 /**
  * Only for one block
  *    Out html file for browsering
+ *    index.html - result file, contains css and html to browse
+ *    this name might be changed if there is a block with this name
+ *    for example changed to 'block.super-ext.html'
+ *    but this name (index.html) for simplify browsering
+ *    and usually no blocks with this name (usually blocks contains few words through dashes)
  */
-gulp.task('item-out', ['item-html', 'item-bh', 'item-css'], function(done) {
+gulp.task('item-out', ['item-css'], function(done) {
   if (!blockName) {
     throw new Error('required: --block=name');
   }
 
-  var outHtml = fs.readFileSync(path.join(pth.blockout, blockName, blockName + '.html'));
+  var bhPath = path.resolve(path.join(pth.styles, blockName, blockName + '.bj.js'));
+
+  var outBh = require(bhPath); //fs.readFileSync();
+  var outHtml = bh.apply(outBh);
   outHtml = '<html><head><link rel="stylesheet" href="' + blockName + '.css" /></head><body>' + outHtml + '</body></html>';
-  var outPath = path.join(pth.blockout, blockName, 'out.html');
+  
+  var outPath = path.join(pth.blockout, blockName, 'index.html');
   fs.writeFile(outPath, outHtml, done);
 });
 

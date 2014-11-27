@@ -1,0 +1,24 @@
+@import '../../global'
+
+.auth-button
+  margin: 4px 0;
+
+.auth-button__button
+  cursor: pointer;
+  padding: 8px
+  text-align: center
+  color: white
+  border-radius: 2px
+  width: 160px
+  border: 0
+  background: linear-gradient(gray, #333)
+  &:hover
+    background: linear-gradient(lighten(gray, 10%), #444)
+
+.auth-button__icon
+  vmg-glyph('soc')
+  font-size: 1.1rem
+
+.auth-button__lbl
+  margin-right: 8px
+  font-size: 1.1rem

@@ -10,7 +10,8 @@ module.exports = {
   },
   content: [{
     elem: 'icon',
-    tag: 'span'
+    tag: 'span',
+    content: '&#xe161;'
   }, {
     elem: 'welcome',
     tag: 'span',

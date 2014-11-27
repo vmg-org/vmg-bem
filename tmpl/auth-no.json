@@ -1,1 +1,1 @@
-"<div class=\"auth-no\" onclick=\"{{open_login_popup}}\"><span class=\"auth-no__icon\"></span><span class=\"auth-no__welcome\">Login</span></div>"
+"<div class=\"auth-no\" onclick=\"{{open_login_popup}}\"><span class=\"auth-no__icon\">&#xe161;</span><span class=\"auth-no__welcome\">Login</span></div>"

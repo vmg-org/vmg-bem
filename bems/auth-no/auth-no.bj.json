@@ -1,1 +1,1 @@
-{"block":"auth-no","attrs":{"onclick":"{{open_login_popup}}"},"content":[{"elem":"icon","tag":"span"},{"elem":"welcome","tag":"span","content":"Login"}]}
+{"block":"auth-no","attrs":{"onclick":"{{open_login_popup}}"},"content":[{"elem":"icon","tag":"span","content":"&#xe161;"},{"elem":"welcome","tag":"span","content":"Login"}]}

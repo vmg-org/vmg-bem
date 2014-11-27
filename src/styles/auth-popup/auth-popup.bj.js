@@ -15,7 +15,8 @@ module.exports = {
     }, {
       elem: 'close',
       content: [{
-        elem: 'close-icon'
+        elem: 'close-icon',
+        content: '&#xe014;'
       }]
     }]
   }]

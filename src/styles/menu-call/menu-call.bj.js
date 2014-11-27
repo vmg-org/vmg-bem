@@ -10,7 +10,8 @@ module.exports = {
     tag: 'span',
     content: [{
       elem: 'call-icon',
-      tag: 'span'
+      tag: 'span',
+      content: '&#xe011'
     }]
   }]
 };

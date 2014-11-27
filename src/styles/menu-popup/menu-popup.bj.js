@@ -12,7 +12,8 @@ module.exports = {
       elem: 'close',
       content: [{
         elem: 'close-icon',
-        tag: 'span'
+        tag: 'span',
+        content: '&#xe014;'
       }]
     }]
   }]

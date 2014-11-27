@@ -1,1 +1,1 @@
-{"block":"menu-popup","content":[{"elem":"space","content":[{"block":"menu-view","content":[{"elem":"header","content":"Menu"},{"elem":"list","content":"super list with apps"}]},{"elem":"close","content":[{"elem":"close-icon","tag":"span"}]}]}]}
+{"block":"menu-popup","content":[{"elem":"space","content":[{"block":"menu-view","content":[{"elem":"header","content":"Menu"},{"elem":"list","content":"super list with apps"}]},{"elem":"close","content":[{"elem":"close-icon","tag":"span","content":"&#xe014;"}]}]}]}
