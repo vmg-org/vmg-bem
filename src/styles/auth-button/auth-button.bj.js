@@ -14,7 +14,7 @@ module.exports = {
     }, {
       elem: 'icon',
       tag: 'span',
-      content: 'c'
+      content: '{{icon_key}}'
     }]
   }]
 };

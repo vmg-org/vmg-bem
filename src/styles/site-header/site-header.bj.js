@@ -41,12 +41,12 @@ module.exports = {
           block: 'vmg-search'
         }]
       }, {
-        block: 'bsp-col',
+        block: 'bsp-col', // TODO: #33! change this to inner element or real block (structure - not decoration)
         mods: {
           lg: 4,
           md: 4
         },
-        content: ['_auth-scope.bj.js', {
+        content: ['_auth-scope.bj.js', { // TODO: #33! Change authScope to inner element
           block: 'auth-profiles',
           demo: true,
           retry: 1,

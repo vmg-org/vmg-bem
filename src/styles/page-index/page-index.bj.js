@@ -1,3 +1,7 @@
+/**
+ *
+ */
+
 module.exports = {
   block: 'page-index',
   tag: 'body',
@@ -21,7 +25,12 @@ module.exports = {
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, '_menu-popup.bj.js', '_popup-scope.bj.js', {
+  }, {
+    elem: 'popup-scope',
+    demo: true,
+    retry: 1,
+    content: ['_auth-popup.bj.js']
+  }, '_menu-popup.bj.js', {
     block: 'jquery-script',
     tag: 'script',
     bem: false,

@@ -1,1 +1,1 @@
-"<div class=\"auth-button\"><button class=\"auth-button__button\"><span class=\"auth-button__lbl\">{{login_with}}</span><span class=\"auth-button__icon\">c</span></button></div>"
+"<div class=\"auth-button\"><button class=\"auth-button__button\"><span class=\"auth-button__lbl\">{{login_with}}</span><span class=\"auth-button__icon\">{{icon_key}}</span></button></div>"
