@@ -11,6 +11,6 @@ module.exports = {
     elem: 'buttons',
     retry: 3,
     demo: true,
-    content: ['_auth-button.bj.js']
+    content: ['_auth-button.bj.js', '_auth-pre-button.bj.js']
   }]
 };

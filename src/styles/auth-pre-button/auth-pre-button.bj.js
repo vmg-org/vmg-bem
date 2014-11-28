@@ -3,12 +3,12 @@
  *     button content: 'c' // b (fb) or c (google) or i (dev)
  */
 module.exports = {
-  block: 'auth-button',
+  block: 'auth-pre-button',
   content: [{
     elem: 'button',
     tag: 'button',
     attrs: {
-      onclick: '{{fnc_start_auth}}'
+      disabled: true
     },
     content: [{
       elem: 'lbl',

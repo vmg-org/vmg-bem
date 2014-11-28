@@ -1,0 +1,1 @@
+{"block":"auth-pre-button","content":[{"elem":"button","tag":"button","attrs":{"disabled":true},"content":[{"elem":"lbl","tag":"span","content":"{{login_with}}"},{"elem":"icon","tag":"span","content":"{{icon_key}}"}]}]}

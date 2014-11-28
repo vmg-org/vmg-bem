@@ -1,0 +1,1 @@
+"<div class=\"auth-pre-button\"><button class=\"auth-pre-button__button\" disabled=\"true\"><span class=\"auth-pre-button__lbl\">{{login_with}}</span><span class=\"auth-pre-button__icon\">{{icon_key}}</span></button></div>"
