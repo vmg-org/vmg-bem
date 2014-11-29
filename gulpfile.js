@@ -287,7 +287,7 @@ gulp.task('item-html', function() {
  *    but this name (index.html) for simplify browsering
  *    and usually no blocks with this name (usually blocks contains few words through dashes)
  */
-gulp.task('item-out', ['item-css'], function(done) {
+gulp.task('block-out', ['item-css'], function(done) {
   if (!blockName) {
     throw new Error('required: --block=name');
   }

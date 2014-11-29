@@ -1,9 +1,15 @@
 module.exports = {
   block: 'site-header', // bsp-container
+  mix: {
+    block: 'bsp-container'
+  },
   content: [{
-    elem: 'row', // bsp-row
+    elem: 'row',
+    mix: {
+      block: 'bsp-row'
+    },
     content: [{
-      elem: 'col-logo', // bsp-col 4
+      elem: 'col-logo',
       mix: {
         block: 'bsp-col',
         mods: {
@@ -45,49 +51,15 @@ module.exports = {
       content: [{
         elem: 'auth-wrap',
         content: [{
-          elem: 'auth-no-wrap',
+          elem: 'auth-no-wrap', // if user is not auth - add content here
           demo: true,
           retry: 1,
           content: ['_auth-no.bj.js']
-        }]
-      }, {
-        block: 'auth-profiles',
-        demo: true,
-        retry: 1,
-        content: [{
-          block: 'auth-profile',
-          mdl: 'social_profile',
-          content: [{
-            elem: 'logout', // and settings for example
-            attrs: {
-              title: 'Log out'
-            },
-            content: [{
-              block: 'glyphicon',
-              tag: 'span',
-              mods: {
-                q: 'log-out'
-              }
-            }]
-          }, {
-            elem: 'display-name-link',
-            tag: 'a',
-            attrs: {
-              href: './cabinet.html'
-            },
-            content: [{
-              elem: 'display-name',
-              tag: 'span',
-              content: '@@display_name' // and @@photo_url for example
-            }]
-          }, {
-            elem: 'link-to-upload',
-            tag: 'a',
-            attrs: {
-              href: './template-editor.html'
-            },
-            content: '%=createTemplate=%'
-          }]
+        }, {
+          elem: 'auth-yes-wrap', // if user is auth - add content here
+          demo: true,
+          retry: 1,
+          content: ['_auth-profile.bj.js']
         }]
       }]
     }]

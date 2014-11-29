@@ -1,12 +1,15 @@
+@import '../../global'
+
 .auth-profile
   clearfix()
   padding: 2px 0
 
 .auth-profile__display-name
-  padding: 7px
+  padding: 8px
   float: right
-  border: 1px solid $link-color
-  background: #fefefe
+  color: $link-color
+    &:hover
+      color: $link-hover-color
 
 .auth-profile__logout
   padding: 3px
@@ -21,3 +24,6 @@
 .auth-profile__link-to-upload
   button-schema()
   button-variant($btn-default-color, $btn-default-bg, $btn-default-border)
+
+.auth-profile__logout-icon
+  vmg-glyph()
