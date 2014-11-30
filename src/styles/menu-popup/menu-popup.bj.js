@@ -6,6 +6,9 @@
  */
 module.exports = {
   block: 'menu-popup',
+  attrs: {
+    onclick: '{{fnc_hide_popup_if_out}}'
+  },
   content: [{
     elem: 'space',
     content: ['_menu-view.bj.js', {
@@ -13,6 +16,9 @@ module.exports = {
       content: [{
         elem: 'close-icon',
         tag: 'span',
+        attrs: {
+          'onclick': '{{fnc_hide_popup}}'
+        },
         content: '&#xe014;'
       }]
     }]

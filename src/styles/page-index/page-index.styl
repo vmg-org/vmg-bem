@@ -1,7 +1,15 @@
 @import "../../global"
 
+$prv-welcome-img = $img-path + 'welcome.jpg'
+
+//http://css-tricks.com/perfect-full-page-background-image/
 .page-index
   page()
+  background: url($prv-welcome-img) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 
 .page-index__header
   page__header()
@@ -14,5 +22,29 @@
 //    this behaviour doesn't support with hided elements at startup
 //    with !important tag - we cannot show elements (by jQuery or a style tag)
 // some components just removed from ready markup and generates dynamically (like auth-no - depens of session)
-.menu-popup
-  display: none;
+// no hided elements by default - elements generated dynamically
+
+.page-index__link-explore
+  button-schema()
+  button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border)
+
+.page-index__fnc-login
+  button-schema()
+  button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
+  padding: 8px
+
+.page-index__fnc-explore
+  button-schema()
+  button-variant($btn-success-color, $btn-success-bg, $btn-success-border)
+  padding: 8px
+
+.page-index__app-desc
+  font-size: 1.1rem
+  margin: 16px 0
+  text-shadow: green 1px 1px;
+  color: white
+
+.page-index__app-name
+  color: white
+  text-shadow: green 1px 1px;
+  margin-top: 100px

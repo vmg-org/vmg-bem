@@ -18,7 +18,7 @@
 module.exports = {
   block: 'auth-popup',
   attrs: {
-    onclick: '{{fnc_close_auth_popup_out}}'
+    onclick: '{{fnc_hide_popup_if_out}}'
   },
   content: [{
     elem: 'space',
@@ -28,7 +28,7 @@ module.exports = {
     }, {
       elem: 'close',
       attrs: {
-        'onclick': '{{fnc_close_auth_popup}}'
+        'onclick': '{{fnc_hide_popup}}'
       },
       content: [{
         elem: 'close-icon',

@@ -111,7 +111,7 @@ module.exports = {
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, '_menu-popup.bj.js', {
+  }, '_popup-scope.bj.js', {
     block: 'jquery-script',
     tag: 'script',
     bem: false,

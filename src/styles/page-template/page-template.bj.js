@@ -66,7 +66,7 @@ module.exports = {
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, '_menu-popup.bj.js', {
+  }, '_popup-scope.bj.js', {
     elem: '',
     bem: false,
     tag: 'script',

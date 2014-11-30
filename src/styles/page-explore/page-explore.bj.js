@@ -6,83 +6,54 @@ module.exports = {
     content: ['_site-header.bj.js']
   }, {
     elem: 'workspace',
+    mix: {
+      block: 'bsp-container'
+    },
     content: [{
-      block: 'bsp-container',
+      elem: 'row',
+      mix: {
+        block: 'bsp-row'
+      },
       content: [{
-        block: 'bsp-row',
-        content: [{
+        elem: 'col-main',
+        mix: {
           block: 'bsp-col',
           mods: {
             md: 8,
             sm: 12
-          },
-          content: [{
-            block: 'over-wrap',
-            content: [{
-              block: 'movie-records-col',
-              content: [{
-                elem: 'header',
-                content: '%=movieRecords=%'
-              }, {
-                elem: 'workspace',
-                content: [{
-                  block: 'movie-records',
-                  demo: true,
-                  retry: 5,
-                  content: [{ // for demo - remove this content for production (will be replaced in JS) or retry for development
-                    elem: 'item',
-                    content: [
-                      '_movie-preview.bj.js'
-                    ]
-                  }]
-                }]
-              }]
-            }]
-          }]
-        }, {
+          }
+        },
+        content: [{
+          elem: 'col-main-wrap',
+          content: ['_movie-records-col.bj.js']
+        }]
+      }, {
+        elem: 'col-side',
+        mix: {
           block: 'bsp-col',
           mods: {
             md: 4,
             sm: 12
-          },
-          content: [{
-            block: 'over-wrap',
-            content: [{
-              block: 'best-templates-col',
-              content: [{
-                elem: 'header',
-                content: '%=movieTemplates=%'
-              }, {
-                elem: 'workspace',
-                content: [{
-                  block: 'best-templates',
-                  demo: true,
-                  retry: 5,
-                  content: [{
-                    elem: 'item',
-                    content: [
-                      '_template-preview.bj.js'
-                    ]
-                  }]
-                }]
-              }]
-            }]
-          }]
+          }
+        },
+        content: [{
+          elem: 'col-side-wrap',
+          content: ['_best-templates-col.bj.js']
         }]
       }]
     }]
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, '_menu-popup.bj.js', {
-    block: 'jquery-script',
+  }, '_popup-scope.bj.js', {
+    elem: 'jquery-script',
     tag: 'script',
     bem: false,
     attrs: {
       src: './libs/jquery.js'
     }
   }, {
-    block: 'page-script',
+    elem: 'page-script',
     tag: 'script',
     bem: false,
     attrs: {

@@ -7,6 +7,10 @@ module.exports = {
   block: 'menu-call',
   content: [{
     elem: 'full-icon',
+    attrs: {
+      // attached manually insteead generating a template
+      onclick: 'app.showMenuChoice()'
+    },
     tag: 'span',
     content: [{
       elem: 'call-icon',

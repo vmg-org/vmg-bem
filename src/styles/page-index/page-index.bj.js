@@ -1,36 +1,66 @@
 /**
- *
+ * Page index
  */
-
 module.exports = {
   block: 'page-index',
   tag: 'body',
   content: [{
-    elem: 'header',
-    content: ['_site-header.bj.js']
-  }, {
     elem: 'workspace',
+    mix: {
+      block: 'bsp-container'
+    },
     content: [{
-      block: 'tmp-welcome',
-      bem: false,
+      elem: 'row',
+      mix: {
+        block: 'bsp-row'
+      },
       content: [{
-        elem: 'link',
-        tag: 'a',
-        attrs: {
-          href: './explore.html'
+        elem: 'side-wrap',
+        mix: {
+          block: 'bsp-col',
+          mods: {
+            lg: 2,
+            md: 2
+          }
+        }
+      }, {
+        elem: 'main-wrap',
+        mix: {
+          block: 'bsp-col',
+          mods: {
+            lg: 8,
+            md: 8
+          }
         },
-        content: 'Explore ISNAPPY'
+        content: [{
+          elem: 'app-name',
+          tag: 'h1',
+          content: 'ISNAPPY'
+        }, {
+          elem: 'app-desc',
+          tag: 'p',
+          content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.'
+        }, {
+          elem: 'fnc-login',
+          tag: 'button',
+          attrs: {
+            onclick: 'window.app.showLoginChoice()'
+          },
+          content: 'Log in'
+        }, {
+          elem: 'fnc-explore',
+          tag: 'a',
+          attrs: {
+            href: './explore.html'
+          },
+          content: 'Explore'
+        }]
       }]
     }]
   }, {
     elem: 'footer',
     content: ['_license-info.bj.js']
-  }, {
-    elem: 'popup-scope',
-    demo: true,
-    retry: 1,
-    content: ['_auth-popup.bj.js']
-  }, '_menu-popup.bj.js', {
+  }, '_popup-scope.bj.js', {
     block: 'jquery-script',
     tag: 'script',
     bem: false,

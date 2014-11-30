@@ -6,7 +6,7 @@
 module.exports = {
   block: 'auth-no',
   attrs: {
-    onclick: '{{fnc_open_login_popup}}'
+    onclick: '{{fnc_show_login_choice}}'
   },
   content: [{
     elem: 'icon',

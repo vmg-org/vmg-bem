@@ -1,1 +1,1 @@
-"<div class=\"auth-no\" onclick=\"{{fnc_open_login_popup}}\"><span class=\"auth-no__icon\">&#xe161;</span><span class=\"auth-no__welcome\">Login</span></div>"
+"<div class=\"auth-no\" onclick=\"{{fnc_show_login_choice}}\"><span class=\"auth-no__icon\">&#xe161;</span><span class=\"auth-no__welcome\">Login</span></div>"
